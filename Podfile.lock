@@ -1,0 +1,24 @@
+PODS:
+  - AnimatedTextInput (0.4.0)
+  - BetterSegmentedControl (0.7)
+  - DynamicButton (3.1.0)
+  - SideMenu (2.2.0)
+  - SnapKit (3.1.2)
+
+DEPENDENCIES:
+  - AnimatedTextInput (~> 0.4.0)
+  - BetterSegmentedControl (~> 0.7)
+  - DynamicButton (~> 3.1.0)
+  - SideMenu (~> 2.2)
+  - SnapKit (~> 3.1.2)
+
+SPEC CHECKSUMS:
+  AnimatedTextInput: 283f38c106399b809b126f80af79fca9f4aabfd6
+  BetterSegmentedControl: 0b4dde1caac22de345820858a5e2789132378c1c
+  DynamicButton: 37968af761a31274aeac427f40204688fa810342
+  SideMenu: eeff6b85456c5c6e14165655691d2033f6b24969
+  SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
+
+PODFILE CHECKSUM: 68a149f8975deec8bb74df08f45a5e57878448ab
+
+COCOAPODS: 1.1.1

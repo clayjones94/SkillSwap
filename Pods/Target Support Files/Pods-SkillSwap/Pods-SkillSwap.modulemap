@@ -1,0 +1,6 @@
+framework module Pods_SkillSwap {
+  umbrella header "Pods-SkillSwap-umbrella.h"
+
+  export *
+  module * { export * }
+}

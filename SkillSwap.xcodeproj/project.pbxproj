@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		921938131E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */; };
+		923383D61E3C29C500C3FFF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923383D51E3C29C500C3FFF6 /* Foundation.framework */; };
+		923383D81E3C29CD00C3FFF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923383D71E3C29CD00C3FFF6 /* UIKit.framework */; };
+		923383DA1E3C29D400C3FFF6 /* BetterSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923383D91E3C29D400C3FFF6 /* BetterSegmentedControl.framework */; };
+		923383DC1E3C2EA800C3FFF6 /* SSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923383DB1E3C2EA800C3FFF6 /* SSColors.swift */; };
+		923383E71E3D5E0200C3FFF6 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 923383DF1E3D5C3A00C3FFF6 /* Gotham-Bold.otf */; };
+		923383E81E3D5E0600C3FFF6 /* Gotham-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 923383E01E3D5C3A00C3FFF6 /* Gotham-BoldItalic.otf */; };
+		923383E91E3D5E0800C3FFF6 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 923383E11E3D5C3A00C3FFF6 /* Gotham-Book.otf */; };
+		923383EA1E3D5E0B00C3FFF6 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 923383E21E3D5C3A00C3FFF6 /* Gotham-BookItalic.otf */; };
+		923383EB1E3D5E0E00C3FFF6 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 923383E31E3D5C3A00C3FFF6 /* Gotham-Light.otf */; };
+		923383EC1E3D5E1100C3FFF6 /* Gotham-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 923383E41E3D5C3A00C3FFF6 /* Gotham-LightItalic.otf */; };
+		923383ED1E3D5E1600C3FFF6 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 923383E51E3D5C3A00C3FFF6 /* Gotham-Medium.otf */; };
+		923383EE1E3D5E1800C3FFF6 /* Gotham-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 923383E61E3D5C3A00C3FFF6 /* Gotham-MediumItalic.otf */; };
+		923383F01E3D67D000C3FFF6 /* SSSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923383EF1E3D67D000C3FFF6 /* SSSideMenuViewController.swift */; };
+		923383F21E3D6DEE00C3FFF6 /* SSLearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923383F11E3D6DEE00C3FFF6 /* SSLearnViewController.swift */; };
+		923383F41E3D6E4300C3FFF6 /* SSTeachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923383F31E3D6E4300C3FFF6 /* SSTeachViewController.swift */; };
+		923383F61E3EA15800C3FFF6 /* SSPickClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923383F51E3EA15800C3FFF6 /* SSPickClassViewController.swift */; };
+		92C075981E3C1F8100D0B063 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C075971E3C1F8100D0B063 /* AppDelegate.swift */; };
+		92C0759F1E3C1F8100D0B063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C0759E1E3C1F8100D0B063 /* Assets.xcassets */; };
+		92C075AA1E3C22E400D0B063 /* SSMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C075A91E3C22E400D0B063 /* SSMainViewController.swift */; };
+		92C075AC1E3C23FF00D0B063 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92C075AB1E3C23FF00D0B063 /* Default-568h@2x.png */; };
+		92C78E481E3F237C003C8ED7 /* SSPickLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C78E471E3F237C003C8ED7 /* SSPickLocationViewController.swift */; };
+		92C78E4A1E3FB4F1003C8ED7 /* SSDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C78E491E3FB4F1003C8ED7 /* SSDescriptionViewController.swift */; };
+		92C78E4C1E3FBA38003C8ED7 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C78E4B1E3FBA38003C8ED7 /* SideMenu.framework */; };
+		92C78E4E1E3FBA3D003C8ED7 /* AnimatedTextInput.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C78E4D1E3FBA3D003C8ED7 /* AnimatedTextInput.framework */; };
+		92C78E501E3FBA47003C8ED7 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C78E4F1E3FBA47003C8ED7 /* SnapKit.framework */; };
+		92C78E521E3FC46F003C8ED7 /* SSSelectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C78E511E3FC46F003C8ED7 /* SSSelectTimeViewController.swift */; };
+		92C78E541E3FF194003C8ED7 /* SSPostSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C78E531E3FF194003C8ED7 /* SSPostSummaryViewController.swift */; };
+		C2C955BA714E073ACDE047EB /* Pods_SkillSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFC40E0F1585E77AB3F93AB /* Pods_SkillSwap.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		685A2BE634EBF6C1E9C0D762 /* Pods-SkillSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillSwap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkillSwap/Pods-SkillSwap.debug.xcconfig"; sourceTree = "<group>"; };
+		82ACFD579FEB922F137AD524 /* Pods-SkillSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillSwap.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkillSwap/Pods-SkillSwap.release.xcconfig"; sourceTree = "<group>"; };
+		921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSWaitForTeacherViewController.swift; sourceTree = "<group>"; };
+		923383D51E3C29C500C3FFF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		923383D71E3C29CD00C3FFF6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		923383D91E3C29D400C3FFF6 /* BetterSegmentedControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BetterSegmentedControl.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphonesimulator/BetterSegmentedControl/BetterSegmentedControl.framework"; sourceTree = "<group>"; };
+		923383DB1E3C2EA800C3FFF6 /* SSColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSColors.swift; sourceTree = "<group>"; };
+		923383DF1E3D5C3A00C3FFF6 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
+		923383E01E3D5C3A00C3FFF6 /* Gotham-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BoldItalic.otf"; sourceTree = "<group>"; };
+		923383E11E3D5C3A00C3FFF6 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
+		923383E21E3D5C3A00C3FFF6 /* Gotham-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BookItalic.otf"; sourceTree = "<group>"; };
+		923383E31E3D5C3A00C3FFF6 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
+		923383E41E3D5C3A00C3FFF6 /* Gotham-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-LightItalic.otf"; sourceTree = "<group>"; };
+		923383E51E3D5C3A00C3FFF6 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
+		923383E61E3D5C3A00C3FFF6 /* Gotham-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-MediumItalic.otf"; sourceTree = "<group>"; };
+		923383EF1E3D67D000C3FFF6 /* SSSideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSideMenuViewController.swift; sourceTree = "<group>"; };
+		923383F11E3D6DEE00C3FFF6 /* SSLearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLearnViewController.swift; sourceTree = "<group>"; };
+		923383F31E3D6E4300C3FFF6 /* SSTeachViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTeachViewController.swift; sourceTree = "<group>"; };
+		923383F51E3EA15800C3FFF6 /* SSPickClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSPickClassViewController.swift; sourceTree = "<group>"; };
+		92C075941E3C1F8100D0B063 /* SkillSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92C075971E3C1F8100D0B063 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		92C0759E1E3C1F8100D0B063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92C075A31E3C1F8100D0B063 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92C075A91E3C22E400D0B063 /* SSMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSMainViewController.swift; sourceTree = "<group>"; };
+		92C075AB1E3C23FF00D0B063 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		92C78E471E3F237C003C8ED7 /* SSPickLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSPickLocationViewController.swift; sourceTree = "<group>"; };
+		92C78E491E3FB4F1003C8ED7 /* SSDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDescriptionViewController.swift; sourceTree = "<group>"; };
+		92C78E4B1E3FBA38003C8ED7 /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/SideMenu/SideMenu.framework"; sourceTree = "<group>"; };
+		92C78E4D1E3FBA3D003C8ED7 /* AnimatedTextInput.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnimatedTextInput.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/AnimatedTextInput/AnimatedTextInput.framework"; sourceTree = "<group>"; };
+		92C78E4F1E3FBA47003C8ED7 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
+		92C78E511E3FC46F003C8ED7 /* SSSelectTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSelectTimeViewController.swift; sourceTree = "<group>"; };
+		92C78E531E3FF194003C8ED7 /* SSPostSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSPostSummaryViewController.swift; sourceTree = "<group>"; };
+		FAFC40E0F1585E77AB3F93AB /* Pods_SkillSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkillSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92C075911E3C1F8100D0B063 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92C78E501E3FBA47003C8ED7 /* SnapKit.framework in Frameworks */,
+				92C78E4E1E3FBA3D003C8ED7 /* AnimatedTextInput.framework in Frameworks */,
+				92C78E4C1E3FBA38003C8ED7 /* SideMenu.framework in Frameworks */,
+				923383DA1E3C29D400C3FFF6 /* BetterSegmentedControl.framework in Frameworks */,
+				923383D81E3C29CD00C3FFF6 /* UIKit.framework in Frameworks */,
+				923383D61E3C29C500C3FFF6 /* Foundation.framework in Frameworks */,
+				C2C955BA714E073ACDE047EB /* Pods_SkillSwap.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		923383DD1E3D5C2400C3FFF6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				923383DE1E3D5C2D00C3FFF6 /* Gotham */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		923383DE1E3D5C2D00C3FFF6 /* Gotham */ = {
+			isa = PBXGroup;
+			children = (
+				923383DF1E3D5C3A00C3FFF6 /* Gotham-Bold.otf */,
+				923383E01E3D5C3A00C3FFF6 /* Gotham-BoldItalic.otf */,
+				923383E11E3D5C3A00C3FFF6 /* Gotham-Book.otf */,
+				923383E21E3D5C3A00C3FFF6 /* Gotham-BookItalic.otf */,
+				923383E31E3D5C3A00C3FFF6 /* Gotham-Light.otf */,
+				923383E41E3D5C3A00C3FFF6 /* Gotham-LightItalic.otf */,
+				923383E51E3D5C3A00C3FFF6 /* Gotham-Medium.otf */,
+				923383E61E3D5C3A00C3FFF6 /* Gotham-MediumItalic.otf */,
+			);
+			name = Gotham;
+			sourceTree = "<group>";
+		};
+		92C0758B1E3C1F8000D0B063 = {
+			isa = PBXGroup;
+			children = (
+				92C075961E3C1F8100D0B063 /* SkillSwap */,
+				92C075951E3C1F8100D0B063 /* Products */,
+				B936FABDDEB1CFD7F9693DA0 /* Pods */,
+				DAE1D88DF9B462E543EADB02 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		92C075951E3C1F8100D0B063 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92C075941E3C1F8100D0B063 /* SkillSwap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92C075961E3C1F8100D0B063 /* SkillSwap */ = {
+			isa = PBXGroup;
+			children = (
+				92C075AB1E3C23FF00D0B063 /* Default-568h@2x.png */,
+				92C075971E3C1F8100D0B063 /* AppDelegate.swift */,
+				923383DB1E3C2EA800C3FFF6 /* SSColors.swift */,
+				923383EF1E3D67D000C3FFF6 /* SSSideMenuViewController.swift */,
+				92C075A91E3C22E400D0B063 /* SSMainViewController.swift */,
+				923383F11E3D6DEE00C3FFF6 /* SSLearnViewController.swift */,
+				921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */,
+				92C78E551E3FF19C003C8ED7 /* New Learn Post */,
+				923383F31E3D6E4300C3FFF6 /* SSTeachViewController.swift */,
+				92C0759E1E3C1F8100D0B063 /* Assets.xcassets */,
+				923383DD1E3D5C2400C3FFF6 /* Fonts */,
+				92C075A31E3C1F8100D0B063 /* Info.plist */,
+			);
+			path = SkillSwap;
+			sourceTree = "<group>";
+		};
+		92C78E551E3FF19C003C8ED7 /* New Learn Post */ = {
+			isa = PBXGroup;
+			children = (
+				923383F51E3EA15800C3FFF6 /* SSPickClassViewController.swift */,
+				92C78E471E3F237C003C8ED7 /* SSPickLocationViewController.swift */,
+				92C78E491E3FB4F1003C8ED7 /* SSDescriptionViewController.swift */,
+				92C78E511E3FC46F003C8ED7 /* SSSelectTimeViewController.swift */,
+				92C78E531E3FF194003C8ED7 /* SSPostSummaryViewController.swift */,
+			);
+			name = "New Learn Post";
+			sourceTree = "<group>";
+		};
+		B936FABDDEB1CFD7F9693DA0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				685A2BE634EBF6C1E9C0D762 /* Pods-SkillSwap.debug.xcconfig */,
+				82ACFD579FEB922F137AD524 /* Pods-SkillSwap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DAE1D88DF9B462E543EADB02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92C78E4F1E3FBA47003C8ED7 /* SnapKit.framework */,
+				92C78E4D1E3FBA3D003C8ED7 /* AnimatedTextInput.framework */,
+				92C78E4B1E3FBA38003C8ED7 /* SideMenu.framework */,
+				923383D91E3C29D400C3FFF6 /* BetterSegmentedControl.framework */,
+				923383D71E3C29CD00C3FFF6 /* UIKit.framework */,
+				923383D51E3C29C500C3FFF6 /* Foundation.framework */,
+				FAFC40E0F1585E77AB3F93AB /* Pods_SkillSwap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92C075931E3C1F8100D0B063 /* SkillSwap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92C075A61E3C1F8100D0B063 /* Build configuration list for PBXNativeTarget "SkillSwap" */;
+			buildPhases = (
+				3DC3295F62A253CA1E97312A /* [CP] Check Pods Manifest.lock */,
+				92C075901E3C1F8100D0B063 /* Sources */,
+				92C075911E3C1F8100D0B063 /* Frameworks */,
+				92C075921E3C1F8100D0B063 /* Resources */,
+				E8010A7B77A83550991FD00B /* [CP] Embed Pods Frameworks */,
+				C1EA1D77C06A40ACCDD87D9A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkillSwap;
+			productName = SkillSwap;
+			productReference = 92C075941E3C1F8100D0B063 /* SkillSwap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92C0758C1E3C1F8100D0B063 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = SkillSwap;
+				TargetAttributes = {
+					92C075931E3C1F8100D0B063 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = CG5WBEU96D;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 92C0758F1E3C1F8100D0B063 /* Build configuration list for PBXProject "SkillSwap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 92C0758B1E3C1F8000D0B063;
+			productRefGroup = 92C075951E3C1F8100D0B063 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92C075931E3C1F8100D0B063 /* SkillSwap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92C075921E3C1F8100D0B063 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				923383EB1E3D5E0E00C3FFF6 /* Gotham-Light.otf in Resources */,
+				92C0759F1E3C1F8100D0B063 /* Assets.xcassets in Resources */,
+				92C075AC1E3C23FF00D0B063 /* Default-568h@2x.png in Resources */,
+				923383E71E3D5E0200C3FFF6 /* Gotham-Bold.otf in Resources */,
+				923383E81E3D5E0600C3FFF6 /* Gotham-BoldItalic.otf in Resources */,
+				923383E91E3D5E0800C3FFF6 /* Gotham-Book.otf in Resources */,
+				923383ED1E3D5E1600C3FFF6 /* Gotham-Medium.otf in Resources */,
+				923383EE1E3D5E1800C3FFF6 /* Gotham-MediumItalic.otf in Resources */,
+				923383EC1E3D5E1100C3FFF6 /* Gotham-LightItalic.otf in Resources */,
+				923383EA1E3D5E0B00C3FFF6 /* Gotham-BookItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DC3295F62A253CA1E97312A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1EA1D77C06A40ACCDD87D9A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkillSwap/Pods-SkillSwap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8010A7B77A83550991FD00B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkillSwap/Pods-SkillSwap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92C075901E3C1F8100D0B063 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				923383F01E3D67D000C3FFF6 /* SSSideMenuViewController.swift in Sources */,
+				923383F61E3EA15800C3FFF6 /* SSPickClassViewController.swift in Sources */,
+				92C78E541E3FF194003C8ED7 /* SSPostSummaryViewController.swift in Sources */,
+				92C78E481E3F237C003C8ED7 /* SSPickLocationViewController.swift in Sources */,
+				923383DC1E3C2EA800C3FFF6 /* SSColors.swift in Sources */,
+				92C075AA1E3C22E400D0B063 /* SSMainViewController.swift in Sources */,
+				92C075981E3C1F8100D0B063 /* AppDelegate.swift in Sources */,
+				923383F41E3D6E4300C3FFF6 /* SSTeachViewController.swift in Sources */,
+				921938131E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift in Sources */,
+				92C78E4A1E3FB4F1003C8ED7 /* SSDescriptionViewController.swift in Sources */,
+				92C78E521E3FC46F003C8ED7 /* SSSelectTimeViewController.swift in Sources */,
+				923383F21E3D6DEE00C3FFF6 /* SSLearnViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		92C075A41E3C1F8100D0B063 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92C075A51E3C1F8100D0B063 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92C075A71E3C1F8100D0B063 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 685A2BE634EBF6C1E9C0D762 /* Pods-SkillSwap.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CG5WBEU96D;
+				INFOPLIST_FILE = SkillSwap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs194h.cjones94.SkillSwap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		92C075A81E3C1F8100D0B063 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82ACFD579FEB922F137AD524 /* Pods-SkillSwap.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CG5WBEU96D;
+				INFOPLIST_FILE = SkillSwap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs194h.cjones94.SkillSwap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92C0758F1E3C1F8100D0B063 /* Build configuration list for PBXProject "SkillSwap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92C075A41E3C1F8100D0B063 /* Debug */,
+				92C075A51E3C1F8100D0B063 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92C075A61E3C1F8100D0B063 /* Build configuration list for PBXNativeTarget "SkillSwap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92C075A71E3C1F8100D0B063 /* Debug */,
+				92C075A81E3C1F8100D0B063 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92C0758C1E3C1F8100D0B063 /* Project object */;
+}

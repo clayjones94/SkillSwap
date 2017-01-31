@@ -1,0 +1,1641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02601ABD06A8EE88FFDF4009E5AF5DC2 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DEBE960A3A8DAC197E21B3D821CC86 /* Debugging.swift */; };
+		02DA0B7DDADC2A3860AFFE5052FEC99F /* DynamicButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DB45ABD010BD5DD096A1909A6AF7CA /* DynamicButton-dummy.m */; };
+		0508905C3C14CABBE2FC1B2E8A85C70D /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D8CF0711C8AA4A7BE77049CFAC3219 /* disclosure.png */; };
+		079ABEDBE112679AA528861AD98D85ED /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48924D7D8DBF1639090F752923CBD3 /* Constraint.swift */; };
+		085001B0C4983085045E8DCD71FFCE6C /* DynamicButtonStyleArrowDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42A41D28000BF79CA8A9D50B4C21D97 /* DynamicButtonStyleArrowDown.swift */; };
+		0A472E63CF2A259EDDC473BE03174CBD /* DynamicButtonStyleVerticalLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1009187EA0369B842CA1D7C4B35879E /* DynamicButtonStyleVerticalLine.swift */; };
+		12640591B76DF3E1182B0CCC012C9886 /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51387C72DBF8D6DEF0200207781D29C4 /* SideMenuManager.swift */; };
+		1469C8F5CBE1840B72789D3C0E217F1C /* DynamicButtonStyleRewind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D60281B1EF326D8EDF1B9C8075DA83A /* DynamicButtonStyleRewind.swift */; };
+		1AF47BAD337A0FD85B53346B5835C0EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		1B7E77B32AAE7899D7EF9B7AE2B077CC /* AnimatedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8085A36EBBC732771729CD276503D3 /* AnimatedLine.swift */; };
+		1C403B5EB32D705543C7CCDEE4B4EC59 /* DynamicButtonStyleDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CF2D48D576B174BD5525EF04B03942 /* DynamicButtonStyleDownload.swift */; };
+		1E8042F4596CC7206AA529B8DC271CD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */; };
+		2033E2A87C634B164B5AC51032083EA1 /* Pods-SkillSwap-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0383A67AE6D821293B7CD68948EE19A0 /* Pods-SkillSwap-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		276F47CC7EC67090E110DBDE7156AA72 /* DynamicButtonStyleCaretUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232F6B393BC3D3BB40F83F2CB8CE25A /* DynamicButtonStyleCaretUp.swift */; };
+		29EE5DFEEC29160DC0405492746E8A4B /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC317E2F8E765D5745C886900E5DFD3F /* UIViewExtensions.swift */; };
+		2A4119C9D3CB61DEBEAFB3AADBCD7250 /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61567A8D861834F3D3577B1E209A3CF /* UITableViewVibrantCell.swift */; };
+		2E5B25BC38B81C05173B32ED30E5BD05 /* BetterSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AA0F5C57DBA47CCCDA3F6EB8FD3984 /* BetterSegmentedControl-dummy.m */; };
+		2F632A4D1ADD5136B02A32C056154E95 /* DynamicButtonStylePause.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A40FCCE5173A641699FD823FD18FB7 /* DynamicButtonStylePause.swift */; };
+		310DD60DCF4CED58E6746D041325B3EF /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7999F5C11C84FED3F4E5D6AD8AB834A /* ConstraintInsets.swift */; };
+		34B195C00E59064A5054E9D72AFDF996 /* cm_icon_input_eye_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 624B6BC8E13BF606D55A114778697C26 /* cm_icon_input_eye_selected@2x.png */; };
+		3625E00D90DDFA2CD7B70487B1D6058A /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E93BB46518B8A95481B05FEC0A31AB /* ConstraintConstantTarget.swift */; };
+		367C95FE959438EA25E119A4DF98C3B1 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459593736A27C7D3811153198E1B3B4 /* ConstraintDSL.swift */; };
+		38AC844695B153A8C58E1DAA9CE2D587 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABAD5A2FDB72379E95D40724D95FC36 /* ConstraintMakerFinalizable.swift */; };
+		3C23CEF4673BC25D4182C31836C7779B /* DynamicButtonStyleStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E45B149655DED594472EE21EEE6C6E7 /* DynamicButtonStyleStop.swift */; };
+		3ECFE1426AFB869293F0D524847804AD /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A4989FBADC265BB3B12B65D07B3C55 /* ConstraintItem.swift */; };
+		41776112D224DE588BA4F8892147FB79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		4313B742D8BF3FBF8E51AA05295534C4 /* DynamicButtonStyleHamburger.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDCF6DB9C40DD4E123FFD97BC2D6CDE /* DynamicButtonStyleHamburger.swift */; };
+		49688BE0FD4A87B3EC40C049406AA7C8 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 132D127C8ED15A38F3965240F9915106 /* SnapKit-dummy.m */; };
+		4AAA32AE79331482048A2BF5164E237D /* DynamicButtonStyleCaretRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7B75F08E50B5A861C17AD7603C170 /* DynamicButtonStyleCaretRight.swift */; };
+		4BC61729174A8ED773747CCA43DA9696 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C2B7DC90D5A035A4D09C461C9BBE4 /* ConstraintRelation.swift */; };
+		4D0B179BD4E4575F380F8E64D9CE1F89 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D309DBC34134B427A629D287AF402A76 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51FE6330A24B58B972B11B060DB321DF /* AnimatedTextInput.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B84546590F837C1D37C886E462490915 /* AnimatedTextInput.bundle */; };
+		53E9E93859F5CFCB4514AD00EEEBB49A /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A817301BDB06F2A80262F5781DCC59BB /* ConstraintLayoutSupport.swift */; };
+		5704E9D5A27150E1875E58189F9E2AB6 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B00D293E5D1F128E67B0BA9B1C0635 /* ConstraintInsetTarget.swift */; };
+		5D04516777D5F74D5C85517F722D1A99 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC369E76EB98A68B31AF003AD44644E /* SideMenu-dummy.m */; };
+		5EF7CB442EC52CCB089F4073B0767BCC /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A861817FDF03D281839BEFFB1621296B /* ConstraintLayoutGuide+Extensions.swift */; };
+		6582022FABF8C367C4BF6BDBE005C1C5 /* disclosure@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA5308899D7D0DF236374BEFBC5F967 /* disclosure@3x.png */; };
+		677D592D091BA9F929C0E559AEEBE50A /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B989E75B2945584FEA45123E2AC67 /* ConstraintAttributes.swift */; };
+		6E2AA015BEAC3885984D1305EB0A64C6 /* AnimatedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09118073C3DB0EBCEDE7B25215D207A0 /* AnimatedTextInput.swift */; };
+		6EE92F67E05C728312C34F81E9E6BF4F /* cm_icon_input_eye_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEDD03B4D3758C006CB150D0CAD95C4A /* cm_icon_input_eye_normal@2x.png */; };
+		6F16EA77E2BECC0DF9C36696191405EA /* DynamicButtonStyleClose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388A1D8ADE89F8775FF439132735F215 /* DynamicButtonStyleClose.swift */; };
+		6F3D438E29BE222613E8937258C764AB /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E971338B7E238D0D3BBFB15BE7A30E4 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7223342EC9299631DDA8BAE5D23B6F53 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC589707BD63323A413B8159DC5B7614 /* ConstraintLayoutGuide.swift */; };
+		7280A91C6C7508B6D82C755F40772C17 /* DynamicButtonStyleArrowLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014C25E6B8D31A2814DDF75C3C36C09 /* DynamicButtonStyleArrowLeft.swift */; };
+		77EE9D2CDCBB8C464C4A189DC248FBE6 /* AnimatedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE712F9D4BBA75F2565B02F851E5B69 /* AnimatedTextView.swift */; };
+		7D64FB12047A622D1132A66AA43D2EF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */; };
+		7E4EFBFAF66EB5F9C6E26B087090F171 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65EEF2BC1B4DA868E0E8F23B0D85632 /* ConstraintView.swift */; };
+		80F3068DDD0C4ECBF32FDCB91F8B2506 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A855A67CB5C4746C1E29F150C6B982C1 /* LayoutConstraintItem.swift */; };
+		85DB37167784FCC49672C51155C5A321 /* DynamicButtonStyleCirclePlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C806B106E62B5C1511A77B13B6F7F6 /* DynamicButtonStyleCirclePlus.swift */; };
+		88BF95742340069C38EA4B5839C405BD /* AnimatedTextInputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C483C982C754A573061A7C7970056881 /* AnimatedTextInputStyle.swift */; };
+		8A2B52FCC4F5C813B70A94BFAE7D24D5 /* DynamicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC38BECD65FC19295A560457CFDCC8F /* DynamicButton.swift */; };
+		8BDA7C4F0B42C3635EB49DB292AD7515 /* DynamicButtonStyleHorizontalMoreOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B4ECCEE41B16B233BA4DDB9F20FA06 /* DynamicButtonStyleHorizontalMoreOptions.swift */; };
+		8D90D45F154452C4B22333AD5BEF0AB4 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE81F41C6CB2227AB4587EA70462DA0E /* ConstraintMakerEditable.swift */; };
+		93DFDF726B422CE19B4896E3DC958E7B /* BetterSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 504A16AB4AA583354DF4EE09F5514104 /* BetterSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9588AA025059E33574CAC925D7594813 /* DynamicButtonStyleReload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C90E8405DC3D96B98326855A7AD393 /* DynamicButtonStyleReload.swift */; };
+		95D78044963340B7CE31E82F96DD9C99 /* DynamicButtonStyleCaretDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE25FB467924024DFF84E405540091F0 /* DynamicButtonStyleCaretDown.swift */; };
+		9804A25963EFBEC3A55760D88ACFF815 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A875B014CBF2172F6A6886B78767C /* ConstraintMakerPriortizable.swift */; };
+		999DD8BEF7680C24E947FC3DA9D83B53 /* DynamicButtonStylePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D5404C71CFC11CBCBAEFF192C17E8B /* DynamicButtonStylePlay.swift */; };
+		9A72870177D8CA7841AF6F9BB8C54E5F /* DynamicButtonStyleNone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1665D44EB7C096F76AD2E2193187053A /* DynamicButtonStyleNone.swift */; };
+		9AC0FAB323E6EFA9E4F1C9F4E9A07A28 /* PathHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAEE22E25A7F574344BE109CCAC0D71 /* PathHelper.swift */; };
+		9B46F6A57B8E17B8B07E1944C4D01946 /* DynamicButtonStylePlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E7AF5CA24E632DDEB6473A4D033D4 /* DynamicButtonStylePlus.swift */; };
+		9EA6E078705DDD40F04A4C1F2DADDC63 /* BetterSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8FA456F33886D05D5D6568A77E61D /* BetterSegmentedControl.swift */; };
+		A68AFCA53567656EC22EB58EC34F429E /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D7A8AC7E6A434621765240427840A3 /* ConstraintRelatableTarget.swift */; };
+		AD102D0B847AC67C973F7A8D59B82DE0 /* DynamicButtonStyleFastForward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2518C615ADAE6289CFF39136CF1C9CFA /* DynamicButtonStyleFastForward.swift */; };
+		AFCD1B0E09376C3A77CC94860DFE37EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		B3EB64120CCF71ACFD11A3F1BF7A046C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		B51FEC4EBB8A679184DCA38ED5FD2301 /* DynamicButtonStyleCaretLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263ADDE5E1A49EE6CA1DB3C9F5D7C68C /* DynamicButtonStyleCaretLeft.swift */; };
+		B72F06DE5001026A54B949E37BE4DDE3 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAD586976B52FB6AC147A99801D229A /* ConstraintViewDSL.swift */; };
+		BA640CD8D9142B53445E4BFADACD355E /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8961904AF44F9C95E68B2DC143A0819 /* ConstraintConfig.swift */; };
+		BC90D58697892020E2F2F2D69DB9761E /* DynamicButtonStyleArrowUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF174A431C226220D24FB01B096A6A7 /* DynamicButtonStyleArrowUp.swift */; };
+		BD153B0E8936DD30573F9F4CC04190A5 /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436A47402E067DC1F21305D19E79A63 /* UISideMenuNavigationController.swift */; };
+		BFDC8826A71C26917CF056FC12CAD48E /* cm_icon_input_eye_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1FF12D68EA6910550E33D45E7E4D354 /* cm_icon_input_eye_selected@3x.png */; };
+		C1F86D58603A88EF0D11BE51148BBE96 /* DynamicButtonStyleVerticalMoreOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA7D9E1FB0DA4C19EC18E4DBD65418 /* DynamicButtonStyleVerticalMoreOptions.swift */; };
+		C78A65154E32610D313207E258256D15 /* DynamicButtonStyleCircleClose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416AD9A2252CE9480411DA7CAA16862 /* DynamicButtonStyleCircleClose.swift */; };
+		C9F6F89E72829039D391F6E14A6EBF1D /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD05F0D0D77444561D5E1CA3AFF954A /* ConstraintView+Extensions.swift */; };
+		CB22F57C9B275781903EAC0DE1014D77 /* AnimatedTextInput-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46B9CF23D67ADE963DCDC35E363BF8F7 /* AnimatedTextInput-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC6468DB91A9FB1C803B71A9657C542D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		CCF6DF6495550EC7D59D5E3C141D5748 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F35FD3A408FE49D1A99CDACD042A29 /* LayoutConstraint.swift */; };
+		CF03A314FE02B8D860C198F835B21721 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8F22DCFF34556E12F2F8639CCC7AB /* ConstraintPriorityTarget.swift */; };
+		D27D29F2DA4B6BDF9BA8E528A87313AE /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59CFD78174DF5BB85CC3908475B534C /* ConstraintMultiplierTarget.swift */; };
+		D79847573F0ABCB6332BCD19C16EA010 /* cm_icon_input_eye_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D454C4FF85C405DFD6C4F0B862AA19 /* cm_icon_input_eye_normal@3x.png */; };
+		D862AFB035C1451B7E053AE310763227 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75531E23684FFAFDF26AA5A8BBDFDACD /* ConstraintOffsetTarget.swift */; };
+		D8D6C0DDA65FC12591C67851F7585F95 /* DynamicButtonStyleCheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E7B9400A2CF493F621027D69C89600 /* DynamicButtonStyleCheckMark.swift */; };
+		DD6A5AB50198F5ED205AB45F81EC6844 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2086BD6FF400D2BB4C15F2564C1705B8 /* ConstraintLayoutSupportDSL.swift */; };
+		DE5A68220135A9592056B55DF474E2DC /* DynamicButtonStyleHorizontalLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48376617B080DFF3F83754B2A0061B4F /* DynamicButtonStyleHorizontalLine.swift */; };
+		E51676DF4BB97DFBBFF5E685BA131B9B /* DynamicButtonStyleDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684B888121CF5988773BB1A67A8B4F95 /* DynamicButtonStyleDot.swift */; };
+		E9EF40D4204A4884FE38020080FF2D51 /* DynamicButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE9E3338C66CDC56DD76499A305B54 /* DynamicButtonStyle.swift */; };
+		EA3A7EB5AC6CA7534425F6A893E48072 /* AnimatedTextInput-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B731D2491193A98C3130BB318D032F8 /* AnimatedTextInput-dummy.m */; };
+		EADD570E11FCB7466E86B6F3D447CA71 /* AnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1D903214E3762550E85B6CB1AD00 /* AnimatedTextField.swift */; };
+		EC4C47AD1AD059280090E5DC45A8003D /* Pods-SkillSwap-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DBD01C568E64F04A219FFDA4195B12 /* Pods-SkillSwap-dummy.m */; };
+		ED4AA489DCB437300AE698E705AA7FB4 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BF1A8AF6236A5DD3153D86EB9B987 /* ConstraintDescription.swift */; };
+		EDFC475D3AF58B28B43655E2B25F359E /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0BA57504AA9CFF5505EB006BA81988 /* ConstraintMaker.swift */; };
+		F0363E8142349B36EE0036E78B66FC85 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662185D08CAD4D71BF3A6F419C2942E4 /* ConstraintLayoutGuideDSL.swift */; };
+		F1571870943AF8DEBF3C95CFC541336B /* AnimatedTextInputFieldConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC03D79569473714ED1C7BADEA7227B8 /* AnimatedTextInputFieldConfigurator.swift */; };
+		F3726F74C43DB3BE4A51AD3F480D29DC /* DynamicButtonStyleArrowRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6004BE68FBBAAA953801093A0C1B4065 /* DynamicButtonStyleArrowRight.swift */; };
+		F65B2E6033B099944A84C496675ED83F /* SideMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD918574D54D43D02A04081793422CC9 /* SideMenuTransition.swift */; };
+		F75BB1EDE157F45C0AD334DF0ABDEDDC /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97BC0F11A946F6D13C6EEC309DA34D8F /* disclosure@2x.png */; };
+		F837F08BCB91E0ABA7D24E08FC6C8B61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		F855F788D2196FF21D554195C8042F81 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123FE96D591D096DA7363E50AEF1959E /* ConstraintMakerExtendable.swift */; };
+		F9DA2435DAD7018BFE01B468190DDFAD /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504AE6C28FC585A6DABE71FB664AEFE8 /* ConstraintMakerRelatable.swift */; };
+		FD0253E9BB8A512D321BE1BC4F10C3D1 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1501B447223DA843991FCFAE845876C /* UILayoutSupport+Extensions.swift */; };
+		FD9DA3471F533E8125BE9DF93E9225D2 /* DynamicButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B2548A4CD176BCD6AC04FEEA4A18945 /* DynamicButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0C9D3D44DBAE54F08FE2A3B34EDF53EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29D8DB41194AB47BA5E0F5FE96529B16;
+			remoteInfo = AnimatedTextInput;
+		};
+		10C9B9BBE6A69DF280811E205EEE3C37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAE24ACA00B7B35A5EB9168B684E5317;
+			remoteInfo = DynamicButton;
+		};
+		28EFACDAFF8136468877B5C023AF9EDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E5B6C550BA1D7EE158EA1D081500965;
+			remoteInfo = SideMenu;
+		};
+		556CA5A2C83EF67FC8C474180021A2A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99201120C07C4FCF4793C8F14714455B;
+			remoteInfo = SnapKit;
+		};
+		8652AACADFD9BE579A57C240B588A570 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C2E09E036949D84633EB63D09D7250C;
+			remoteInfo = "AnimatedTextInput-AnimatedTextInput";
+		};
+		AD20153FBF6795561F116EC71EB990E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E13B5BED48305DAFCA2C71A8E98913B;
+			remoteInfo = BetterSegmentedControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0114388039F68CD8C26ED81415731B9F /* BetterSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BetterSegmentedControl.framework; path = BetterSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0383A67AE6D821293B7CD68948EE19A0 /* Pods-SkillSwap-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SkillSwap-umbrella.h"; sourceTree = "<group>"; };
+		0436A47402E067DC1F21305D19E79A63 /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UISideMenuNavigationController.swift; path = Pod/Classes/UISideMenuNavigationController.swift; sourceTree = "<group>"; };
+		04C90E8405DC3D96B98326855A7AD393 /* DynamicButtonStyleReload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleReload.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleReload.swift; sourceTree = "<group>"; };
+		08B8EAFFFB8EF86C4674014CC2921232 /* Pods-SkillSwap-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SkillSwap-resources.sh"; sourceTree = "<group>"; };
+		09118073C3DB0EBCEDE7B25215D207A0 /* AnimatedTextInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedTextInput.swift; path = AnimatedTextInput/Classes/AnimatedTextInput.swift; sourceTree = "<group>"; };
+		0B236D07E020762213264E67E0AADCEA /* Pods-SkillSwap-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SkillSwap-acknowledgements.markdown"; sourceTree = "<group>"; };
+		102B71A7B02519C8B68D1EF226F532C8 /* DynamicButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DynamicButton.xcconfig; sourceTree = "<group>"; };
+		123FE96D591D096DA7363E50AEF1959E /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
+		132D127C8ED15A38F3965240F9915106 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
+		13D8CF0711C8AA4A7BE77049CFAC3219 /* disclosure.png */ = {isa = PBXFileReference; includeInIndex = 1; name = disclosure.png; path = AnimatedTextInput/Assets/disclosure.png; sourceTree = "<group>"; };
+		1416AD9A2252CE9480411DA7CAA16862 /* DynamicButtonStyleCircleClose.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleCircleClose.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleCircleClose.swift; sourceTree = "<group>"; };
+		1459593736A27C7D3811153198E1B3B4 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
+		149758EC6E5EFF2E8CB6EBA65E8764D7 /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
+		14A16EED7A003A86F2C39CEB9973A441 /* DynamicButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicButton-prefix.pch"; sourceTree = "<group>"; };
+		15C7EF005C908AD04766E9AA9B42C4B6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1665D44EB7C096F76AD2E2193187053A /* DynamicButtonStyleNone.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleNone.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleNone.swift; sourceTree = "<group>"; };
+		1CF174A431C226220D24FB01B096A6A7 /* DynamicButtonStyleArrowUp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleArrowUp.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleArrowUp.swift; sourceTree = "<group>"; };
+		2086BD6FF400D2BB4C15F2564C1705B8 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
+		209373B232207919F30A5D90EAC25647 /* AnimatedTextInput.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AnimatedTextInput.xcconfig; sourceTree = "<group>"; };
+		21EB1D903214E3762550E85B6CB1AD00 /* AnimatedTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedTextField.swift; path = AnimatedTextInput/Classes/AnimatedTextField.swift; sourceTree = "<group>"; };
+		2518C615ADAE6289CFF39136CF1C9CFA /* DynamicButtonStyleFastForward.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleFastForward.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleFastForward.swift; sourceTree = "<group>"; };
+		263ADDE5E1A49EE6CA1DB3C9F5D7C68C /* DynamicButtonStyleCaretLeft.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleCaretLeft.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleCaretLeft.swift; sourceTree = "<group>"; };
+		2ABAD5A2FDB72379E95D40724D95FC36 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
+		2CC38BECD65FC19295A560457CFDCC8F /* DynamicButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButton.swift; path = Sources/DynamicButton.swift; sourceTree = "<group>"; };
+		2DCDFA9F6F30E04C03752EFA203E0715 /* SideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.xcconfig; sourceTree = "<group>"; };
+		30B14183D1E8ACF6B52B3891190AE205 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30CF2D48D576B174BD5525EF04B03942 /* DynamicButtonStyleDownload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleDownload.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleDownload.swift; sourceTree = "<group>"; };
+		33F32AB93926605756FAA31B73AF554C /* DynamicButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DynamicButton.modulemap; sourceTree = "<group>"; };
+		34A3175A31B25717B7612A1A07F864A6 /* Pods_SkillSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SkillSwap.framework; path = "Pods-SkillSwap.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		388A1D8ADE89F8775FF439132735F215 /* DynamicButtonStyleClose.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleClose.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleClose.swift; sourceTree = "<group>"; };
+		395EADBCC5C447592A1942CA763E712D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41DBD01C568E64F04A219FFDA4195B12 /* Pods-SkillSwap-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SkillSwap-dummy.m"; sourceTree = "<group>"; };
+		434C4AD6DEE57ED863F99990ED5A704B /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4544ED906FC6398D62E7215E7B2F7F83 /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
+		46B9CF23D67ADE963DCDC35E363BF8F7 /* AnimatedTextInput-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AnimatedTextInput-umbrella.h"; sourceTree = "<group>"; };
+		46DEBE960A3A8DAC197E21B3D821CC86 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
+		48376617B080DFF3F83754B2A0061B4F /* DynamicButtonStyleHorizontalLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleHorizontalLine.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleHorizontalLine.swift; sourceTree = "<group>"; };
+		4B2548A4CD176BCD6AC04FEEA4A18945 /* DynamicButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicButton-umbrella.h"; sourceTree = "<group>"; };
+		4CC369E76EB98A68B31AF003AD44644E /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
+		4D60281B1EF326D8EDF1B9C8075DA83A /* DynamicButtonStyleRewind.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleRewind.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleRewind.swift; sourceTree = "<group>"; };
+		4E971338B7E238D0D3BBFB15BE7A30E4 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
+		4FE8F22DCFF34556E12F2F8639CCC7AB /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
+		504A16AB4AA583354DF4EE09F5514104 /* BetterSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BetterSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
+		504AE6C28FC585A6DABE71FB664AEFE8 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		50A7B75F08E50B5A861C17AD7603C170 /* DynamicButtonStyleCaretRight.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleCaretRight.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleCaretRight.swift; sourceTree = "<group>"; };
+		51387C72DBF8D6DEF0200207781D29C4 /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
+		572B989E75B2945584FEA45123E2AC67 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
+		6004BE68FBBAAA953801093A0C1B4065 /* DynamicButtonStyleArrowRight.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleArrowRight.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleArrowRight.swift; sourceTree = "<group>"; };
+		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		624B6BC8E13BF606D55A114778697C26 /* cm_icon_input_eye_selected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "cm_icon_input_eye_selected@2x.png"; path = "AnimatedTextInput/Assets/cm_icon_input_eye_selected@2x.png"; sourceTree = "<group>"; };
+		65E9442096E7B711FD04AF2E207CC6D6 /* Pods-SkillSwap-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SkillSwap-acknowledgements.plist"; sourceTree = "<group>"; };
+		662185D08CAD4D71BF3A6F419C2942E4 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
+		684B888121CF5988773BB1A67A8B4F95 /* DynamicButtonStyleDot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleDot.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleDot.swift; sourceTree = "<group>"; };
+		69B4ECCEE41B16B233BA4DDB9F20FA06 /* DynamicButtonStyleHorizontalMoreOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleHorizontalMoreOptions.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleHorizontalMoreOptions.swift; sourceTree = "<group>"; };
+		69F35FD3A408FE49D1A99CDACD042A29 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
+		6D48924D7D8DBF1639090F752923CBD3 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
+		6E45B149655DED594472EE21EEE6C6E7 /* DynamicButtonStyleStop.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleStop.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleStop.swift; sourceTree = "<group>"; };
+		70AA0F5C57DBA47CCCDA3F6EB8FD3984 /* BetterSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BetterSegmentedControl-dummy.m"; sourceTree = "<group>"; };
+		70E7B9400A2CF493F621027D69C89600 /* DynamicButtonStyleCheckMark.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleCheckMark.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleCheckMark.swift; sourceTree = "<group>"; };
+		75531E23684FFAFDF26AA5A8BBDFDACD /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
+		796C2B7DC90D5A035A4D09C461C9BBE4 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
+		7B0BA57504AA9CFF5505EB006BA81988 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
+		7BE712F9D4BBA75F2565B02F851E5B69 /* AnimatedTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedTextView.swift; path = AnimatedTextInput/Classes/AnimatedTextView.swift; sourceTree = "<group>"; };
+		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		808026A9E6FA5832B10D125251180EA4 /* Pods-SkillSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SkillSwap.debug.xcconfig"; sourceTree = "<group>"; };
+		81D45D81C9E62684B2BBC06AD78E091D /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SideMenu.modulemap; sourceTree = "<group>"; };
+		82D454C4FF85C405DFD6C4F0B862AA19 /* cm_icon_input_eye_normal@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "cm_icon_input_eye_normal@3x.png"; path = "AnimatedTextInput/Assets/cm_icon_input_eye_normal@3x.png"; sourceTree = "<group>"; };
+		83244630759FEAB9A8FB138DCABE2F71 /* Pods-SkillSwap-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SkillSwap-frameworks.sh"; sourceTree = "<group>"; };
+		856E88E4EE8DAA1CB5D8C9A65139BE83 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E99CBB2230844D7AD3BC3EF41D3313D /* ResourceBundle-AnimatedTextInput-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-AnimatedTextInput-Info.plist"; sourceTree = "<group>"; };
+		8F0A3BB246B008A84A5DAC2341992F0C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97BC0F11A946F6D13C6EEC309DA34D8F /* disclosure@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "disclosure@2x.png"; path = "AnimatedTextInput/Assets/disclosure@2x.png"; sourceTree = "<group>"; };
+		986E88739A54743BEF14C1237FBAEF45 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98E21CA8D781338AD02F4158360E98E8 /* AnimatedTextInput.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AnimatedTextInput.modulemap; sourceTree = "<group>"; };
+		9B25AAADD8D1ED8E36F6833D011C6E95 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
+		9B731D2491193A98C3130BB318D032F8 /* AnimatedTextInput-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AnimatedTextInput-dummy.m"; sourceTree = "<group>"; };
+		9DCA9D472FE6A1ECAD77F735654FB8CF /* BetterSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BetterSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
+		A014C25E6B8D31A2814DDF75C3C36C09 /* DynamicButtonStyleArrowLeft.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleArrowLeft.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleArrowLeft.swift; sourceTree = "<group>"; };
+		A1501B447223DA843991FCFAE845876C /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
+		A1D5404C71CFC11CBCBAEFF192C17E8B /* DynamicButtonStylePlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStylePlay.swift; path = Sources/DynamicButtonStyles/DynamicButtonStylePlay.swift; sourceTree = "<group>"; };
+		A1E93BB46518B8A95481B05FEC0A31AB /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
+		A1FF12D68EA6910550E33D45E7E4D354 /* cm_icon_input_eye_selected@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "cm_icon_input_eye_selected@3x.png"; path = "AnimatedTextInput/Assets/cm_icon_input_eye_selected@3x.png"; sourceTree = "<group>"; };
+		A34013A0AE65FD98D24C8DB9472E9BC6 /* BetterSegmentedControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BetterSegmentedControl.xcconfig; sourceTree = "<group>"; };
+		A42A41D28000BF79CA8A9D50B4C21D97 /* DynamicButtonStyleArrowDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleArrowDown.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleArrowDown.swift; sourceTree = "<group>"; };
+		A42A507E3F742B4D430AA9D688525DB7 /* AnimatedTextInput.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AnimatedTextInput.framework; path = AnimatedTextInput.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7999F5C11C84FED3F4E5D6AD8AB834A /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
+		A79BF1A8AF6236A5DD3153D86EB9B987 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
+		A817301BDB06F2A80262F5781DCC59BB /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
+		A855A67CB5C4746C1E29F150C6B982C1 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
+		A861817FDF03D281839BEFFB1621296B /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
+		AC79573FDEC2983602012A2D1EF04F9C /* DynamicButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DynamicButton.framework; path = DynamicButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACA93D0849C6EC3D6F8023C14AC7B842 /* Pods-SkillSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SkillSwap.release.xcconfig"; sourceTree = "<group>"; };
+		AD918574D54D43D02A04081793422CC9 /* SideMenuTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransition.swift; path = Pod/Classes/SideMenuTransition.swift; sourceTree = "<group>"; };
+		AFA5308899D7D0DF236374BEFBC5F967 /* disclosure@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "disclosure@3x.png"; path = "AnimatedTextInput/Assets/disclosure@3x.png"; sourceTree = "<group>"; };
+		B1009187EA0369B842CA1D7C4B35879E /* DynamicButtonStyleVerticalLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleVerticalLine.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleVerticalLine.swift; sourceTree = "<group>"; };
+		B1F8FA456F33886D05D5D6568A77E61D /* BetterSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BetterSegmentedControl.swift; path = Pod/Classes/BetterSegmentedControl.swift; sourceTree = "<group>"; };
+		B232F6B393BC3D3BB40F83F2CB8CE25A /* DynamicButtonStyleCaretUp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleCaretUp.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleCaretUp.swift; sourceTree = "<group>"; };
+		B34F5A840276CC829C5C7E9E94583CFA /* Pods-SkillSwap.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SkillSwap.modulemap"; sourceTree = "<group>"; };
+		B3D7A8AC7E6A434621765240427840A3 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
+		B61567A8D861834F3D3577B1E209A3CF /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
+		B84546590F837C1D37C886E462490915 /* AnimatedTextInput.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AnimatedTextInput.bundle; path = AnimatedTextInput.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1E7AF5CA24E632DDEB6473A4D033D4 /* DynamicButtonStylePlus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStylePlus.swift; path = Sources/DynamicButtonStyles/DynamicButtonStylePlus.swift; sourceTree = "<group>"; };
+		C483C982C754A573061A7C7970056881 /* AnimatedTextInputStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedTextInputStyle.swift; path = AnimatedTextInput/Classes/AnimatedTextInputStyle.swift; sourceTree = "<group>"; };
+		C59CFD78174DF5BB85CC3908475B534C /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
+		C9FE9E3338C66CDC56DD76499A305B54 /* DynamicButtonStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyle.swift; path = Sources/DynamicButtonStyle.swift; sourceTree = "<group>"; };
+		CC03D79569473714ED1C7BADEA7227B8 /* AnimatedTextInputFieldConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedTextInputFieldConfigurator.swift; path = AnimatedTextInput/Classes/AnimatedTextInputFieldConfigurator.swift; sourceTree = "<group>"; };
+		CC589707BD63323A413B8159DC5B7614 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
+		CCAEE22E25A7F574344BE109CCAC0D71 /* PathHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathHelper.swift; path = Sources/PathHelper.swift; sourceTree = "<group>"; };
+		CCEA7D9E1FB0DA4C19EC18E4DBD65418 /* DynamicButtonStyleVerticalMoreOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleVerticalMoreOptions.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleVerticalMoreOptions.swift; sourceTree = "<group>"; };
+		D0C806B106E62B5C1511A77B13B6F7F6 /* DynamicButtonStyleCirclePlus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleCirclePlus.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleCirclePlus.swift; sourceTree = "<group>"; };
+		D309DBC34134B427A629D287AF402A76 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
+		D5A4989FBADC265BB3B12B65D07B3C55 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
+		D733BF1EBC128CE86ADCEC5BF9AD8674 /* AnimatedTextInput-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AnimatedTextInput-prefix.pch"; sourceTree = "<group>"; };
+		D7B00D293E5D1F128E67B0BA9B1C0635 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
+		D8961904AF44F9C95E68B2DC143A0819 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
+		DAD05F0D0D77444561D5E1CA3AFF954A /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
+		DC317E2F8E765D5745C886900E5DFD3F /* UIViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = AnimatedTextInput/Classes/UIViewExtensions.swift; sourceTree = "<group>"; };
+		DCAD586976B52FB6AC147A99801D229A /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
+		DE81F41C6CB2227AB4587EA70462DA0E /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
+		DEC14388912FDE35B1FDEBFA13DDF4FD /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SnapKit.modulemap; sourceTree = "<group>"; };
+		DEDD03B4D3758C006CB150D0CAD95C4A /* cm_icon_input_eye_normal@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "cm_icon_input_eye_normal@2x.png"; path = "AnimatedTextInput/Assets/cm_icon_input_eye_normal@2x.png"; sourceTree = "<group>"; };
+		E6A40FCCE5173A641699FD823FD18FB7 /* DynamicButtonStylePause.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStylePause.swift; path = Sources/DynamicButtonStyles/DynamicButtonStylePause.swift; sourceTree = "<group>"; };
+		E8F4294AC407F977AB93D431AD8A797A /* BetterSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = BetterSegmentedControl.modulemap; sourceTree = "<group>"; };
+		ECDCF6DB9C40DD4E123FFD97BC2D6CDE /* DynamicButtonStyleHamburger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleHamburger.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleHamburger.swift; sourceTree = "<group>"; };
+		F3DB45ABD010BD5DD096A1909A6AF7CA /* DynamicButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DynamicButton-dummy.m"; sourceTree = "<group>"; };
+		F45A875B014CBF2172F6A6886B78767C /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
+		F65EEF2BC1B4DA868E0E8F23B0D85632 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
+		F8F1C4D16FD0E5C1325BF83A3A660701 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD8085A36EBBC732771729CD276503D3 /* AnimatedLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedLine.swift; path = AnimatedTextInput/Classes/AnimatedLine.swift; sourceTree = "<group>"; };
+		FE25FB467924024DFF84E405540091F0 /* DynamicButtonStyleCaretDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicButtonStyleCaretDown.swift; path = Sources/DynamicButtonStyles/DynamicButtonStyleCaretDown.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EECD8E6ABB7F9593B95A23C372C31F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41776112D224DE588BA4F8892147FB79 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5594EEB9C90FBBFF62D7CE5B9A397331 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F837F08BCB91E0ABA7D24E08FC6C8B61 /* Foundation.framework in Frameworks */,
+				1E8042F4596CC7206AA529B8DC271CD0 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		567272B5B642A2B7FF6C2A16E146917E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3EB64120CCF71ACFD11A3F1BF7A046C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67CF4AC577C5983BAD65C049B7E5D022 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFCD1B0E09376C3A77CC94860DFE37EC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9031BDE56E150B98A1795CBB978443A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92E59976337B917FA287BACBEF904378 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC6468DB91A9FB1C803B71A9657C542D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C931C385F00677527BC61C8859052A60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AF47BAD337A0FD85B53346B5835C0EA /* Foundation.framework in Frameworks */,
+				7D64FB12047A622D1132A66AA43D2EF1 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F856C5D70D237B4BEB456AB2B9B611A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F0A3BB246B008A84A5DAC2341992F0C /* Info.plist */,
+				81D45D81C9E62684B2BBC06AD78E091D /* SideMenu.modulemap */,
+				2DCDFA9F6F30E04C03752EFA203E0715 /* SideMenu.xcconfig */,
+				4CC369E76EB98A68B31AF003AD44644E /* SideMenu-dummy.m */,
+				149758EC6E5EFF2E8CB6EBA65E8764D7 /* SideMenu-prefix.pch */,
+				4E971338B7E238D0D3BBFB15BE7A30E4 /* SideMenu-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SideMenu";
+			sourceTree = "<group>";
+		};
+		29210D68C330952394F9F24430CFC989 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				98E21CA8D781338AD02F4158360E98E8 /* AnimatedTextInput.modulemap */,
+				209373B232207919F30A5D90EAC25647 /* AnimatedTextInput.xcconfig */,
+				9B731D2491193A98C3130BB318D032F8 /* AnimatedTextInput-dummy.m */,
+				D733BF1EBC128CE86ADCEC5BF9AD8674 /* AnimatedTextInput-prefix.pch */,
+				46B9CF23D67ADE963DCDC35E363BF8F7 /* AnimatedTextInput-umbrella.h */,
+				15C7EF005C908AD04766E9AA9B42C4B6 /* Info.plist */,
+				8E99CBB2230844D7AD3BC3EF41D3313D /* ResourceBundle-AnimatedTextInput-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AnimatedTextInput";
+			sourceTree = "<group>";
+		};
+		404231062F56B5F9C586CD2D11D2CD81 /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				6D48924D7D8DBF1639090F752923CBD3 /* Constraint.swift */,
+				572B989E75B2945584FEA45123E2AC67 /* ConstraintAttributes.swift */,
+				D8961904AF44F9C95E68B2DC143A0819 /* ConstraintConfig.swift */,
+				A1E93BB46518B8A95481B05FEC0A31AB /* ConstraintConstantTarget.swift */,
+				A79BF1A8AF6236A5DD3153D86EB9B987 /* ConstraintDescription.swift */,
+				1459593736A27C7D3811153198E1B3B4 /* ConstraintDSL.swift */,
+				A7999F5C11C84FED3F4E5D6AD8AB834A /* ConstraintInsets.swift */,
+				D7B00D293E5D1F128E67B0BA9B1C0635 /* ConstraintInsetTarget.swift */,
+				D5A4989FBADC265BB3B12B65D07B3C55 /* ConstraintItem.swift */,
+				CC589707BD63323A413B8159DC5B7614 /* ConstraintLayoutGuide.swift */,
+				A861817FDF03D281839BEFFB1621296B /* ConstraintLayoutGuide+Extensions.swift */,
+				662185D08CAD4D71BF3A6F419C2942E4 /* ConstraintLayoutGuideDSL.swift */,
+				A817301BDB06F2A80262F5781DCC59BB /* ConstraintLayoutSupport.swift */,
+				2086BD6FF400D2BB4C15F2564C1705B8 /* ConstraintLayoutSupportDSL.swift */,
+				7B0BA57504AA9CFF5505EB006BA81988 /* ConstraintMaker.swift */,
+				DE81F41C6CB2227AB4587EA70462DA0E /* ConstraintMakerEditable.swift */,
+				123FE96D591D096DA7363E50AEF1959E /* ConstraintMakerExtendable.swift */,
+				2ABAD5A2FDB72379E95D40724D95FC36 /* ConstraintMakerFinalizable.swift */,
+				F45A875B014CBF2172F6A6886B78767C /* ConstraintMakerPriortizable.swift */,
+				504AE6C28FC585A6DABE71FB664AEFE8 /* ConstraintMakerRelatable.swift */,
+				C59CFD78174DF5BB85CC3908475B534C /* ConstraintMultiplierTarget.swift */,
+				75531E23684FFAFDF26AA5A8BBDFDACD /* ConstraintOffsetTarget.swift */,
+				4FE8F22DCFF34556E12F2F8639CCC7AB /* ConstraintPriorityTarget.swift */,
+				B3D7A8AC7E6A434621765240427840A3 /* ConstraintRelatableTarget.swift */,
+				796C2B7DC90D5A035A4D09C461C9BBE4 /* ConstraintRelation.swift */,
+				F65EEF2BC1B4DA868E0E8F23B0D85632 /* ConstraintView.swift */,
+				DAD05F0D0D77444561D5E1CA3AFF954A /* ConstraintView+Extensions.swift */,
+				DCAD586976B52FB6AC147A99801D229A /* ConstraintViewDSL.swift */,
+				46DEBE960A3A8DAC197E21B3D821CC86 /* Debugging.swift */,
+				69F35FD3A408FE49D1A99CDACD042A29 /* LayoutConstraint.swift */,
+				A855A67CB5C4746C1E29F150C6B982C1 /* LayoutConstraintItem.swift */,
+				A1501B447223DA843991FCFAE845876C /* UILayoutSupport+Extensions.swift */,
+				7B397EDBBFEEEA305BE6FA85C41AB109 /* Support Files */,
+			);
+			name = SnapKit;
+			path = SnapKit;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6EE98446B568159EE277B68FD442AF0 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		436B31D169C42E060623B2E6F81E8E62 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A396B1B6EF83A4221367C3BDE005C69C /* AnimatedTextInput */,
+				6B6A5417B53816E2B3BEE6D52FC39BFD /* BetterSegmentedControl */,
+				E231F7CE6342440F5E31227699F4EA7C /* DynamicButton */,
+				76D93F11B79CF096FEFACC387E5681F7 /* SideMenu */,
+				404231062F56B5F9C586CD2D11D2CD81 /* SnapKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		67004279CC3477FC9BA09DA924CAC25F /* Pods-SkillSwap */ = {
+			isa = PBXGroup;
+			children = (
+				F8F1C4D16FD0E5C1325BF83A3A660701 /* Info.plist */,
+				B34F5A840276CC829C5C7E9E94583CFA /* Pods-SkillSwap.modulemap */,
+				0B236D07E020762213264E67E0AADCEA /* Pods-SkillSwap-acknowledgements.markdown */,
+				65E9442096E7B711FD04AF2E207CC6D6 /* Pods-SkillSwap-acknowledgements.plist */,
+				41DBD01C568E64F04A219FFDA4195B12 /* Pods-SkillSwap-dummy.m */,
+				83244630759FEAB9A8FB138DCABE2F71 /* Pods-SkillSwap-frameworks.sh */,
+				08B8EAFFFB8EF86C4674014CC2921232 /* Pods-SkillSwap-resources.sh */,
+				0383A67AE6D821293B7CD68948EE19A0 /* Pods-SkillSwap-umbrella.h */,
+				808026A9E6FA5832B10D125251180EA4 /* Pods-SkillSwap.debug.xcconfig */,
+				ACA93D0849C6EC3D6F8023C14AC7B842 /* Pods-SkillSwap.release.xcconfig */,
+			);
+			name = "Pods-SkillSwap";
+			path = "Target Support Files/Pods-SkillSwap";
+			sourceTree = "<group>";
+		};
+		6B6A5417B53816E2B3BEE6D52FC39BFD /* BetterSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				B1F8FA456F33886D05D5D6568A77E61D /* BetterSegmentedControl.swift */,
+				D409BAA758961CADA37178D0E394095D /* Support Files */,
+			);
+			name = BetterSegmentedControl;
+			path = BetterSegmentedControl;
+			sourceTree = "<group>";
+		};
+		6BC5FFD864A5B268B7FF4292AE7ABD30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B84546590F837C1D37C886E462490915 /* AnimatedTextInput.bundle */,
+				A42A507E3F742B4D430AA9D688525DB7 /* AnimatedTextInput.framework */,
+				0114388039F68CD8C26ED81415731B9F /* BetterSegmentedControl.framework */,
+				AC79573FDEC2983602012A2D1EF04F9C /* DynamicButton.framework */,
+				34A3175A31B25717B7612A1A07F864A6 /* Pods_SkillSwap.framework */,
+				30B14183D1E8ACF6B52B3891190AE205 /* SideMenu.framework */,
+				434C4AD6DEE57ED863F99990ED5A704B /* SnapKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		719DA7E283FACD18D9C5A6984B72B198 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DEDD03B4D3758C006CB150D0CAD95C4A /* cm_icon_input_eye_normal@2x.png */,
+				82D454C4FF85C405DFD6C4F0B862AA19 /* cm_icon_input_eye_normal@3x.png */,
+				624B6BC8E13BF606D55A114778697C26 /* cm_icon_input_eye_selected@2x.png */,
+				A1FF12D68EA6910550E33D45E7E4D354 /* cm_icon_input_eye_selected@3x.png */,
+				13D8CF0711C8AA4A7BE77049CFAC3219 /* disclosure.png */,
+				97BC0F11A946F6D13C6EEC309DA34D8F /* disclosure@2x.png */,
+				AFA5308899D7D0DF236374BEFBC5F967 /* disclosure@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		76D93F11B79CF096FEFACC387E5681F7 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				51387C72DBF8D6DEF0200207781D29C4 /* SideMenuManager.swift */,
+				AD918574D54D43D02A04081793422CC9 /* SideMenuTransition.swift */,
+				0436A47402E067DC1F21305D19E79A63 /* UISideMenuNavigationController.swift */,
+				B61567A8D861834F3D3577B1E209A3CF /* UITableViewVibrantCell.swift */,
+				0F856C5D70D237B4BEB456AB2B9B611A /* Support Files */,
+			);
+			name = SideMenu;
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		7B397EDBBFEEEA305BE6FA85C41AB109 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				986E88739A54743BEF14C1237FBAEF45 /* Info.plist */,
+				DEC14388912FDE35B1FDEBFA13DDF4FD /* SnapKit.modulemap */,
+				4544ED906FC6398D62E7215E7B2F7F83 /* SnapKit.xcconfig */,
+				132D127C8ED15A38F3965240F9915106 /* SnapKit-dummy.m */,
+				9B25AAADD8D1ED8E36F6833D011C6E95 /* SnapKit-prefix.pch */,
+				D309DBC34134B427A629D287AF402A76 /* SnapKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SnapKit";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				436B31D169C42E060623B2E6F81E8E62 /* Pods */,
+				6BC5FFD864A5B268B7FF4292AE7ABD30 /* Products */,
+				F8BA734CC92D6381C3E282E0BA5E881D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A396B1B6EF83A4221367C3BDE005C69C /* AnimatedTextInput */ = {
+			isa = PBXGroup;
+			children = (
+				FD8085A36EBBC732771729CD276503D3 /* AnimatedLine.swift */,
+				21EB1D903214E3762550E85B6CB1AD00 /* AnimatedTextField.swift */,
+				09118073C3DB0EBCEDE7B25215D207A0 /* AnimatedTextInput.swift */,
+				CC03D79569473714ED1C7BADEA7227B8 /* AnimatedTextInputFieldConfigurator.swift */,
+				C483C982C754A573061A7C7970056881 /* AnimatedTextInputStyle.swift */,
+				7BE712F9D4BBA75F2565B02F851E5B69 /* AnimatedTextView.swift */,
+				DC317E2F8E765D5745C886900E5DFD3F /* UIViewExtensions.swift */,
+				719DA7E283FACD18D9C5A6984B72B198 /* Resources */,
+				29210D68C330952394F9F24430CFC989 /* Support Files */,
+			);
+			name = AnimatedTextInput;
+			path = AnimatedTextInput;
+			sourceTree = "<group>";
+		};
+		BF16CCE63F31B1ACBD4917A898F058EC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				33F32AB93926605756FAA31B73AF554C /* DynamicButton.modulemap */,
+				102B71A7B02519C8B68D1EF226F532C8 /* DynamicButton.xcconfig */,
+				F3DB45ABD010BD5DD096A1909A6AF7CA /* DynamicButton-dummy.m */,
+				14A16EED7A003A86F2C39CEB9973A441 /* DynamicButton-prefix.pch */,
+				4B2548A4CD176BCD6AC04FEEA4A18945 /* DynamicButton-umbrella.h */,
+				856E88E4EE8DAA1CB5D8C9A65139BE83 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DynamicButton";
+			sourceTree = "<group>";
+		};
+		D409BAA758961CADA37178D0E394095D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8F4294AC407F977AB93D431AD8A797A /* BetterSegmentedControl.modulemap */,
+				A34013A0AE65FD98D24C8DB9472E9BC6 /* BetterSegmentedControl.xcconfig */,
+				70AA0F5C57DBA47CCCDA3F6EB8FD3984 /* BetterSegmentedControl-dummy.m */,
+				9DCA9D472FE6A1ECAD77F735654FB8CF /* BetterSegmentedControl-prefix.pch */,
+				504A16AB4AA583354DF4EE09F5514104 /* BetterSegmentedControl-umbrella.h */,
+				395EADBCC5C447592A1942CA763E712D /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BetterSegmentedControl";
+			sourceTree = "<group>";
+		};
+		E231F7CE6342440F5E31227699F4EA7C /* DynamicButton */ = {
+			isa = PBXGroup;
+			children = (
+				2CC38BECD65FC19295A560457CFDCC8F /* DynamicButton.swift */,
+				C9FE9E3338C66CDC56DD76499A305B54 /* DynamicButtonStyle.swift */,
+				A42A41D28000BF79CA8A9D50B4C21D97 /* DynamicButtonStyleArrowDown.swift */,
+				A014C25E6B8D31A2814DDF75C3C36C09 /* DynamicButtonStyleArrowLeft.swift */,
+				6004BE68FBBAAA953801093A0C1B4065 /* DynamicButtonStyleArrowRight.swift */,
+				1CF174A431C226220D24FB01B096A6A7 /* DynamicButtonStyleArrowUp.swift */,
+				FE25FB467924024DFF84E405540091F0 /* DynamicButtonStyleCaretDown.swift */,
+				263ADDE5E1A49EE6CA1DB3C9F5D7C68C /* DynamicButtonStyleCaretLeft.swift */,
+				50A7B75F08E50B5A861C17AD7603C170 /* DynamicButtonStyleCaretRight.swift */,
+				B232F6B393BC3D3BB40F83F2CB8CE25A /* DynamicButtonStyleCaretUp.swift */,
+				70E7B9400A2CF493F621027D69C89600 /* DynamicButtonStyleCheckMark.swift */,
+				1416AD9A2252CE9480411DA7CAA16862 /* DynamicButtonStyleCircleClose.swift */,
+				D0C806B106E62B5C1511A77B13B6F7F6 /* DynamicButtonStyleCirclePlus.swift */,
+				388A1D8ADE89F8775FF439132735F215 /* DynamicButtonStyleClose.swift */,
+				684B888121CF5988773BB1A67A8B4F95 /* DynamicButtonStyleDot.swift */,
+				30CF2D48D576B174BD5525EF04B03942 /* DynamicButtonStyleDownload.swift */,
+				2518C615ADAE6289CFF39136CF1C9CFA /* DynamicButtonStyleFastForward.swift */,
+				ECDCF6DB9C40DD4E123FFD97BC2D6CDE /* DynamicButtonStyleHamburger.swift */,
+				48376617B080DFF3F83754B2A0061B4F /* DynamicButtonStyleHorizontalLine.swift */,
+				69B4ECCEE41B16B233BA4DDB9F20FA06 /* DynamicButtonStyleHorizontalMoreOptions.swift */,
+				1665D44EB7C096F76AD2E2193187053A /* DynamicButtonStyleNone.swift */,
+				E6A40FCCE5173A641699FD823FD18FB7 /* DynamicButtonStylePause.swift */,
+				A1D5404C71CFC11CBCBAEFF192C17E8B /* DynamicButtonStylePlay.swift */,
+				BA1E7AF5CA24E632DDEB6473A4D033D4 /* DynamicButtonStylePlus.swift */,
+				04C90E8405DC3D96B98326855A7AD393 /* DynamicButtonStyleReload.swift */,
+				4D60281B1EF326D8EDF1B9C8075DA83A /* DynamicButtonStyleRewind.swift */,
+				6E45B149655DED594472EE21EEE6C6E7 /* DynamicButtonStyleStop.swift */,
+				B1009187EA0369B842CA1D7C4B35879E /* DynamicButtonStyleVerticalLine.swift */,
+				CCEA7D9E1FB0DA4C19EC18E4DBD65418 /* DynamicButtonStyleVerticalMoreOptions.swift */,
+				CCAEE22E25A7F574344BE109CCAC0D71 /* PathHelper.swift */,
+				BF16CCE63F31B1ACBD4917A898F058EC /* Support Files */,
+			);
+			name = DynamicButton;
+			path = DynamicButton;
+			sourceTree = "<group>";
+		};
+		E6EE98446B568159EE277B68FD442AF0 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */,
+				7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F8BA734CC92D6381C3E282E0BA5E881D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				67004279CC3477FC9BA09DA924CAC25F /* Pods-SkillSwap */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2ED7D410B80EC570A087443D943BCF60 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9DA3471F533E8125BE9DF93E9225D2 /* DynamicButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B0ADB266C028663BB8C26B6E24EF1D9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F3D438E29BE222613E8937258C764AB /* SideMenu-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		838C8FE8CE83F1B956506A28F7B44545 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB22F57C9B275781903EAC0DE1014D77 /* AnimatedTextInput-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0CDDC71B70618470BB0BE9A7602D322 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2033E2A87C634B164B5AC51032083EA1 /* Pods-SkillSwap-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8FDFDB223CA9C88C7224106EC89AD2D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D0B179BD4E4575F380F8E64D9CE1F89 /* SnapKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBDE6254E0C13F991AC61BC2928646F3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93DFDF726B422CE19B4896E3DC958E7B /* BetterSegmentedControl-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		29D8DB41194AB47BA5E0F5FE96529B16 /* AnimatedTextInput */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6723FD1A2A748A0F35FC541F60968EAD /* Build configuration list for PBXNativeTarget "AnimatedTextInput" */;
+			buildPhases = (
+				D9989067B5FB0B1937A6479DED34F428 /* Sources */,
+				567272B5B642A2B7FF6C2A16E146917E /* Frameworks */,
+				CDD529DB75B0B4AA12E1E68159F4E8B7 /* Resources */,
+				838C8FE8CE83F1B956506A28F7B44545 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A7E4D8D6E4288B93C67B3124DC48BF8 /* PBXTargetDependency */,
+			);
+			name = AnimatedTextInput;
+			productName = AnimatedTextInput;
+			productReference = A42A507E3F742B4D430AA9D688525DB7 /* AnimatedTextInput.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2E13B5BED48305DAFCA2C71A8E98913B /* BetterSegmentedControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F3339B865F6FDE3A6C301E6891B98D2 /* Build configuration list for PBXNativeTarget "BetterSegmentedControl" */;
+			buildPhases = (
+				0F359B61B14D0E062FF665E5A1EC968C /* Sources */,
+				C931C385F00677527BC61C8859052A60 /* Frameworks */,
+				EBDE6254E0C13F991AC61BC2928646F3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BetterSegmentedControl;
+			productName = BetterSegmentedControl;
+			productReference = 0114388039F68CD8C26ED81415731B9F /* BetterSegmentedControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		478CCF6141AB0A70F2F82C710D9DF9F3 /* Pods-SkillSwap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F08A33E5FDDEBAB95CDDD90DC940765E /* Build configuration list for PBXNativeTarget "Pods-SkillSwap" */;
+			buildPhases = (
+				9BF71B47916303F745D884795ED8FD3D /* Sources */,
+				92E59976337B917FA287BACBEF904378 /* Frameworks */,
+				D0CDDC71B70618470BB0BE9A7602D322 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90B9B9706625E1403AAC41C9DE01AE3F /* PBXTargetDependency */,
+				F94C1DC4A4D92B02A1AC9FAAD02E51B6 /* PBXTargetDependency */,
+				398CBB8B0CBA8758278A6346FD43885D /* PBXTargetDependency */,
+				268B3919B3FF7AB365DB56B695D3F301 /* PBXTargetDependency */,
+				1023FB3902C1871D681E94309F54D577 /* PBXTargetDependency */,
+			);
+			name = "Pods-SkillSwap";
+			productName = "Pods-SkillSwap";
+			productReference = 34A3175A31B25717B7612A1A07F864A6 /* Pods_SkillSwap.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6E5B6C550BA1D7EE158EA1D081500965 /* SideMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBFCC4F8F4E8317298A6B79917A450D0 /* Build configuration list for PBXNativeTarget "SideMenu" */;
+			buildPhases = (
+				E11F86F109EA434C6C878FCB2D4F7100 /* Sources */,
+				67CF4AC577C5983BAD65C049B7E5D022 /* Frameworks */,
+				5B0ADB266C028663BB8C26B6E24EF1D9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SideMenu;
+			productName = SideMenu;
+			productReference = 30B14183D1E8ACF6B52B3891190AE205 /* SideMenu.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8C2E09E036949D84633EB63D09D7250C /* AnimatedTextInput-AnimatedTextInput */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 674235A09C70949E5AA4A9002F03DF88 /* Build configuration list for PBXNativeTarget "AnimatedTextInput-AnimatedTextInput" */;
+			buildPhases = (
+				BBCD3D5B0E249126AC864C50584B0C30 /* Sources */,
+				9031BDE56E150B98A1795CBB978443A5 /* Frameworks */,
+				272DCED16BFCB186952C9D6696FA0E5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AnimatedTextInput-AnimatedTextInput";
+			productName = "AnimatedTextInput-AnimatedTextInput";
+			productReference = B84546590F837C1D37C886E462490915 /* AnimatedTextInput.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		99201120C07C4FCF4793C8F14714455B /* SnapKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DA55D5C057CCDF483AE7C37AE4D4B2E /* Build configuration list for PBXNativeTarget "SnapKit" */;
+			buildPhases = (
+				9796AA8A3BA37E8E9888C29D69C3AC9C /* Sources */,
+				3EECD8E6ABB7F9593B95A23C372C31F3 /* Frameworks */,
+				D8FDFDB223CA9C88C7224106EC89AD2D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnapKit;
+			productName = SnapKit;
+			productReference = 434C4AD6DEE57ED863F99990ED5A704B /* SnapKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AAE24ACA00B7B35A5EB9168B684E5317 /* DynamicButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B526A559BBDEC9021BA0144D618FDDF4 /* Build configuration list for PBXNativeTarget "DynamicButton" */;
+			buildPhases = (
+				C0413766E060813A26738D9D6D430DC9 /* Sources */,
+				5594EEB9C90FBBFF62D7CE5B9A397331 /* Frameworks */,
+				2ED7D410B80EC570A087443D943BCF60 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicButton;
+			productName = DynamicButton;
+			productReference = AC79573FDEC2983602012A2D1EF04F9C /* DynamicButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 6BC5FFD864A5B268B7FF4292AE7ABD30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29D8DB41194AB47BA5E0F5FE96529B16 /* AnimatedTextInput */,
+				8C2E09E036949D84633EB63D09D7250C /* AnimatedTextInput-AnimatedTextInput */,
+				2E13B5BED48305DAFCA2C71A8E98913B /* BetterSegmentedControl */,
+				AAE24ACA00B7B35A5EB9168B684E5317 /* DynamicButton */,
+				478CCF6141AB0A70F2F82C710D9DF9F3 /* Pods-SkillSwap */,
+				6E5B6C550BA1D7EE158EA1D081500965 /* SideMenu */,
+				99201120C07C4FCF4793C8F14714455B /* SnapKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		272DCED16BFCB186952C9D6696FA0E5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EE92F67E05C728312C34F81E9E6BF4F /* cm_icon_input_eye_normal@2x.png in Resources */,
+				D79847573F0ABCB6332BCD19C16EA010 /* cm_icon_input_eye_normal@3x.png in Resources */,
+				34B195C00E59064A5054E9D72AFDF996 /* cm_icon_input_eye_selected@2x.png in Resources */,
+				BFDC8826A71C26917CF056FC12CAD48E /* cm_icon_input_eye_selected@3x.png in Resources */,
+				0508905C3C14CABBE2FC1B2E8A85C70D /* disclosure.png in Resources */,
+				F75BB1EDE157F45C0AD334DF0ABDEDDC /* disclosure@2x.png in Resources */,
+				6582022FABF8C367C4BF6BDBE005C1C5 /* disclosure@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDD529DB75B0B4AA12E1E68159F4E8B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51FE6330A24B58B972B11B060DB321DF /* AnimatedTextInput.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0F359B61B14D0E062FF665E5A1EC968C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E5B25BC38B81C05173B32ED30E5BD05 /* BetterSegmentedControl-dummy.m in Sources */,
+				9EA6E078705DDD40F04A4C1F2DADDC63 /* BetterSegmentedControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9796AA8A3BA37E8E9888C29D69C3AC9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				079ABEDBE112679AA528861AD98D85ED /* Constraint.swift in Sources */,
+				677D592D091BA9F929C0E559AEEBE50A /* ConstraintAttributes.swift in Sources */,
+				BA640CD8D9142B53445E4BFADACD355E /* ConstraintConfig.swift in Sources */,
+				3625E00D90DDFA2CD7B70487B1D6058A /* ConstraintConstantTarget.swift in Sources */,
+				ED4AA489DCB437300AE698E705AA7FB4 /* ConstraintDescription.swift in Sources */,
+				367C95FE959438EA25E119A4DF98C3B1 /* ConstraintDSL.swift in Sources */,
+				310DD60DCF4CED58E6746D041325B3EF /* ConstraintInsets.swift in Sources */,
+				5704E9D5A27150E1875E58189F9E2AB6 /* ConstraintInsetTarget.swift in Sources */,
+				3ECFE1426AFB869293F0D524847804AD /* ConstraintItem.swift in Sources */,
+				5EF7CB442EC52CCB089F4073B0767BCC /* ConstraintLayoutGuide+Extensions.swift in Sources */,
+				7223342EC9299631DDA8BAE5D23B6F53 /* ConstraintLayoutGuide.swift in Sources */,
+				F0363E8142349B36EE0036E78B66FC85 /* ConstraintLayoutGuideDSL.swift in Sources */,
+				53E9E93859F5CFCB4514AD00EEEBB49A /* ConstraintLayoutSupport.swift in Sources */,
+				DD6A5AB50198F5ED205AB45F81EC6844 /* ConstraintLayoutSupportDSL.swift in Sources */,
+				EDFC475D3AF58B28B43655E2B25F359E /* ConstraintMaker.swift in Sources */,
+				8D90D45F154452C4B22333AD5BEF0AB4 /* ConstraintMakerEditable.swift in Sources */,
+				F855F788D2196FF21D554195C8042F81 /* ConstraintMakerExtendable.swift in Sources */,
+				38AC844695B153A8C58E1DAA9CE2D587 /* ConstraintMakerFinalizable.swift in Sources */,
+				9804A25963EFBEC3A55760D88ACFF815 /* ConstraintMakerPriortizable.swift in Sources */,
+				F9DA2435DAD7018BFE01B468190DDFAD /* ConstraintMakerRelatable.swift in Sources */,
+				D27D29F2DA4B6BDF9BA8E528A87313AE /* ConstraintMultiplierTarget.swift in Sources */,
+				D862AFB035C1451B7E053AE310763227 /* ConstraintOffsetTarget.swift in Sources */,
+				CF03A314FE02B8D860C198F835B21721 /* ConstraintPriorityTarget.swift in Sources */,
+				A68AFCA53567656EC22EB58EC34F429E /* ConstraintRelatableTarget.swift in Sources */,
+				4BC61729174A8ED773747CCA43DA9696 /* ConstraintRelation.swift in Sources */,
+				C9F6F89E72829039D391F6E14A6EBF1D /* ConstraintView+Extensions.swift in Sources */,
+				7E4EFBFAF66EB5F9C6E26B087090F171 /* ConstraintView.swift in Sources */,
+				B72F06DE5001026A54B949E37BE4DDE3 /* ConstraintViewDSL.swift in Sources */,
+				02601ABD06A8EE88FFDF4009E5AF5DC2 /* Debugging.swift in Sources */,
+				CCF6DF6495550EC7D59D5E3C141D5748 /* LayoutConstraint.swift in Sources */,
+				80F3068DDD0C4ECBF32FDCB91F8B2506 /* LayoutConstraintItem.swift in Sources */,
+				49688BE0FD4A87B3EC40C049406AA7C8 /* SnapKit-dummy.m in Sources */,
+				FD0253E9BB8A512D321BE1BC4F10C3D1 /* UILayoutSupport+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BF71B47916303F745D884795ED8FD3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC4C47AD1AD059280090E5DC45A8003D /* Pods-SkillSwap-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBCD3D5B0E249126AC864C50584B0C30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0413766E060813A26738D9D6D430DC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02DA0B7DDADC2A3860AFFE5052FEC99F /* DynamicButton-dummy.m in Sources */,
+				8A2B52FCC4F5C813B70A94BFAE7D24D5 /* DynamicButton.swift in Sources */,
+				E9EF40D4204A4884FE38020080FF2D51 /* DynamicButtonStyle.swift in Sources */,
+				085001B0C4983085045E8DCD71FFCE6C /* DynamicButtonStyleArrowDown.swift in Sources */,
+				7280A91C6C7508B6D82C755F40772C17 /* DynamicButtonStyleArrowLeft.swift in Sources */,
+				F3726F74C43DB3BE4A51AD3F480D29DC /* DynamicButtonStyleArrowRight.swift in Sources */,
+				BC90D58697892020E2F2F2D69DB9761E /* DynamicButtonStyleArrowUp.swift in Sources */,
+				95D78044963340B7CE31E82F96DD9C99 /* DynamicButtonStyleCaretDown.swift in Sources */,
+				B51FEC4EBB8A679184DCA38ED5FD2301 /* DynamicButtonStyleCaretLeft.swift in Sources */,
+				4AAA32AE79331482048A2BF5164E237D /* DynamicButtonStyleCaretRight.swift in Sources */,
+				276F47CC7EC67090E110DBDE7156AA72 /* DynamicButtonStyleCaretUp.swift in Sources */,
+				D8D6C0DDA65FC12591C67851F7585F95 /* DynamicButtonStyleCheckMark.swift in Sources */,
+				C78A65154E32610D313207E258256D15 /* DynamicButtonStyleCircleClose.swift in Sources */,
+				85DB37167784FCC49672C51155C5A321 /* DynamicButtonStyleCirclePlus.swift in Sources */,
+				6F16EA77E2BECC0DF9C36696191405EA /* DynamicButtonStyleClose.swift in Sources */,
+				E51676DF4BB97DFBBFF5E685BA131B9B /* DynamicButtonStyleDot.swift in Sources */,
+				1C403B5EB32D705543C7CCDEE4B4EC59 /* DynamicButtonStyleDownload.swift in Sources */,
+				AD102D0B847AC67C973F7A8D59B82DE0 /* DynamicButtonStyleFastForward.swift in Sources */,
+				4313B742D8BF3FBF8E51AA05295534C4 /* DynamicButtonStyleHamburger.swift in Sources */,
+				DE5A68220135A9592056B55DF474E2DC /* DynamicButtonStyleHorizontalLine.swift in Sources */,
+				8BDA7C4F0B42C3635EB49DB292AD7515 /* DynamicButtonStyleHorizontalMoreOptions.swift in Sources */,
+				9A72870177D8CA7841AF6F9BB8C54E5F /* DynamicButtonStyleNone.swift in Sources */,
+				2F632A4D1ADD5136B02A32C056154E95 /* DynamicButtonStylePause.swift in Sources */,
+				999DD8BEF7680C24E947FC3DA9D83B53 /* DynamicButtonStylePlay.swift in Sources */,
+				9B46F6A57B8E17B8B07E1944C4D01946 /* DynamicButtonStylePlus.swift in Sources */,
+				9588AA025059E33574CAC925D7594813 /* DynamicButtonStyleReload.swift in Sources */,
+				1469C8F5CBE1840B72789D3C0E217F1C /* DynamicButtonStyleRewind.swift in Sources */,
+				3C23CEF4673BC25D4182C31836C7779B /* DynamicButtonStyleStop.swift in Sources */,
+				0A472E63CF2A259EDDC473BE03174CBD /* DynamicButtonStyleVerticalLine.swift in Sources */,
+				C1F86D58603A88EF0D11BE51148BBE96 /* DynamicButtonStyleVerticalMoreOptions.swift in Sources */,
+				9AC0FAB323E6EFA9E4F1C9F4E9A07A28 /* PathHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9989067B5FB0B1937A6479DED34F428 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B7E77B32AAE7899D7EF9B7AE2B077CC /* AnimatedLine.swift in Sources */,
+				EADD570E11FCB7466E86B6F3D447CA71 /* AnimatedTextField.swift in Sources */,
+				EA3A7EB5AC6CA7534425F6A893E48072 /* AnimatedTextInput-dummy.m in Sources */,
+				6E2AA015BEAC3885984D1305EB0A64C6 /* AnimatedTextInput.swift in Sources */,
+				F1571870943AF8DEBF3C95CFC541336B /* AnimatedTextInputFieldConfigurator.swift in Sources */,
+				88BF95742340069C38EA4B5839C405BD /* AnimatedTextInputStyle.swift in Sources */,
+				77EE9D2CDCBB8C464C4A189DC248FBE6 /* AnimatedTextView.swift in Sources */,
+				29EE5DFEEC29160DC0405492746E8A4B /* UIViewExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E11F86F109EA434C6C878FCB2D4F7100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D04516777D5F74D5C85517F722D1A99 /* SideMenu-dummy.m in Sources */,
+				12640591B76DF3E1182B0CCC012C9886 /* SideMenuManager.swift in Sources */,
+				F65B2E6033B099944A84C496675ED83F /* SideMenuTransition.swift in Sources */,
+				BD153B0E8936DD30573F9F4CC04190A5 /* UISideMenuNavigationController.swift in Sources */,
+				2A4119C9D3CB61DEBEAFB3AADBCD7250 /* UITableViewVibrantCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1023FB3902C1871D681E94309F54D577 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			target = 99201120C07C4FCF4793C8F14714455B /* SnapKit */;
+			targetProxy = 556CA5A2C83EF67FC8C474180021A2A5 /* PBXContainerItemProxy */;
+		};
+		268B3919B3FF7AB365DB56B695D3F301 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SideMenu;
+			target = 6E5B6C550BA1D7EE158EA1D081500965 /* SideMenu */;
+			targetProxy = 28EFACDAFF8136468877B5C023AF9EDD /* PBXContainerItemProxy */;
+		};
+		398CBB8B0CBA8758278A6346FD43885D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DynamicButton;
+			target = AAE24ACA00B7B35A5EB9168B684E5317 /* DynamicButton */;
+			targetProxy = 10C9B9BBE6A69DF280811E205EEE3C37 /* PBXContainerItemProxy */;
+		};
+		90B9B9706625E1403AAC41C9DE01AE3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AnimatedTextInput;
+			target = 29D8DB41194AB47BA5E0F5FE96529B16 /* AnimatedTextInput */;
+			targetProxy = 0C9D3D44DBAE54F08FE2A3B34EDF53EC /* PBXContainerItemProxy */;
+		};
+		9A7E4D8D6E4288B93C67B3124DC48BF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AnimatedTextInput-AnimatedTextInput";
+			target = 8C2E09E036949D84633EB63D09D7250C /* AnimatedTextInput-AnimatedTextInput */;
+			targetProxy = 8652AACADFD9BE579A57C240B588A570 /* PBXContainerItemProxy */;
+		};
+		F94C1DC4A4D92B02A1AC9FAAD02E51B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BetterSegmentedControl;
+			target = 2E13B5BED48305DAFCA2C71A8E98913B /* BetterSegmentedControl */;
+			targetProxy = AD20153FBF6795561F116EC71EB990E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12914D756594D15C6F2CA12FE5F89F1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		1C1C801FB7C70A8BF986B640C9010AEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A34013A0AE65FD98D24C8DB9472E9BC6 /* BetterSegmentedControl.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BetterSegmentedControl/BetterSegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BetterSegmentedControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BetterSegmentedControl/BetterSegmentedControl.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = BetterSegmentedControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2EB6F7E4F9ADD3A9793A8E16AAEE0D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A34013A0AE65FD98D24C8DB9472E9BC6 /* BetterSegmentedControl.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BetterSegmentedControl/BetterSegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BetterSegmentedControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BetterSegmentedControl/BetterSegmentedControl.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = BetterSegmentedControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4ED211AF1018EA84BEE3F5130504CF31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DCDFA9F6F30E04C03752EFA203E0715 /* SideMenu.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SideMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SideMenu/SideMenu.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SideMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		57E1ACF60CD6156EB155D299D0D922E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 102B71A7B02519C8B68D1EF226F532C8 /* DynamicButton.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DynamicButton/DynamicButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DynamicButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DynamicButton/DynamicButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DynamicButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		681E4A04C63443C1AEDA7B61AA9A86FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 209373B232207919F30A5D90EAC25647 /* AnimatedTextInput.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AnimatedTextInput/AnimatedTextInput-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AnimatedTextInput/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AnimatedTextInput/AnimatedTextInput.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AnimatedTextInput;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		794566DBD419EBFC73B7415C533482E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4544ED906FC6398D62E7215E7B2F7F83 /* SnapKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SnapKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SnapKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		82CAD2F2327F59CFAC4A1D5012E57F0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DCDFA9F6F30E04C03752EFA203E0715 /* SideMenu.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SideMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SideMenu/SideMenu.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SideMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A7044D54BB643B48BD89A6C1920CF64D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4544ED906FC6398D62E7215E7B2F7F83 /* SnapKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SnapKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SnapKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BDA1A88F1F787BD4A13881AB580F24C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 808026A9E6FA5832B10D125251180EA4 /* Pods-SkillSwap.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SkillSwap/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SkillSwap/Pods-SkillSwap.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SkillSwap;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C509134ED15E9FFDFD9F63AC37F1C433 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 209373B232207919F30A5D90EAC25647 /* AnimatedTextInput.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AnimatedTextInput";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/AnimatedTextInput/ResourceBundle-AnimatedTextInput-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = AnimatedTextInput;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		CE7E5C384F3B6BF7B43A57F57895EEDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 102B71A7B02519C8B68D1EF226F532C8 /* DynamicButton.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DynamicButton/DynamicButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DynamicButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DynamicButton/DynamicButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DynamicButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E72E7977875C2D251FC62736BBDDC389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC56F87C056D577984ABF7BCBB317DCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 209373B232207919F30A5D90EAC25647 /* AnimatedTextInput.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AnimatedTextInput/AnimatedTextInput-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AnimatedTextInput/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AnimatedTextInput/AnimatedTextInput.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AnimatedTextInput;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FD9B2D7D4354927EA915BB7D0F5BA38F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 209373B232207919F30A5D90EAC25647 /* AnimatedTextInput.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AnimatedTextInput";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/AnimatedTextInput/ResourceBundle-AnimatedTextInput-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = AnimatedTextInput;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		FFA77E15741F679E7AE87115AD15294E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACA93D0849C6EC3D6F8023C14AC7B842 /* Pods-SkillSwap.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SkillSwap/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SkillSwap/Pods-SkillSwap.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SkillSwap;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DA55D5C057CCDF483AE7C37AE4D4B2E /* Build configuration list for PBXNativeTarget "SnapKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7044D54BB643B48BD89A6C1920CF64D /* Debug */,
+				794566DBD419EBFC73B7415C533482E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12914D756594D15C6F2CA12FE5F89F1B /* Debug */,
+				E72E7977875C2D251FC62736BBDDC389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6723FD1A2A748A0F35FC541F60968EAD /* Build configuration list for PBXNativeTarget "AnimatedTextInput" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC56F87C056D577984ABF7BCBB317DCE /* Debug */,
+				681E4A04C63443C1AEDA7B61AA9A86FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		674235A09C70949E5AA4A9002F03DF88 /* Build configuration list for PBXNativeTarget "AnimatedTextInput-AnimatedTextInput" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD9B2D7D4354927EA915BB7D0F5BA38F /* Debug */,
+				C509134ED15E9FFDFD9F63AC37F1C433 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F3339B865F6FDE3A6C301E6891B98D2 /* Build configuration list for PBXNativeTarget "BetterSegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C1C801FB7C70A8BF986B640C9010AEB /* Debug */,
+				2EB6F7E4F9ADD3A9793A8E16AAEE0D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B526A559BBDEC9021BA0144D618FDDF4 /* Build configuration list for PBXNativeTarget "DynamicButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7E5C384F3B6BF7B43A57F57895EEDA /* Debug */,
+				57E1ACF60CD6156EB155D299D0D922E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBFCC4F8F4E8317298A6B79917A450D0 /* Build configuration list for PBXNativeTarget "SideMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ED211AF1018EA84BEE3F5130504CF31 /* Debug */,
+				82CAD2F2327F59CFAC4A1D5012E57F0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F08A33E5FDDEBAB95CDDD90DC940765E /* Build configuration list for PBXNativeTarget "Pods-SkillSwap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDA1A88F1F787BD4A13881AB580F24C8 /* Debug */,
+				FFA77E15741F679E7AE87115AD15294E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
