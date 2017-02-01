@@ -53,7 +53,7 @@ class SSPickClassViewController: UIViewController, UITableViewDelegate, UITableV
         
         let titleView = UILabel()
         topView.addSubview(titleView)
-        titleView.text = "Learn \(subjectTitle)"
+        titleView.text = "\(subjectTitle) Help"
         titleView.font = UIFont(name: "Gotham-Book", size: 18)
         titleView.textColor = detailColor
         titleView.snp.makeConstraints { (make) in
@@ -114,7 +114,7 @@ class SSPickClassViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "topic")
-        cell?.textLabel?.textColor = color
+        cell?.textLabel?.textColor = SSColors.SSDarkGray
         cell?.textLabel?.text = "Topic"
         return cell!
     }

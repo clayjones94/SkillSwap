@@ -8,29 +8,35 @@
 
 import UIKit
 
-class SSTeachViewController: UIViewController {
+class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let tableView = UITableView(frame: .zero, style: .plain)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .blue
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.snp.makeConstraints { (make) in
+            make.bottom.left.right.equalToSuperview()
+            make.top.equalToSuperview().offset(20)
+        }
+        
+        tableView.register(SSTeachTableViewCell.self, forCellReuseIdentifier: "teach cell")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+ 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "teach cell")
+        return cell!
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
 }

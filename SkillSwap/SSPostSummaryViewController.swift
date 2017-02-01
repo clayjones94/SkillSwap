@@ -11,7 +11,7 @@ import UIKit
 class SSPostSummaryViewController: UIViewController {
     
     let titleView = UILabel()
-    var color = SSColors.SSGreen
+    var color = SSColors.SSBlue
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -187,7 +187,11 @@ class SSPostSummaryViewController: UIViewController {
     }
     
     func postButtonSelected() {
+        navigationController?.dismiss(animated: true, completion: nil)
+        SSCurrentUser.sharedInstance.learningStatus = .waiting
         
+        let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+        NotificationCenter.default.post(name: notificationName, object: nil)
     }
 
     func backbuttonSelected() {

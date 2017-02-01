@@ -17,8 +17,6 @@ class SSMainViewController: UIViewController {
     let teachVC = SSTeachViewController()
     let waitVC = SSWaitForTeacherViewController()
     var currentVC :UIViewController? = nil
-    
-    let waitMode = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +26,8 @@ class SSMainViewController: UIViewController {
         
         layoutSegmentedControl()
         layoutSideMenu()
+        
+        setUpNotifications()
         
         currentVC = learnVC
         controlValueChanged()
@@ -44,11 +44,18 @@ class SSMainViewController: UIViewController {
         backgroundColor: .white,
         titleColor: .lightGray,
         indicatorViewBackgroundColor: .white,
-        selectedTitleColor: SSColors.SSGreen)
+        selectedTitleColor: SSColors.SSBlue)
+    
+    private func setUpNotifications() {
+        let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+        
+        // Register to receive notification
+        NotificationCenter.default.addObserver(self, selector: #selector(SSMainViewController.controlValueChanged), name: notificationName, object: nil)
+    }
     
     private func layoutSegmentedControl() {
         segControl.titleFont = UIFont(name: "Gotham-Medium", size: 12.0)!
-        segControl.indicatorViewBorderColor = SSColors.SSGreen.cgColor
+        segControl.indicatorViewBorderColor = SSColors.SSBlue.cgColor
         segControl.indicatorViewBorderWidth = 2
         segControl.indicatorViewInset = 0
         segControl.layer.borderWidth = 0.5
@@ -74,7 +81,9 @@ class SSMainViewController: UIViewController {
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         
         let menuButton = UIButton(type: .custom)
-        menuButton.setImage(#imageLiteral(resourceName: "side_menu"), for: .normal)
+        let image = UIImage(named: "side_menu")?.withRenderingMode(.alwaysTemplate)
+        menuButton.setImage(image, for: .normal)
+        menuButton.tintColor = SSColors.SSBlue
         menuButton.sizeToFit()
         view.addSubview(menuButton)
         menuButton.snp.makeConstraints { (make) in
@@ -87,7 +96,7 @@ class SSMainViewController: UIViewController {
     
     func controlValueChanged() {
         if segControl.index == 0 {
-            if waitMode {
+            if SSCurrentUser.sharedInstance.learningStatus != .none {
                 currentVC = waitVC
             } else {
                 currentVC = learnVC

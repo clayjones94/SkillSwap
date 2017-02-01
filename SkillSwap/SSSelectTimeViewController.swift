@@ -12,7 +12,7 @@ import DynamicButton
 class SSSelectTimeViewController: UIViewController {
     
     let titleView = UILabel()
-    var color = SSColors.SSGreen
+    var color = SSColors.SSBlue
     let upButton = DynamicButton(style: DynamicButtonStyle.caretUp)
     let downButton = DynamicButton(style: DynamicButtonStyle.caretDown)
     let timeLabel = UILabel()
@@ -94,7 +94,7 @@ class SSSelectTimeViewController: UIViewController {
         
         view.addSubview(timeLabel)
         timeLabel.textColor = SSColors.SSDarkGray
-        timeLabel.font = UIFont(name: "Gotham-Medium", size: 60)
+        timeLabel.font = UIFont(name: "Gotham-Book", size: 60)
         timeLabel.textAlignment = .center
         timeLabel.text = "\(numMinutes)"
         timeLabel.sizeToFit()

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		921938131E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */; };
+		921938171E405C9E00C6A4C8 /* DynamicButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921938151E405C9E00C6A4C8 /* DynamicButton.framework */; };
+		9219381B1E41C7FC00C6A4C8 /* SSAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219381A1E41C7FC00C6A4C8 /* SSAnimations.swift */; };
+		9219381D1E41D3EB00C6A4C8 /* SSCurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219381C1E41D3EB00C6A4C8 /* SSCurrentUser.swift */; };
+		9219381F1E41D50800C6A4C8 /* SSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219381E1E41D50800C6A4C8 /* SSConstants.swift */; };
+		921938211E42677600C6A4C8 /* SSTeachTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921938201E42677600C6A4C8 /* SSTeachTableViewCell.swift */; };
 		923383D61E3C29C500C3FFF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923383D51E3C29C500C3FFF6 /* Foundation.framework */; };
 		923383D81E3C29CD00C3FFF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923383D71E3C29CD00C3FFF6 /* UIKit.framework */; };
 		923383DA1E3C29D400C3FFF6 /* BetterSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923383D91E3C29D400C3FFF6 /* BetterSegmentedControl.framework */; };
@@ -42,6 +47,13 @@
 		685A2BE634EBF6C1E9C0D762 /* Pods-SkillSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillSwap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkillSwap/Pods-SkillSwap.debug.xcconfig"; sourceTree = "<group>"; };
 		82ACFD579FEB922F137AD524 /* Pods-SkillSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillSwap.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkillSwap/Pods-SkillSwap.release.xcconfig"; sourceTree = "<group>"; };
 		921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSWaitForTeacherViewController.swift; sourceTree = "<group>"; };
+		921938141E405C9E00C6A4C8 /* CountdownLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CountdownLabel.framework; path = "Pods/../build/Debug-iphoneos/CountdownLabel/CountdownLabel.framework"; sourceTree = "<group>"; };
+		921938151E405C9E00C6A4C8 /* DynamicButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicButton.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/DynamicButton/DynamicButton.framework"; sourceTree = "<group>"; };
+		921938181E405CC400C6A4C8 /* CountdownLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CountdownLabel.framework; path = "Pods/../build/Debug-iphoneos/CountdownLabel/CountdownLabel.framework"; sourceTree = "<group>"; };
+		9219381A1E41C7FC00C6A4C8 /* SSAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSAnimations.swift; sourceTree = "<group>"; };
+		9219381C1E41D3EB00C6A4C8 /* SSCurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSCurrentUser.swift; sourceTree = "<group>"; };
+		9219381E1E41D50800C6A4C8 /* SSConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSConstants.swift; sourceTree = "<group>"; };
+		921938201E42677600C6A4C8 /* SSTeachTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTeachTableViewCell.swift; sourceTree = "<group>"; };
 		923383D51E3C29C500C3FFF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		923383D71E3C29CD00C3FFF6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		923383D91E3C29D400C3FFF6 /* BetterSegmentedControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BetterSegmentedControl.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphonesimulator/BetterSegmentedControl/BetterSegmentedControl.framework"; sourceTree = "<group>"; };
@@ -79,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921938171E405C9E00C6A4C8 /* DynamicButton.framework in Frameworks */,
 				92C78E501E3FBA47003C8ED7 /* SnapKit.framework in Frameworks */,
 				92C78E4E1E3FBA3D003C8ED7 /* AnimatedTextInput.framework in Frameworks */,
 				92C78E4C1E3FBA38003C8ED7 /* SideMenu.framework in Frameworks */,
@@ -139,12 +152,16 @@
 				92C075AB1E3C23FF00D0B063 /* Default-568h@2x.png */,
 				92C075971E3C1F8100D0B063 /* AppDelegate.swift */,
 				923383DB1E3C2EA800C3FFF6 /* SSColors.swift */,
+				9219381E1E41D50800C6A4C8 /* SSConstants.swift */,
+				9219381A1E41C7FC00C6A4C8 /* SSAnimations.swift */,
 				923383EF1E3D67D000C3FFF6 /* SSSideMenuViewController.swift */,
 				92C075A91E3C22E400D0B063 /* SSMainViewController.swift */,
 				923383F11E3D6DEE00C3FFF6 /* SSLearnViewController.swift */,
 				921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */,
 				92C78E551E3FF19C003C8ED7 /* New Learn Post */,
 				923383F31E3D6E4300C3FFF6 /* SSTeachViewController.swift */,
+				921938201E42677600C6A4C8 /* SSTeachTableViewCell.swift */,
+				9219381C1E41D3EB00C6A4C8 /* SSCurrentUser.swift */,
 				92C0759E1E3C1F8100D0B063 /* Assets.xcassets */,
 				923383DD1E3D5C2400C3FFF6 /* Fonts */,
 				92C075A31E3C1F8100D0B063 /* Info.plist */,
@@ -176,6 +193,9 @@
 		DAE1D88DF9B462E543EADB02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				921938181E405CC400C6A4C8 /* CountdownLabel.framework */,
+				921938141E405C9E00C6A4C8 /* CountdownLabel.framework */,
+				921938151E405C9E00C6A4C8 /* DynamicButton.framework */,
 				92C78E4F1E3FBA47003C8ED7 /* SnapKit.framework */,
 				92C78E4D1E3FBA3D003C8ED7 /* AnimatedTextInput.framework */,
 				92C78E4B1E3FBA38003C8ED7 /* SideMenu.framework */,
@@ -320,8 +340,11 @@
 			files = (
 				923383F01E3D67D000C3FFF6 /* SSSideMenuViewController.swift in Sources */,
 				923383F61E3EA15800C3FFF6 /* SSPickClassViewController.swift in Sources */,
+				9219381D1E41D3EB00C6A4C8 /* SSCurrentUser.swift in Sources */,
+				921938211E42677600C6A4C8 /* SSTeachTableViewCell.swift in Sources */,
 				92C78E541E3FF194003C8ED7 /* SSPostSummaryViewController.swift in Sources */,
 				92C78E481E3F237C003C8ED7 /* SSPickLocationViewController.swift in Sources */,
+				9219381B1E41C7FC00C6A4C8 /* SSAnimations.swift in Sources */,
 				923383DC1E3C2EA800C3FFF6 /* SSColors.swift in Sources */,
 				92C075AA1E3C22E400D0B063 /* SSMainViewController.swift in Sources */,
 				92C075981E3C1F8100D0B063 /* AppDelegate.swift in Sources */,
@@ -329,6 +352,7 @@
 				921938131E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift in Sources */,
 				92C78E4A1E3FB4F1003C8ED7 /* SSDescriptionViewController.swift in Sources */,
 				92C78E521E3FC46F003C8ED7 /* SSSelectTimeViewController.swift in Sources */,
+				9219381F1E41D50800C6A4C8 /* SSConstants.swift in Sources */,
 				923383F21E3D6DEE00C3FFF6 /* SSLearnViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +462,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CG5WBEU96D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CountdownLabel",
+				);
 				INFOPLIST_FILE = SkillSwap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs194h.cjones94.SkillSwap;
@@ -453,6 +481,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CG5WBEU96D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CountdownLabel",
+				);
 				INFOPLIST_FILE = SkillSwap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs194h.cjones94.SkillSwap;

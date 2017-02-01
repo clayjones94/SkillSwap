@@ -12,7 +12,7 @@ import AnimatedTextInput
 class SSDescriptionViewController: UIViewController, AnimatedTextInputDelegate {
 
     let titleView = UILabel()
-    var color = SSColors.SSGreen
+    var color = SSColors.SSBlue
     let subjectField = AnimatedTextInput()
     let detailTextView = AnimatedTextInput()
     

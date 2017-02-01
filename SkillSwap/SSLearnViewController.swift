@@ -16,8 +16,8 @@ class SSLearnViewController: UIViewController, UITextFieldDelegate, UICollection
         [
             "image": #imageLiteral(resourceName: "comp_sci_icon"),
             "title": "Computer Science",
-            "color": SSColors.SSGreen,
-            "detail_color": SSColors.SSGreenDetail
+            "color": SSColors.SSBlue,
+            "detail_color": SSColors.SSBlueDetail
         ],
         [
             "image": #imageLiteral(resourceName: "chem_icon"),
@@ -81,7 +81,7 @@ class SSLearnViewController: UIViewController, UITextFieldDelegate, UICollection
         let titleLabel = UILabel()
         view.addSubview(titleLabel)
         titleLabel.font = UIFont(name: "Gotham-Medium", size: 16)
-        titleLabel.textColor = SSColors.SSGreen
+        titleLabel.textColor = SSColors.SSBlue
         titleLabel.text = "Need a tutor?"
         titleLabel.sizeToFit()
         titleLabel.snp.makeConstraints { (make) in
@@ -139,8 +139,8 @@ class SSLearnViewController: UIViewController, UITextFieldDelegate, UICollection
 
 class SSSubjectCell: UICollectionViewCell {
     
-    var color = SSColors.SSGreen
-    var detailColor = SSColors.SSGreenDetail
+    var color = SSColors.SSBlue
+    var detailColor = SSColors.SSBlueDetail
     var subjectTitle = "Unknown"
     let titleView = UILabel()
     let iconView = UIImageView()
