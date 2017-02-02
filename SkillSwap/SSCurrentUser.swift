@@ -17,5 +17,5 @@ class SSCurrentUser: NSObject {
     var loggedIn: Bool = false
     
     var teachingStatus: TeachingStatus = .none
-    var learningStatus: LearningStatus = .none
+    var learningStatus: LearningStatus = .matched
 }

@@ -20,12 +20,12 @@ class SSTeachTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         addSubview(iconView)
         iconView.backgroundColor = SSColors.SSBlue
-        iconView.layer.cornerRadius = (self.frame.size.height - 20)/2
+        iconView.layer.cornerRadius = (self.frame.size.height - 40)/2
         iconView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
-            make.top.equalToSuperview().offset(10)
-            make.bottom.equalToSuperview().offset(-10)
-            make.width.equalTo(self.snp.height).offset(-20)
+            make.top.equalToSuperview().offset(20)
+            make.bottom.equalToSuperview().offset(-20)
+            make.width.equalTo(self.snp.height).offset(-40)
         }
         
         addSubview(subjectLabel)
@@ -33,7 +33,7 @@ class SSTeachTableViewCell: UITableViewCell {
         subjectLabel.font = UIFont(name: "Gotham-Book", size: 12)
         subjectLabel.textColor = SSColors.SSGray
         subjectLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(iconView.snp.right).offset(5)
+            make.left.equalTo(iconView.snp.right).offset(10)
             make.centerY.equalToSuperview()
         }
         

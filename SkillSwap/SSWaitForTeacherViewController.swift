@@ -8,6 +8,7 @@
 
 import UIKit
 import DynamicButton
+import PopupDialog
 
 class SSWaitForTeacherViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class SSWaitForTeacherViewController: UIViewController {
     let timeExpire = UILabel()
     let color = SSColors.SSBlue
     var timer = Timer()
+    var popup: PopupDialog = PopupDialog(title: "", message: "")
     
     var time = 300
     
@@ -27,6 +29,7 @@ class SSWaitForTeacherViewController: UIViewController {
         
         layoutWaitingBar()
         layoutMatchedBar()
+        layoutPaymentPopup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -280,12 +283,47 @@ class SSWaitForTeacherViewController: UIViewController {
         })
     }
     
-    func finishButtonSelected(button :UIButton) {
-        SSAnimations().popAnimateButton(button: button)
-        SSCurrentUser.sharedInstance.learningStatus = .none
+    func layoutPaymentPopup(){
+        let title = "Finish + Pay"
+        let message = "Pay your help"
         
-        let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
-        NotificationCenter.default.post(name: notificationName, object: nil)
+        // Create the dialog
+        popup = PopupDialog(title: title, message: message, image: #imageLiteral(resourceName: "money_transfer"))
+        
+        // Create buttons
+        let buttonOne = CancelButton(title: "Cancel") {
+            print("You canceled the car dialog.")
+        }
+        
+        let buttonTwo = DefaultButton(title: "30 minutes") {
+            SSCurrentUser.sharedInstance.learningStatus = .none
+            
+            let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+            NotificationCenter.default.post(name: notificationName, object: nil)
+        }
+        
+        let buttonThree = DefaultButton(title: "40 minutes (Overtime)", height: 60) {
+            SSCurrentUser.sharedInstance.learningStatus = .none
+            
+            let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+            NotificationCenter.default.post(name: notificationName, object: nil)
+        }
+        
+        let buttonFour = DefaultButton(title: "0 minutes", height: 60) {
+            SSCurrentUser.sharedInstance.learningStatus = .none
+            
+            let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+            NotificationCenter.default.post(name: notificationName, object: nil)
+        }
+        
+        popup.addButtons([buttonOne, buttonTwo, buttonThree, buttonFour])
+    }
+    
+    func finishButtonSelected(button :UIButton) {
+        
+        SSAnimations().popAnimateButton(button: button)
+        
+        self.present(popup, animated: true, completion: nil)
     }
     
     func updateBar(){

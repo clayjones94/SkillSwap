@@ -12,4 +12,6 @@ target 'SkillSwap' do
   pod 'SideMenu', '~> 2.2'
   pod 'AnimatedTextInput', '~> 0.4.0'
   pod 'DynamicButton', '~> 3.1.0'
+  pod 'PopupDialog', '~> 0.5'
 end
+
