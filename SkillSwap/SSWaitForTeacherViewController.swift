@@ -133,7 +133,7 @@ class SSWaitForTeacherViewController: UIViewController {
     }
     
     func seePostSelected(){
-        
+        showPostDetailView()
     }
     
     func cancelPost() {
@@ -247,7 +247,7 @@ class SSWaitForTeacherViewController: UIViewController {
         reportButton.setTitle("report", for: .normal)
         reportButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 14)
         reportButton.setTitleColor(SSColors.SSPink, for: .normal)
-        reportButton.addTarget(self, action: #selector(seePostSelected), for: .touchUpInside)
+        reportButton.addTarget(self, action: #selector(layoutReportPopup), for: .touchUpInside)
         matchedBar.addSubview(reportButton)
         reportButton.snp.makeConstraints({ (make) in
             make.top.equalTo(viewPostButton.snp.bottom).offset(5)
@@ -314,14 +314,14 @@ class SSWaitForTeacherViewController: UIViewController {
         let title = "We are very sorry!"
         
         // Create the dialog
-        popup = PopupDialog(title: title, message: "", image: #imageLiteral(resourceName: "money_transfer"))
+        let popup = PopupDialog(title: title, message: nil)
         
         // Create buttons
         let buttonOne = CancelButton(title: "Cancel") {
             print("You canceled the car dialog.")
         }
         
-        let buttonTwo = DefaultButton(title: "😃 Pay 30 minutes") {
+        let buttonTwo = DefaultButton(title: "Bad tutor") {
             SSCurrentUser.sharedInstance.learningStatus = .none
             
             let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
@@ -336,6 +336,24 @@ class SSWaitForTeacherViewController: UIViewController {
         }
         
         popup.addButtons([buttonOne, buttonTwo, buttonFour])
+        
+        self.present(popup, animated: true, completion: nil)
+    }
+    
+    func showPostDetailView(){
+        
+        let vc = SSTeachDetailViewController()
+        // Create the dialog
+        let popup = PopupDialog(viewController: vc, buttonAlignment: UILayoutConstraintAxis.vertical, transitionStyle: .fadeIn, gestureDismissal: true, completion: nil)
+        
+        // Create buttons
+        let buttonOne = CancelButton(title: "Dismiss") {
+            popup.dismiss()
+        }
+    
+        popup.addButtons([buttonOne])
+        
+        self.present(popup, animated: true, completion: nil)
     }
     
     func finishButtonSelected(button :UIButton) {
