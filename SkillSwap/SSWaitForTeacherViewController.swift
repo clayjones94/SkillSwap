@@ -29,7 +29,6 @@ class SSWaitForTeacherViewController: UIViewController {
         
         layoutWaitingBar()
         layoutMatchedBar()
-        layoutPaymentPopup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -285,43 +284,65 @@ class SSWaitForTeacherViewController: UIViewController {
     
     func layoutPaymentPopup(){
         let title = "Finish + Pay"
-        let message = "Pay your help"
         
         // Create the dialog
-        popup = PopupDialog(title: title, message: message, image: #imageLiteral(resourceName: "money_transfer"))
+        popup = PopupDialog(title: title, message: "", image: #imageLiteral(resourceName: "money_transfer"))
         
         // Create buttons
         let buttonOne = CancelButton(title: "Cancel") {
             print("You canceled the car dialog.")
         }
         
-        let buttonTwo = DefaultButton(title: "30 minutes") {
+        let buttonTwo = DefaultButton(title: "😃 Pay 30 minutes") {
             SSCurrentUser.sharedInstance.learningStatus = .none
             
             let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
             NotificationCenter.default.post(name: notificationName, object: nil)
         }
         
-        let buttonThree = DefaultButton(title: "40 minutes (Overtime)", height: 60) {
+        let buttonFour = DefaultButton(title: "🙁 We never met", height: 60) {
             SSCurrentUser.sharedInstance.learningStatus = .none
             
             let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
             NotificationCenter.default.post(name: notificationName, object: nil)
         }
         
-        let buttonFour = DefaultButton(title: "0 minutes", height: 60) {
+        popup.addButtons([buttonOne, buttonTwo, buttonFour])
+    }
+    
+    func layoutReportPopup(){
+        let title = "We are very sorry!"
+        
+        // Create the dialog
+        popup = PopupDialog(title: title, message: "", image: #imageLiteral(resourceName: "money_transfer"))
+        
+        // Create buttons
+        let buttonOne = CancelButton(title: "Cancel") {
+            print("You canceled the car dialog.")
+        }
+        
+        let buttonTwo = DefaultButton(title: "😃 Pay 30 minutes") {
             SSCurrentUser.sharedInstance.learningStatus = .none
             
             let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
             NotificationCenter.default.post(name: notificationName, object: nil)
         }
         
-        popup.addButtons([buttonOne, buttonTwo, buttonThree, buttonFour])
+        let buttonFour = DefaultButton(title: "🙁 We never met", height: 60) {
+            SSCurrentUser.sharedInstance.learningStatus = .none
+            
+            let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+            NotificationCenter.default.post(name: notificationName, object: nil)
+        }
+        
+        popup.addButtons([buttonOne, buttonTwo, buttonFour])
     }
     
     func finishButtonSelected(button :UIButton) {
         
         SSAnimations().popAnimateButton(button: button)
+        
+        layoutPaymentPopup()
         
         self.present(popup, animated: true, completion: nil)
     }

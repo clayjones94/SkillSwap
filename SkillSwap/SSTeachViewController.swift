@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -38,5 +39,32 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.setSelected(false, animated: false)
+        layoutDetailPopup()
+    }
+    
+    func layoutDetailPopup(){
+
+        let vc = SSTeachDetailViewController()
+        // Create the dialog
+        let popup = PopupDialog(viewController: vc, buttonAlignment: UILayoutConstraintAxis.vertical, transitionStyle: .fadeIn, gestureDismissal: true, completion: nil)
+        
+        // Create buttons
+        let buttonOne = CancelButton(title: "😕 No, thanks") {
+            popup.dismiss()
+        }
+        
+        let buttonTwo = DefaultButton(title: "🤓 Teach") {
+            SSCurrentUser.sharedInstance.teachingStatus = .matched
+            self.present(SSTeacherMatchViewController(), animated: true, completion: nil)
+        }
+        
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        self.present(popup, animated: true, completion: nil)
     }
 }

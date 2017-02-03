@@ -14,6 +14,9 @@
 		9219381F1E41D50800C6A4C8 /* SSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219381E1E41D50800C6A4C8 /* SSConstants.swift */; };
 		921938211E42677600C6A4C8 /* SSTeachTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921938201E42677600C6A4C8 /* SSTeachTableViewCell.swift */; };
 		921938231E431BD500C6A4C8 /* PopupDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921938221E431BD500C6A4C8 /* PopupDialog.framework */; };
+		921938251E43AFC600C6A4C8 /* SSTeachDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921938241E43AFC600C6A4C8 /* SSTeachDetailViewController.swift */; };
+		921938271E43BF3F00C6A4C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921938261E43BF3F00C6A4C8 /* Assets.xcassets */; };
+		921938291E43C28000C6A4C8 /* SSTeacherMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921938281E43C28000C6A4C8 /* SSTeacherMatchViewController.swift */; };
 		923383D61E3C29C500C3FFF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923383D51E3C29C500C3FFF6 /* Foundation.framework */; };
 		923383D81E3C29CD00C3FFF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923383D71E3C29CD00C3FFF6 /* UIKit.framework */; };
 		923383DA1E3C29D400C3FFF6 /* BetterSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923383D91E3C29D400C3FFF6 /* BetterSegmentedControl.framework */; };
@@ -31,7 +34,6 @@
 		923383F41E3D6E4300C3FFF6 /* SSTeachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923383F31E3D6E4300C3FFF6 /* SSTeachViewController.swift */; };
 		923383F61E3EA15800C3FFF6 /* SSPickClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923383F51E3EA15800C3FFF6 /* SSPickClassViewController.swift */; };
 		92C075981E3C1F8100D0B063 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C075971E3C1F8100D0B063 /* AppDelegate.swift */; };
-		92C0759F1E3C1F8100D0B063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C0759E1E3C1F8100D0B063 /* Assets.xcassets */; };
 		92C075AA1E3C22E400D0B063 /* SSMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C075A91E3C22E400D0B063 /* SSMainViewController.swift */; };
 		92C075AC1E3C23FF00D0B063 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92C075AB1E3C23FF00D0B063 /* Default-568h@2x.png */; };
 		92C78E481E3F237C003C8ED7 /* SSPickLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C78E471E3F237C003C8ED7 /* SSPickLocationViewController.swift */; };
@@ -56,6 +58,9 @@
 		9219381E1E41D50800C6A4C8 /* SSConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSConstants.swift; sourceTree = "<group>"; };
 		921938201E42677600C6A4C8 /* SSTeachTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTeachTableViewCell.swift; sourceTree = "<group>"; };
 		921938221E431BD500C6A4C8 /* PopupDialog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PopupDialog.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/PopupDialog/PopupDialog.framework"; sourceTree = "<group>"; };
+		921938241E43AFC600C6A4C8 /* SSTeachDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTeachDetailViewController.swift; sourceTree = "<group>"; };
+		921938261E43BF3F00C6A4C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		921938281E43C28000C6A4C8 /* SSTeacherMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTeacherMatchViewController.swift; sourceTree = "<group>"; };
 		923383D51E3C29C500C3FFF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		923383D71E3C29CD00C3FFF6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		923383D91E3C29D400C3FFF6 /* BetterSegmentedControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BetterSegmentedControl.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphonesimulator/BetterSegmentedControl/BetterSegmentedControl.framework"; sourceTree = "<group>"; };
@@ -74,7 +79,6 @@
 		923383F51E3EA15800C3FFF6 /* SSPickClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSPickClassViewController.swift; sourceTree = "<group>"; };
 		92C075941E3C1F8100D0B063 /* SkillSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C075971E3C1F8100D0B063 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		92C0759E1E3C1F8100D0B063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92C075A31E3C1F8100D0B063 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C075A91E3C22E400D0B063 /* SSMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSMainViewController.swift; sourceTree = "<group>"; };
 		92C075AB1E3C23FF00D0B063 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -163,9 +167,11 @@
 				921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */,
 				92C78E551E3FF19C003C8ED7 /* New Learn Post */,
 				923383F31E3D6E4300C3FFF6 /* SSTeachViewController.swift */,
+				921938241E43AFC600C6A4C8 /* SSTeachDetailViewController.swift */,
+				921938281E43C28000C6A4C8 /* SSTeacherMatchViewController.swift */,
 				921938201E42677600C6A4C8 /* SSTeachTableViewCell.swift */,
 				9219381C1E41D3EB00C6A4C8 /* SSCurrentUser.swift */,
-				92C0759E1E3C1F8100D0B063 /* Assets.xcassets */,
+				921938261E43BF3F00C6A4C8 /* Assets.xcassets */,
 				923383DD1E3D5C2400C3FFF6 /* Fonts */,
 				92C075A31E3C1F8100D0B063 /* Info.plist */,
 			);
@@ -275,10 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				923383EB1E3D5E0E00C3FFF6 /* Gotham-Light.otf in Resources */,
-				92C0759F1E3C1F8100D0B063 /* Assets.xcassets in Resources */,
 				92C075AC1E3C23FF00D0B063 /* Default-568h@2x.png in Resources */,
 				923383E71E3D5E0200C3FFF6 /* Gotham-Bold.otf in Resources */,
 				923383E81E3D5E0600C3FFF6 /* Gotham-BoldItalic.otf in Resources */,
+				921938271E43BF3F00C6A4C8 /* Assets.xcassets in Resources */,
 				923383E91E3D5E0800C3FFF6 /* Gotham-Book.otf in Resources */,
 				923383ED1E3D5E1600C3FFF6 /* Gotham-Medium.otf in Resources */,
 				923383EE1E3D5E1800C3FFF6 /* Gotham-MediumItalic.otf in Resources */,
@@ -346,12 +352,14 @@
 				923383F61E3EA15800C3FFF6 /* SSPickClassViewController.swift in Sources */,
 				9219381D1E41D3EB00C6A4C8 /* SSCurrentUser.swift in Sources */,
 				921938211E42677600C6A4C8 /* SSTeachTableViewCell.swift in Sources */,
+				921938251E43AFC600C6A4C8 /* SSTeachDetailViewController.swift in Sources */,
 				92C78E541E3FF194003C8ED7 /* SSPostSummaryViewController.swift in Sources */,
 				92C78E481E3F237C003C8ED7 /* SSPickLocationViewController.swift in Sources */,
 				9219381B1E41C7FC00C6A4C8 /* SSAnimations.swift in Sources */,
 				923383DC1E3C2EA800C3FFF6 /* SSColors.swift in Sources */,
 				92C075AA1E3C22E400D0B063 /* SSMainViewController.swift in Sources */,
 				92C075981E3C1F8100D0B063 /* AppDelegate.swift in Sources */,
+				921938291E43C28000C6A4C8 /* SSTeacherMatchViewController.swift in Sources */,
 				923383F41E3D6E4300C3FFF6 /* SSTeachViewController.swift in Sources */,
 				921938131E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift in Sources */,
 				92C78E4A1E3FB4F1003C8ED7 /* SSDescriptionViewController.swift in Sources */,
