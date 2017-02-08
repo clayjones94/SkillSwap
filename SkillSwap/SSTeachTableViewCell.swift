@@ -10,35 +10,51 @@ import UIKit
 
 class SSTeachTableViewCell: UITableViewCell {
 
+    let iconBackdrop = UIView()
     let iconView = UIImageView()
     let summaryLabel = UILabel()
     let subjectLabel = UILabel()
     let timeLabel = UILabel()
     let locationLabel = UILabel()
     let line = UIView()
+    var meetup: SSMeetup?
 
     override func layoutSubviews() {
-        addSubview(iconView)
-        iconView.backgroundColor = SSColors.SSBlue
-        iconView.layer.cornerRadius = (self.frame.size.height - 40)/2
-        iconView.snp.makeConstraints { (make) in
+        
+        addSubview(iconBackdrop)
+        iconBackdrop.backgroundColor = meetup?.topic?.subject?.color
+        iconBackdrop.layer.cornerRadius = (self.frame.size.height - 40)/2
+        iconBackdrop.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.top.equalToSuperview().offset(20)
             make.bottom.equalToSuperview().offset(-20)
             make.width.equalTo(self.snp.height).offset(-40)
         }
         
+        iconBackdrop.addSubview(iconView)
+        iconView.image = meetup?.topic?.subject?.image
+        iconView.image = iconView.image!.withRenderingMode(.alwaysTemplate)
+        iconView.tintColor = detailColorForColor(color: (meetup?.topic?.subject?.color)!)
+//        iconView.backgroundColor = meetup?.topic?.subject?.color
+//        iconView.layer.cornerRadius = (self.frame.size.height - 40)/2
+        iconView.snp.makeConstraints { (make) in
+            make.centerX.centerY.equalToSuperview()
+            make.width.height.equalToSuperview().offset(-25)
+        }
+        
         addSubview(subjectLabel)
-        subjectLabel.text = "Chemistry - Chem 31"
+        let subject = meetup?.topic?.subject?.name!
+        let topic = meetup?.topic?.name!
+        subjectLabel.text = "\(subject!) - \(topic!)"
         subjectLabel.font = UIFont(name: "Gotham-Book", size: 12)
         subjectLabel.textColor = SSColors.SSGray
         subjectLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(iconView.snp.right).offset(10)
+            make.left.equalTo(iconBackdrop.snp.right).offset(10)
             make.centerY.equalToSuperview()
         }
         
         addSubview(summaryLabel)
-        summaryLabel.text = "Need Help with PSet2"
+        summaryLabel.text = meetup?.summary
         summaryLabel.font = UIFont(name: "Gotham-Book", size: 16)
         summaryLabel.textColor = SSColors.SSDarkGray
         summaryLabel.sizeToFit()
@@ -48,7 +64,8 @@ class SSTeachTableViewCell: UITableViewCell {
         }
         
         addSubview(timeLabel)
-        timeLabel.text = "30 minutes"
+        let time = meetup?.timeExchange!
+        timeLabel.text = "\(time!) minutes"
         timeLabel.font = UIFont(name: "Gotham-Book", size: 10)
         timeLabel.textColor = SSColors.SSDarkGray
         timeLabel.snp.makeConstraints { (make) in
@@ -57,7 +74,7 @@ class SSTeachTableViewCell: UITableViewCell {
         }
         
         addSubview(locationLabel)
-        locationLabel.text = "Green Library"
+        locationLabel.text = meetup?.location?.name
         locationLabel.font = UIFont(name: "Gotham-Book", size: 10)
         locationLabel.textColor = SSColors.SSDarkGray
         locationLabel.snp.makeConstraints { (make) in

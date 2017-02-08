@@ -9,8 +9,9 @@
 import UIKit
 import DynamicButton
 import PopupDialog
+import MessageUI
 
-class SSWaitForTeacherViewController: UIViewController {
+class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewControllerDelegate {
 
     let waitingBar = UIView()
     let matchedBar = UIView()
@@ -19,7 +20,7 @@ class SSWaitForTeacherViewController: UIViewController {
     var timer = Timer()
     var popup: PopupDialog = PopupDialog(title: "", message: "")
     
-    var time = 300
+    var time = 60 * 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +82,7 @@ class SSWaitForTeacherViewController: UIViewController {
         }
         
         waitingBar.addSubview(timeExpire)
-        timeExpire.text = "0:00"
+        timeExpire.text = "60:00"
         timeExpire.font = UIFont(name: "Gotham-Book", size: 28)
         timeExpire.textColor = .white
         timeExpire.snp.makeConstraints { (make) in
@@ -122,9 +123,29 @@ class SSWaitForTeacherViewController: UIViewController {
     }
     
     func countDown() {
-        timeExpire.text = "\(time/60):\(time % 60)"
+        if time == 0 {
+            timer.invalidate()
+            SSCurrentUser.sharedInstance.learningStatus = .none
+            
+            let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+            NotificationCenter.default.post(name: notificationName, object: nil)
+            
+            let popup = PopupDialog(title: "Sorry 🙁", message: "There were no tutors available for you.")
+            let buttonOne = CancelButton(title: "dimiss") {}
+            popup.addButtons([buttonOne])
+            self.present(popup, animated: true, completion: nil)
+            return
+        }
+        
+        let sec = time % 60
+        if sec < 10 {
+            timeExpire.text = "\(time/60):0\(time % 60)"
+        } else {
+            timeExpire.text = "\(time/60):\(time % 60)"
+        }
         time -= 1
-        if time == 290 {
+        if time % 10 == 2 {
+            timer.invalidate()
             SSCurrentUser.sharedInstance.learningStatus = .matched
             
             let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
@@ -169,7 +190,9 @@ class SSWaitForTeacherViewController: UIViewController {
             make.top.equalToSuperview().offset(20)
         }
         
-        let iconView = UIImageView(image: #imageLiteral(resourceName: "people_image"))
+        let iconView = UIImageView(image: #imageLiteral(resourceName: "profile_sub_image"))
+        iconView.image = iconView.image!.withRenderingMode(.alwaysTemplate)
+        iconView.tintColor = .white
         topView.addSubview(iconView)
         iconView.sizeToFit()
         iconView.snp.makeConstraints { (make) in
@@ -192,7 +215,7 @@ class SSWaitForTeacherViewController: UIViewController {
         messageButton.setTitle("message", for: .normal)
         messageButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 14)
         messageButton.setTitleColor(SSColors.SSDarkGray, for: .normal)
-        messageButton.addTarget(self, action: #selector(seePostSelected), for: .touchUpInside)
+        messageButton.addTarget(self, action: #selector(sendMessageButtonPressed), for: .touchUpInside)
         matchedBar.addSubview(messageButton)
         messageButton.snp.makeConstraints({ (make) in
             make.top.equalTo(topView.snp.bottom).offset(5)
@@ -343,6 +366,8 @@ class SSWaitForTeacherViewController: UIViewController {
     func showPostDetailView(){
         
         let vc = SSTeachDetailViewController()
+        vc.meetup = SSCurrentUser.sharedInstance.currentMeetupPost
+        
         // Create the dialog
         let popup = PopupDialog(viewController: vc, buttonAlignment: UILayoutConstraintAxis.vertical, transitionStyle: .fadeIn, gestureDismissal: true, completion: nil)
         
@@ -368,5 +393,23 @@ class SSWaitForTeacherViewController: UIViewController {
     func updateBar(){
         matchedBar.isHidden = SSCurrentUser.sharedInstance.learningStatus == .waiting
         waitingBar.isHidden = SSCurrentUser.sharedInstance.learningStatus != .waiting
+    }
+    
+    func sendMessageButtonPressed () {
+        if (MFMessageComposeViewController.canSendText()) {
+            let composeVC = MFMessageComposeViewController()
+            composeVC.messageComposeDelegate = self
+            
+            // Configure the fields of the interface.
+            composeVC.recipients = ["8584723180"]
+            composeVC.body = "Hello, Clay! Thanks for accepting my help request on SkillSwap. Where can I meet you?"
+            
+            // Present the view controller modally.
+            self.present(composeVC, animated: true, completion: nil)
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        self.dismiss(animated: false, completion: nil)
     }
 }

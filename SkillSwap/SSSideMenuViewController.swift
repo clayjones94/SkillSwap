@@ -10,7 +10,9 @@ import UIKit
 
 class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let tableView = UITableView(frame: .zero, style: .grouped)
+    let tableView = UITableView(frame: .zero, style: UITableViewStyle.plain)
+    
+    var menuItems: Array<Dictionary<String, Any>>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +21,66 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
         
         navigationController?.setNavigationBarHidden(true, animated: false)
         
+        menuItems = [
+            [
+                "title": "Home",
+                "action": #selector(SSSideMenuViewController.home)
+            ],
+            [
+                "title": "Meetups",
+                "action": #selector(SSSideMenuViewController.meetups)
+            ],
+            [
+                "title": "Logout",
+                "action": #selector(SSSideMenuViewController.home)
+            ]
+        ]
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = view.frame
         view.addSubview(tableView)
+        
+        layoutView()
+    }
+    
+    func layoutView() {
+        let nameLabel = UILabel()
+        view.addSubview(nameLabel)
+        nameLabel.text = SSCurrentUser.sharedInstance.user?.name
+        nameLabel.font = UIFont(name: "Gotham-Book", size: 18)
+        nameLabel.textColor = SSColors.SSDarkGray
+        nameLabel.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(40)
+        }
+        
+        let timeLabel = UILabel()
+        view.addSubview(timeLabel)
+        let time = SSCurrentUser.sharedInstance.user?.time
+        timeLabel.text = "\(time!) minutes"
+        timeLabel.font = UIFont(name: "Gotham-Book", size: 12)
+        timeLabel.textColor = SSColors.SSDarkGray
+        timeLabel.textAlignment = .center
+        timeLabel.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(nameLabel.snp.bottom).offset(5)
+        }
+        
+        tableView.snp.makeConstraints { (make) in
+            make.bottom.left.right.equalToSuperview()
+            make.top.equalTo(timeLabel.snp.bottom).offset(10)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.setSelected(false, animated: false)
+        perform(menuItems?[indexPath.row]["action"] as! Selector)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -34,7 +88,18 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
         if cell == nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: "menu cell")
         }
-        cell?.textLabel?.text = "Menu Item"
+        cell?.textLabel?.font = UIFont(name: "Gotham-Book", size: 14)
+        
+        cell?.textLabel?.text = menuItems?[indexPath.row]["title"] as! String?
         return cell!
+    }
+    
+    func home() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func meetups () {
+//        dismiss(animated: true, completion: nil)
+        navigationController?.pushViewController(SSMeetupsViewController(), animated: false)
     }
 }

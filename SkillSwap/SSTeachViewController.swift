@@ -12,6 +12,7 @@ import PopupDialog
 class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let tableView = UITableView(frame: .zero, style: .plain)
+    var meetups: Array<SSMeetup> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +27,27 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         tableView.register(SSTeachTableViewCell.self, forCellReuseIdentifier: "teach cell")
+        
+        refresh()
+    }
+    
+    func refresh() {
+        SSDatabase.getAllMeetups { (success, meetups) in
+            self.meetups = meetups
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return meetups.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "teach cell")
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "teach cell") as! SSTeachTableViewCell
+        cell.meetup = meetups[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -44,12 +57,13 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.setSelected(false, animated: false)
-        layoutDetailPopup()
+        layoutDetailPopup(indexPath: indexPath)
     }
     
-    func layoutDetailPopup(){
+    func layoutDetailPopup(indexPath: IndexPath){
 
         let vc = SSTeachDetailViewController()
+        vc.meetup = meetups[indexPath.row]
         // Create the dialog
         let popup = PopupDialog(viewController: vc, buttonAlignment: UILayoutConstraintAxis.vertical, transitionStyle: .fadeIn, gestureDismissal: true, completion: nil)
         

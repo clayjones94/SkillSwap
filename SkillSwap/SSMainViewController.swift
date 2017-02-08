@@ -10,18 +10,18 @@ import UIKit
 import BetterSegmentedControl
 import SnapKit
 import SideMenu
+import LFLoginController
 
 class SSMainViewController: UIViewController {
     
     let learnVC = SSLearnViewController()
     let teachVC = SSTeachViewController()
-    let waitVC = SSWaitForTeacherViewController()
+    var waitVC: SSWaitForTeacherViewController?
     var currentVC :UIViewController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         view.backgroundColor = .white
         
         layoutSegmentedControl()
@@ -35,6 +35,10 @@ class SSMainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         controlValueChanged()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+//        if !SSCurrentUser.sharedInstance.loggedIn {
+//            loginUser()
+//        }
     }
     
     let segControl = BetterSegmentedControl(
@@ -77,6 +81,8 @@ class SSMainViewController: UIViewController {
         menuLeftNavigationController.view.backgroundColor = .white
         menuLeftNavigationController.leftSide = true
         SideMenuManager.menuLeftNavigationController = menuLeftNavigationController
+        SideMenuManager.menuFadeStatusBar = true
+        SideMenuManager.menuAnimationBackgroundColor = .white
         SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         
@@ -97,15 +103,19 @@ class SSMainViewController: UIViewController {
     func controlValueChanged() {
         if segControl.index == 0 {
             if SSCurrentUser.sharedInstance.learningStatus != .none {
+                if waitVC == nil {
+                    waitVC = SSWaitForTeacherViewController()
+                }
                 currentVC = waitVC
             } else {
                 currentVC = learnVC
+                waitVC = nil
             }
             teachVC.removeFromParentViewController()
         } else {
             currentVC = teachVC
             learnVC.removeFromParentViewController()
-            waitVC.removeFromParentViewController()
+            waitVC?.removeFromParentViewController()
         }
         self.addChildViewController(currentVC!)
         view.addSubview((currentVC?.view)!)
@@ -119,9 +129,33 @@ class SSMainViewController: UIViewController {
         present(SideMenuManager.menuLeftNavigationController!, animated: true, completion: nil)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loginUser() {
+        //1. Create a LFLoginController instance
+        let loginController = LFLoginController()
+        loginController.delegate = self
+        
+        self.navigationController?.pushViewController(loginController, animated: true)
     }
+}
 
+extension SSMainViewController: LFLoginControllerDelegate {
+    
+    func loginDidFinish(email: String, password: String, type: LFLoginController.SendType) {
+        print(email)
+        print(password)
+        print(type)
+        
+        SSDatabase.registerUser(user: SSUser(id: "1", name: "Clay Jones", phone: "858-472-3180")) { (success, newUser) in
+            if success {
+                SSCurrentUser.sharedInstance.loggedIn = true
+                SSCurrentUser.sharedInstance.user = newUser
+                _ = self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+    
+    func forgotPasswordTapped() {
+        
+        print("forgot password")
+    }
 }

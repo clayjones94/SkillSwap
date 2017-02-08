@@ -8,6 +8,7 @@
 
 import UIKit
 import AnimatedTextInput
+import PopupDialog
 
 class SSDescriptionViewController: UIViewController, AnimatedTextInputDelegate {
 
@@ -15,6 +16,7 @@ class SSDescriptionViewController: UIViewController, AnimatedTextInputDelegate {
     var color = SSColors.SSBlue
     let subjectField = AnimatedTextInput()
     let detailTextView = AnimatedTextInput()
+    var meetup: SSMeetup?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +67,7 @@ class SSDescriptionViewController: UIViewController, AnimatedTextInputDelegate {
         view.addSubview(subjectField)
         subjectField.placeHolderText = "Summary"
         subjectField.style = AnimatedTextInputStyleRed(color: color)
-        subjectField.showCharacterCounterLabel(with: 30)
+        subjectField.showCharacterCounterLabel(with: 20)
         subjectField.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(titleView.snp.bottom).offset(25)
@@ -87,11 +89,46 @@ class SSDescriptionViewController: UIViewController, AnimatedTextInputDelegate {
     }
     
     func backbuttonSelected() {
-        navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
     
     func nextButtonSelected() {
+        if subjectField.text?.characters.count == 0 {
+            let popup = PopupDialog(title: "Whoops", message: "You need a summary!")
+            let buttonOne = CancelButton(title: "dimiss") {}
+            popup.addButtons([buttonOne])
+            self.present(popup, animated: true, completion: nil)
+            return
+        }
+        
+        if (subjectField.text?.characters.count)! > 20 {
+            let popup = PopupDialog(title: "Whoops", message: "Your summary is too long!")
+            let buttonOne = CancelButton(title: "dimiss") {}
+            popup.addButtons([buttonOne])
+            self.present(popup, animated: true, completion: nil)
+            return
+        }
+        
+        if detailTextView.text?.characters.count == 0 {
+            let popup = PopupDialog(title: "Whoops", message: "You need details!")
+            let buttonOne = CancelButton(title: "dimiss") {}
+            popup.addButtons([buttonOne])
+            self.present(popup, animated: true, completion: nil)
+            return
+        }
+        
+        if (detailTextView.text?.characters.count)! > 300 {
+            let popup = PopupDialog(title: "Whoops", message: "Your details are too long")
+            let buttonOne = CancelButton(title: "dimiss") {}
+            popup.addButtons([buttonOne])
+            self.present(popup, animated: true, completion: nil)
+            return
+        }
+        
         let vc = SSSelectTimeViewController()
+        meetup?.summary = subjectField.text
+        meetup?.details = detailTextView.text
+        vc.meetup = meetup
         vc.color = color
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -109,7 +146,7 @@ struct AnimatedTextInputStyleRed: AnimatedTextInputStyle {
     let errorColor = UIColor.red
     let textInputFont = UIFont.systemFont(ofSize: 14)
     let textInputFontColor = UIColor.black
-    let placeholderMinFontSize: CGFloat = 9
+    let placeholderMinFontSize: CGFloat = 12
     let counterLabelFont: UIFont? = UIFont.systemFont(ofSize: 9)
     let leftMargin: CGFloat = 25
     let topMargin: CGFloat = 20

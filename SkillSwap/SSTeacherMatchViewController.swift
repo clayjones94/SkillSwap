@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class SSTeacherMatchViewController: UIViewController {
+class SSTeacherMatchViewController: UIViewController, MFMessageComposeViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,9 @@ class SSTeacherMatchViewController: UIViewController {
             make.width.equalTo(200)
         }
         
-        let iconView = UIImageView(image: #imageLiteral(resourceName: "people_image"))
+        let iconView = UIImageView(image: #imageLiteral(resourceName: "profile_sub_image"))
+        iconView.image = iconView.image!.withRenderingMode(.alwaysTemplate)
+        iconView.tintColor = .white
         view.addSubview(iconView)
         iconView.sizeToFit()
         iconView.snp.makeConstraints { (make) in
@@ -52,12 +55,12 @@ class SSTeacherMatchViewController: UIViewController {
         }
         
         let messageButton = UIButton()
-        messageButton.setTitle("send message", for: .normal)
-        messageButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 12)
+        messageButton.setTitle("message", for: .normal)
+        messageButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 14)
         messageButton.setTitleColor(SSColors.SSBlue, for: .normal)
         messageButton.layer.cornerRadius = 4
         messageButton.backgroundColor = .white
-        messageButton.addTarget(self, action: #selector(message), for: .touchUpInside)
+        messageButton.addTarget(self, action: #selector(sendMessageButtonPressed), for: .touchUpInside)
         view.addSubview(messageButton)
         messageButton.snp.makeConstraints({ (make) in
             make.top.equalTo(nameLabel.snp.bottom).offset(40)
@@ -90,7 +93,7 @@ class SSTeacherMatchViewController: UIViewController {
         
         let dismissButton = UIButton()
         dismissButton.setTitle("Dismiss", for: .normal)
-        dismissButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 12)
+        dismissButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 14)
         dismissButton.setTitleColor(SSColors.SSBlue, for: .normal)
         dismissButton.layer.cornerRadius = 4
         dismissButton.backgroundColor = .white
@@ -106,6 +109,24 @@ class SSTeacherMatchViewController: UIViewController {
     
     func message() {
         
+    }
+    
+    func sendMessageButtonPressed () {
+        if (MFMessageComposeViewController.canSendText()) {
+            let composeVC = MFMessageComposeViewController()
+            composeVC.messageComposeDelegate = self
+            
+            // Configure the fields of the interface.
+            composeVC.recipients = ["8584723180"]
+            composeVC.body = "Hello, Clay! It's your tutor from SkillSwap. Where can I meet you?"
+            
+            // Present the view controller modally.
+            self.present(composeVC, animated: true, completion: nil)
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        self.dismiss(animated: false, completion: nil)
     }
     
     func dismissButtonPressed(){

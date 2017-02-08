@@ -11,6 +11,7 @@ import UIKit
 class SSTeachDetailViewController: UIViewController {
     
     let color = SSColors.SSBlue
+    var meetup: SSMeetup?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,7 +30,9 @@ class SSTeachDetailViewController: UIViewController {
     
     func layoutSummary() {
         
-        let iconView = UIImageView(image: #imageLiteral(resourceName: "people_image"))
+        let iconView = UIImageView(image: #imageLiteral(resourceName: "profile_sub_image"))
+        iconView.image = iconView.image!.withRenderingMode(.alwaysTemplate)
+        iconView.tintColor = SSColors.SSGray
         view.addSubview(iconView)
         iconView.sizeToFit()
         iconView.snp.makeConstraints { (make) in
@@ -40,7 +43,7 @@ class SSTeachDetailViewController: UIViewController {
         
         let nameLabel = UILabel()
         view.addSubview(nameLabel)
-        nameLabel.text = "Clay Jones"
+        nameLabel.text = meetup?.student?.name
         nameLabel.font = UIFont(name: "Gotham-Book", size: 14)
         nameLabel.textColor = SSColors.SSDarkGray
         nameLabel.snp.makeConstraints { (make) in
@@ -50,7 +53,7 @@ class SSTeachDetailViewController: UIViewController {
         
         let summaryLabel = UILabel()
         view.addSubview(summaryLabel)
-        summaryLabel.text = "Need help with pset1"
+        summaryLabel.text = meetup?.summary
         summaryLabel.numberOfLines = 0
         summaryLabel.font = UIFont(name: "Gotham-Medium", size: 16)
         summaryLabel.textColor = SSColors.SSDarkGray
@@ -73,7 +76,9 @@ class SSTeachDetailViewController: UIViewController {
         
         let subjectLabel = UILabel()
         view.addSubview(subjectLabel)
-        subjectLabel.text = "Chemistry - Chem 31"
+        let subject = meetup?.topic?.subject?.name!
+        let topic = meetup?.topic?.name!
+        subjectLabel.text = "\(subject!) - \(topic!)"
         subjectLabel.font = UIFont(name: "Gotham-Book", size: 12)
         subjectLabel.textColor = SSColors.SSDarkGray
         subjectLabel.textAlignment = .center
@@ -94,7 +99,7 @@ class SSTeachDetailViewController: UIViewController {
         
         let locationLabel = UILabel()
         view.addSubview(locationLabel)
-        locationLabel.text = "Tressider Union"
+        locationLabel.text = meetup?.location?.name
         locationLabel.font = UIFont(name: "Gotham-Book", size: 12)
         locationLabel.textColor = SSColors.SSDarkGray
         locationLabel.textAlignment = .center
@@ -115,7 +120,8 @@ class SSTeachDetailViewController: UIViewController {
         
         let timeLabel = UILabel()
         view.addSubview(timeLabel)
-        timeLabel.text = "30 minutes"
+        let time = meetup?.timeExchange!
+        timeLabel.text = "\(time!) minutes"
         timeLabel.font = UIFont(name: "Gotham-Book", size: 12)
         timeLabel.textColor = SSColors.SSDarkGray
         timeLabel.textAlignment = .center
@@ -137,7 +143,7 @@ class SSTeachDetailViewController: UIViewController {
         
         let detailLabel = UILabel()
         view.addSubview(detailLabel)
-        detailLabel.text = "I’m working on my first pset of chem 31 and I need help with various introductory topics within organic chemistry."
+        detailLabel.text = meetup?.details
         detailLabel.font = UIFont(name: "Gotham-Book", size: 12)
         detailLabel.textColor = SSColors.SSDarkGray
         detailLabel.textAlignment = .left

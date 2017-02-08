@@ -13,7 +13,10 @@ class SSPickClassViewController: UIViewController, UITableViewDelegate, UITableV
     var color = UIColor.lightGray
     var detailColor = UIColor.gray
     var subjectTitle = "Subject"
+    var subject: SSSubject?
     var icon = UIImage()
+    var meetup: SSMeetup?
+    var topics: Array<SSTopic> = []
     
     let searchbar = UITextField()
     let tableView = UITableView(frame: .zero, style: .plain)
@@ -28,6 +31,26 @@ class SSPickClassViewController: UIViewController, UITableViewDelegate, UITableV
         
         layoutTopView()
         layoutSearchAndTable()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tableView.contentOffset = CGPoint(x: 0, y: -40)
+        refreshTopics()
+    }
+    
+    func refreshTopics() {
+        tableView.refreshControl?.beginRefreshing()
+        tableView.refreshControl?.isHidden = false
+        SSDatabase.getAllTopicsForSubject(subject: self.subject!) { (success, topics) in
+            self.topics = topics
+            DispatchQueue.main.async {
+                self.tableView.refreshControl?.endRefreshing()
+                self.tableView.refreshControl?.isHidden = true
+                self.tableView.reloadData()
+            }
+        }
     }
     
     private func layoutTopView() {
@@ -73,29 +96,32 @@ class SSPickClassViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     private func layoutSearchAndTable() {
-        view.addSubview(searchbar)
-        searchbar.backgroundColor = .white
-        searchbar.textAlignment = .center
-        searchbar.placeholder = "Search for a topic or class..."
-        searchbar.font = UIFont(name: "Gotham-Medium", size: 14)
-        searchbar.snp.makeConstraints { (make) in
-            make.top.equalTo(topView.snp.bottom).offset(10)
-            make.height.equalTo(44)
-            make.centerX.equalToSuperview()
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
-        }
-        searchbar.layer.shadowColor = UIColor.black.cgColor
-        searchbar.layer.shadowOffset = CGSize(width: 0, height: 1)
-        searchbar.layer.shadowOpacity = 0.25
-        searchbar.layer.shadowRadius = 2
+//        view.addSubview(searchbar)
+//        searchbar.backgroundColor = .white
+//        searchbar.textAlignment = .center
+//        searchbar.placeholder = "Search for a topic or class..."
+//        searchbar.font = UIFont(name: "Gotham-Medium", size: 14)
+//        searchbar.snp.makeConstraints { (make) in
+//            make.top.equalTo(topView.snp.bottom).offset(10)
+//            make.height.equalTo(44)
+//            make.centerX.equalToSuperview()
+//            make.left.equalToSuperview().offset(20)
+//            make.right.equalToSuperview().offset(-20)
+//        }
+//        searchbar.layer.shadowColor = UIColor.black.cgColor
+//        searchbar.layer.shadowOffset = CGSize(width: 0, height: 1)
+//        searchbar.layer.shadowOpacity = 0.25
+//        searchbar.layer.shadowRadius = 2
         
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
-        tableView.contentOffset = CGPoint(x: 0, y: -40);
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: 0);
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "topic")
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(SSPickClassViewController.refreshTopics), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl)
         tableView.snp.makeConstraints { (make) in
             make.bottom.left.right.equalToSuperview()
             make.top.equalTo(topView.snp.bottom)
@@ -109,19 +135,21 @@ class SSPickClassViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return topics.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "topic")
         cell?.textLabel?.textColor = SSColors.SSDarkGray
-        cell?.textLabel?.text = "Topic"
+        cell?.textLabel?.text = topics[indexPath.row].name
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = SSPickLocationViewController()
         vc.color = color
+        vc.meetup = meetup
+        meetup?.topic = topics[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -12,6 +12,8 @@ class SSPostSummaryViewController: UIViewController {
     
     let titleView = UILabel()
     var color = SSColors.SSBlue
+    
+    var meetup: SSMeetup?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,31 +49,31 @@ class SSPostSummaryViewController: UIViewController {
     }
     
     func layoutSummary () {
-        let topLine = UIView()
-        view.addSubview(topLine)
-        topLine.backgroundColor = color.withAlphaComponent(0.5)
-        topLine.snp.makeConstraints { (make) in
-            make.top.equalTo(titleView.snp.bottom).offset(30)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(1)
-            make.width.equalTo(200)
-        }
+//        let topLine = UIView()
+//        view.addSubview(topLine)
+//        topLine.backgroundColor = color.withAlphaComponent(0.5)
+//        topLine.snp.makeConstraints { (make) in
+//            make.top.equalTo(titleView.snp.bottom).offset(30)
+//            make.centerX.equalToSuperview()
+//            make.height.equalTo(1)
+//            make.width.equalTo(200)
+//        }
         
         let summaryLabel = UILabel()
         view.addSubview(summaryLabel)
-        summaryLabel.text = "Need help with pset1"
+        summaryLabel.text = meetup?.summary
         summaryLabel.font = UIFont(name: "Gotham-Medium", size: 18)
         summaryLabel.textColor = SSColors.SSDarkGray
         summaryLabel.textAlignment = .center
         summaryLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(topLine.snp.bottom).offset(30)
+            make.top.equalTo(titleView.snp.bottom).offset(30)
         }
         
         let detailTitle = UILabel()
         view.addSubview(detailTitle)
         detailTitle.text = "Detail"
-        detailTitle.font = UIFont(name: "Gotham-Medium", size: 12)
+        detailTitle.font = UIFont(name: "Gotham-Medium", size: 14)
         detailTitle.textColor = color
         detailTitle.textAlignment = .center
         detailTitle.snp.makeConstraints { (make) in
@@ -81,8 +83,8 @@ class SSPostSummaryViewController: UIViewController {
         
         let detailLabel = UILabel()
         view.addSubview(detailLabel)
-        detailLabel.text = "I’m working on my first pset of chem 31 and I need help with various introductory topics within organic chemistry."
-        detailLabel.font = UIFont(name: "Gotham-Book", size: 12)
+        detailLabel.text = meetup?.details
+        detailLabel.font = UIFont(name: "Gotham-Book", size: 14)
         detailLabel.textColor = SSColors.SSDarkGray
         detailLabel.textAlignment = .center
         detailLabel.numberOfLines = 0
@@ -96,7 +98,7 @@ class SSPostSummaryViewController: UIViewController {
         let subjectTitle = UILabel()
         view.addSubview(subjectTitle)
         subjectTitle.text = "Subject - Focus"
-        subjectTitle.font = UIFont(name: "Gotham-Medium", size: 12)
+        subjectTitle.font = UIFont(name: "Gotham-Medium", size: 14)
         subjectTitle.textColor = color
         subjectTitle.textAlignment = .center
         subjectTitle.snp.makeConstraints { (make) in
@@ -106,8 +108,10 @@ class SSPostSummaryViewController: UIViewController {
         
         let subjectLabel = UILabel()
         view.addSubview(subjectLabel)
-        subjectLabel.text = "Chemistry - Chem 31"
-        subjectLabel.font = UIFont(name: "Gotham-Book", size: 12)
+        let subject = meetup?.topic?.subject?.name!
+        let topic = meetup?.topic?.name!
+        subjectLabel.text = "\(subject!) - \(topic!)"
+        subjectLabel.font = UIFont(name: "Gotham-Book", size: 14)
         subjectLabel.textColor = SSColors.SSDarkGray
         subjectLabel.textAlignment = .center
         subjectLabel.snp.makeConstraints { (make) in
@@ -127,8 +131,8 @@ class SSPostSummaryViewController: UIViewController {
         
         let locationLabel = UILabel()
         view.addSubview(locationLabel)
-        locationLabel.text = "Tressider Union"
-        locationLabel.font = UIFont(name: "Gotham-Book", size: 12)
+        locationLabel.text = meetup?.location?.name
+        locationLabel.font = UIFont(name: "Gotham-Book", size: 14)
         locationLabel.textColor = SSColors.SSDarkGray
         locationLabel.textAlignment = .center
         locationLabel.snp.makeConstraints { (make) in
@@ -148,8 +152,9 @@ class SSPostSummaryViewController: UIViewController {
         
         let timeLabel = UILabel()
         view.addSubview(timeLabel)
-        timeLabel.text = "30 minutes"
-        timeLabel.font = UIFont(name: "Gotham-Book", size: 12)
+        let time = meetup?.timeExchange!
+        timeLabel.text = "\(time!) minutes"
+        timeLabel.font = UIFont(name: "Gotham-Book", size: 14)
         timeLabel.textColor = SSColors.SSDarkGray
         timeLabel.textAlignment = .center
         timeLabel.snp.makeConstraints { (make) in
@@ -157,32 +162,30 @@ class SSPostSummaryViewController: UIViewController {
             make.top.equalTo(timeIconView.snp.bottom).offset(3)
         }
         
-        let bottomLine = UIView()
-        view.addSubview(bottomLine)
-        bottomLine.backgroundColor = color.withAlphaComponent(0.5)
-        bottomLine.snp.makeConstraints { (make) in
-            make.top.equalTo(timeLabel.snp.bottom).offset(30)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(1)
-            make.width.equalTo(200)
-        }
+//        let bottomLine = UIView()
+//        view.addSubview(bottomLine)
+//        bottomLine.backgroundColor = color.withAlphaComponent(0.5)
+//        bottomLine.snp.makeConstraints { (make) in
+//            make.top.equalTo(timeLabel.snp.bottom).offset(30)
+//            make.centerX.equalToSuperview()
+//            make.height.equalTo(1)
+//            make.width.equalTo(200)
+//        }
         
         let postButton = UIButton(type: .roundedRect)
         view.addSubview(postButton)
-        postButton.backgroundColor = .white
-        postButton.setTitleColor(color, for: .normal)
+        postButton.backgroundColor = color
+        postButton.setTitleColor(.white, for: .normal)
         postButton.setTitle("POST", for: .normal)
         postButton.titleLabel?.font = UIFont(name: "Gotham-Medium", size: 16)
-        postButton.layer.cornerRadius = 5
-        postButton.layer.borderColor = color.cgColor
-        postButton.layer.borderWidth = 2
+//        postButton.layer.cornerRadius = 5
+//        postButton.layer.borderColor = color.cgColor
+//        postButton.layer.borderWidth = 2
         view.addSubview(postButton)
         postButton.addTarget(self, action: #selector(postButtonSelected), for: .touchUpInside)
         postButton.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(bottomLine.snp.bottom).offset(20)
-            make.width.equalTo(130)
-            make.height.equalTo(40)
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(60)
         }
     }
     
@@ -190,11 +193,13 @@ class SSPostSummaryViewController: UIViewController {
         navigationController?.dismiss(animated: true, completion: nil)
         SSCurrentUser.sharedInstance.learningStatus = .waiting
         
+        SSCurrentUser.sharedInstance.currentMeetupPost = meetup
+        
         let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
         NotificationCenter.default.post(name: notificationName, object: nil)
     }
 
     func backbuttonSelected() {
-        navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
 }

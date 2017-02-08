@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921669AB1E498085002EA0DB /* SSSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669AA1E498085002EA0DB /* SSSubject.swift */; };
+		921669AD1E498097002EA0DB /* SSTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669AC1E498097002EA0DB /* SSTopic.swift */; };
+		921669B11E498305002EA0DB /* SSDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669B01E498305002EA0DB /* SSDatabase.swift */; };
+		921669B41E499611002EA0DB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921669B21E499611002EA0DB /* Alamofire.framework */; };
+		921669B51E499611002EA0DB /* LFLoginController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921669B31E499611002EA0DB /* LFLoginController.framework */; };
+		921669B71E4AD65A002EA0DB /* SSStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669B61E4AD65A002EA0DB /* SSStorage.swift */; };
+		921669B91E4AEFA2002EA0DB /* SSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669B81E4AEFA2002EA0DB /* SSUtils.swift */; };
+		921669BB1E4B9F30002EA0DB /* SSMeetupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669BA1E4B9F30002EA0DB /* SSMeetupsViewController.swift */; };
 		921938131E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */; };
 		921938171E405C9E00C6A4C8 /* DynamicButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921938151E405C9E00C6A4C8 /* DynamicButton.framework */; };
 		9219381B1E41C7FC00C6A4C8 /* SSAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219381A1E41C7FC00C6A4C8 /* SSAnimations.swift */; };
@@ -17,6 +25,9 @@
 		921938251E43AFC600C6A4C8 /* SSTeachDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921938241E43AFC600C6A4C8 /* SSTeachDetailViewController.swift */; };
 		921938271E43BF3F00C6A4C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921938261E43BF3F00C6A4C8 /* Assets.xcassets */; };
 		921938291E43C28000C6A4C8 /* SSTeacherMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921938281E43C28000C6A4C8 /* SSTeacherMatchViewController.swift */; };
+		9219382B1E457FAB00C6A4C8 /* SSMeetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219382A1E457FAB00C6A4C8 /* SSMeetup.swift */; };
+		9219382D1E4580C700C6A4C8 /* SSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219382C1E4580C700C6A4C8 /* SSUser.swift */; };
+		9219382F1E45834000C6A4C8 /* SSLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219382E1E45834000C6A4C8 /* SSLocation.swift */; };
 		923383D61E3C29C500C3FFF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923383D51E3C29C500C3FFF6 /* Foundation.framework */; };
 		923383D81E3C29CD00C3FFF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923383D71E3C29CD00C3FFF6 /* UIKit.framework */; };
 		923383DA1E3C29D400C3FFF6 /* BetterSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923383D91E3C29D400C3FFF6 /* BetterSegmentedControl.framework */; };
@@ -49,6 +60,14 @@
 /* Begin PBXFileReference section */
 		685A2BE634EBF6C1E9C0D762 /* Pods-SkillSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillSwap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkillSwap/Pods-SkillSwap.debug.xcconfig"; sourceTree = "<group>"; };
 		82ACFD579FEB922F137AD524 /* Pods-SkillSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillSwap.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkillSwap/Pods-SkillSwap.release.xcconfig"; sourceTree = "<group>"; };
+		921669AA1E498085002EA0DB /* SSSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSubject.swift; sourceTree = "<group>"; };
+		921669AC1E498097002EA0DB /* SSTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTopic.swift; sourceTree = "<group>"; };
+		921669B01E498305002EA0DB /* SSDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDatabase.swift; sourceTree = "<group>"; };
+		921669B21E499611002EA0DB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		921669B31E499611002EA0DB /* LFLoginController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LFLoginController.framework; path = "Pods/../build/Debug-iphoneos/LFLoginController/LFLoginController.framework"; sourceTree = "<group>"; };
+		921669B61E4AD65A002EA0DB /* SSStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSStorage.swift; sourceTree = "<group>"; };
+		921669B81E4AEFA2002EA0DB /* SSUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSUtils.swift; sourceTree = "<group>"; };
+		921669BA1E4B9F30002EA0DB /* SSMeetupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSMeetupsViewController.swift; sourceTree = "<group>"; };
 		921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSWaitForTeacherViewController.swift; sourceTree = "<group>"; };
 		921938141E405C9E00C6A4C8 /* CountdownLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CountdownLabel.framework; path = "Pods/../build/Debug-iphoneos/CountdownLabel/CountdownLabel.framework"; sourceTree = "<group>"; };
 		921938151E405C9E00C6A4C8 /* DynamicButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicButton.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/DynamicButton/DynamicButton.framework"; sourceTree = "<group>"; };
@@ -61,6 +80,9 @@
 		921938241E43AFC600C6A4C8 /* SSTeachDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTeachDetailViewController.swift; sourceTree = "<group>"; };
 		921938261E43BF3F00C6A4C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		921938281E43C28000C6A4C8 /* SSTeacherMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTeacherMatchViewController.swift; sourceTree = "<group>"; };
+		9219382A1E457FAB00C6A4C8 /* SSMeetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSMeetup.swift; sourceTree = "<group>"; };
+		9219382C1E4580C700C6A4C8 /* SSUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSUser.swift; sourceTree = "<group>"; };
+		9219382E1E45834000C6A4C8 /* SSLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLocation.swift; sourceTree = "<group>"; };
 		923383D51E3C29C500C3FFF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		923383D71E3C29CD00C3FFF6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		923383D91E3C29D400C3FFF6 /* BetterSegmentedControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BetterSegmentedControl.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphonesimulator/BetterSegmentedControl/BetterSegmentedControl.framework"; sourceTree = "<group>"; };
@@ -97,6 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921669B41E499611002EA0DB /* Alamofire.framework in Frameworks */,
+				921669B51E499611002EA0DB /* LFLoginController.framework in Frameworks */,
 				921938231E431BD500C6A4C8 /* PopupDialog.framework in Frameworks */,
 				921938171E405C9E00C6A4C8 /* DynamicButton.framework in Frameworks */,
 				92C78E501E3FBA47003C8ED7 /* SnapKit.framework in Frameworks */,
@@ -112,6 +136,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		921669A91E497CC4002EA0DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9219381C1E41D3EB00C6A4C8 /* SSCurrentUser.swift */,
+				9219382A1E457FAB00C6A4C8 /* SSMeetup.swift */,
+				9219382C1E4580C700C6A4C8 /* SSUser.swift */,
+				9219382E1E45834000C6A4C8 /* SSLocation.swift */,
+				921669AA1E498085002EA0DB /* SSSubject.swift */,
+				921669AC1E498097002EA0DB /* SSTopic.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		921669AE1E49818C002EA0DB /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				921669B81E4AEFA2002EA0DB /* SSUtils.swift */,
+			);
+			name = Storage;
+			sourceTree = "<group>";
+		};
+		921669AF1E4981C2002EA0DB /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				921669B01E498305002EA0DB /* SSDatabase.swift */,
+				921669B61E4AD65A002EA0DB /* SSStorage.swift */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
 		923383DD1E3D5C2400C3FFF6 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +216,7 @@
 				9219381E1E41D50800C6A4C8 /* SSConstants.swift */,
 				9219381A1E41C7FC00C6A4C8 /* SSAnimations.swift */,
 				923383EF1E3D67D000C3FFF6 /* SSSideMenuViewController.swift */,
+				921669BA1E4B9F30002EA0DB /* SSMeetupsViewController.swift */,
 				92C075A91E3C22E400D0B063 /* SSMainViewController.swift */,
 				923383F11E3D6DEE00C3FFF6 /* SSLearnViewController.swift */,
 				921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */,
@@ -170,7 +225,9 @@
 				921938241E43AFC600C6A4C8 /* SSTeachDetailViewController.swift */,
 				921938281E43C28000C6A4C8 /* SSTeacherMatchViewController.swift */,
 				921938201E42677600C6A4C8 /* SSTeachTableViewCell.swift */,
-				9219381C1E41D3EB00C6A4C8 /* SSCurrentUser.swift */,
+				921669AF1E4981C2002EA0DB /* Database */,
+				921669AE1E49818C002EA0DB /* Storage */,
+				921669A91E497CC4002EA0DB /* Models */,
 				921938261E43BF3F00C6A4C8 /* Assets.xcassets */,
 				923383DD1E3D5C2400C3FFF6 /* Fonts */,
 				92C075A31E3C1F8100D0B063 /* Info.plist */,
@@ -202,6 +259,8 @@
 		DAE1D88DF9B462E543EADB02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				921669B21E499611002EA0DB /* Alamofire.framework */,
+				921669B31E499611002EA0DB /* LFLoginController.framework */,
 				921938221E431BD500C6A4C8 /* PopupDialog.framework */,
 				921938181E405CC400C6A4C8 /* CountdownLabel.framework */,
 				921938141E405C9E00C6A4C8 /* CountdownLabel.framework */,
@@ -354,15 +413,24 @@
 				921938211E42677600C6A4C8 /* SSTeachTableViewCell.swift in Sources */,
 				921938251E43AFC600C6A4C8 /* SSTeachDetailViewController.swift in Sources */,
 				92C78E541E3FF194003C8ED7 /* SSPostSummaryViewController.swift in Sources */,
+				921669B11E498305002EA0DB /* SSDatabase.swift in Sources */,
 				92C78E481E3F237C003C8ED7 /* SSPickLocationViewController.swift in Sources */,
+				921669B71E4AD65A002EA0DB /* SSStorage.swift in Sources */,
 				9219381B1E41C7FC00C6A4C8 /* SSAnimations.swift in Sources */,
+				921669AB1E498085002EA0DB /* SSSubject.swift in Sources */,
+				9219382B1E457FAB00C6A4C8 /* SSMeetup.swift in Sources */,
 				923383DC1E3C2EA800C3FFF6 /* SSColors.swift in Sources */,
+				921669BB1E4B9F30002EA0DB /* SSMeetupsViewController.swift in Sources */,
+				921669AD1E498097002EA0DB /* SSTopic.swift in Sources */,
 				92C075AA1E3C22E400D0B063 /* SSMainViewController.swift in Sources */,
+				921669B91E4AEFA2002EA0DB /* SSUtils.swift in Sources */,
+				9219382F1E45834000C6A4C8 /* SSLocation.swift in Sources */,
 				92C075981E3C1F8100D0B063 /* AppDelegate.swift in Sources */,
 				921938291E43C28000C6A4C8 /* SSTeacherMatchViewController.swift in Sources */,
 				923383F41E3D6E4300C3FFF6 /* SSTeachViewController.swift in Sources */,
 				921938131E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift in Sources */,
 				92C78E4A1E3FB4F1003C8ED7 /* SSDescriptionViewController.swift in Sources */,
+				9219382D1E4580C700C6A4C8 /* SSUser.swift in Sources */,
 				92C78E521E3FC46F003C8ED7 /* SSSelectTimeViewController.swift in Sources */,
 				9219381F1E41D50800C6A4C8 /* SSConstants.swift in Sources */,
 				923383F21E3D6DEE00C3FFF6 /* SSLearnViewController.swift in Sources */,
@@ -477,6 +545,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/CountdownLabel",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/LFLoginController",
 				);
 				INFOPLIST_FILE = SkillSwap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -496,6 +565,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/CountdownLabel",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/LFLoginController",
 				);
 				INFOPLIST_FILE = SkillSwap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

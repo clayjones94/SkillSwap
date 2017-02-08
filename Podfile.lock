@@ -1,27 +1,33 @@
 PODS:
+  - Alamofire (4.3.0)
   - AnimatedTextInput (0.4.0)
   - BetterSegmentedControl (0.7)
   - DynamicButton (3.1.0)
+  - LFLoginController (0.2.8)
   - PopupDialog (0.5.3)
   - SideMenu (2.2.0)
   - SnapKit (3.1.2)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.3)
   - AnimatedTextInput (~> 0.4.0)
   - BetterSegmentedControl (~> 0.7)
   - DynamicButton (~> 3.1.0)
+  - LFLoginController
   - PopupDialog (~> 0.5)
   - SideMenu (~> 2.2)
   - SnapKit (~> 3.1.2)
 
 SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   AnimatedTextInput: 283f38c106399b809b126f80af79fca9f4aabfd6
   BetterSegmentedControl: 0b4dde1caac22de345820858a5e2789132378c1c
   DynamicButton: 37968af761a31274aeac427f40204688fa810342
+  LFLoginController: 9c658847b55f30dfa0c780f5331fb63117853aef
   PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
   SideMenu: eeff6b85456c5c6e14165655691d2033f6b24969
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
 
-PODFILE CHECKSUM: 174e9f36c5041288c494ffc90148d5298d3de459
+PODFILE CHECKSUM: 55b43821d93989f21d1bafce48fe9e4797988810
 
 COCOAPODS: 1.1.1

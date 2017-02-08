@@ -11,10 +11,11 @@ import UIKit
 class SSPickLocationViewController: UIViewController {
     
     var color = SSColors.SSBlue
-    let locations = ["Tressider Union","Lathrop Tech Lounge","Old Union","Huang Basement"]
     var selectedIndex = -1
     let buttons = [UIButton(type: .custom), UIButton(type: .custom), UIButton(type: .custom), UIButton(type: .custom)]
     let titleView = UILabel()
+    var locations: Array<SSLocation> = []
+    var meetup: SSMeetup?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,19 +23,25 @@ class SSPickLocationViewController: UIViewController {
         view.backgroundColor = .white
         
         layoutTopBar()
-        layoutLocationButtons()
+        
+        SSDatabase.getAllMeetupLocations { (success, locs) in
+            self.locations = locs
+            DispatchQueue.main.async {
+                self.layoutLocationButtons()
+            }
+        }
     }
     
     func layoutLocationButtons() {
         for i in 0...3 {
             let button = buttons[i]
-            button.setTitle(locations[i], for: .normal)
+            button.setTitle(locations[i].name, for: .normal)
             button.layer.borderColor = color.cgColor
             button.layer.cornerRadius = 5
             button.layer.borderWidth = 1
             button.tag = i
             button.titleLabel?.font = UIFont(name: "Gotham-Book", size: 18)
-            button.setTitleColor(SSColors.SSDarkGray, for: .normal)
+            button.setTitleColor(color, for: .normal)
             button.backgroundColor = .white
             button.addTarget(self, action: #selector(locationSelected(_:)), for: .touchUpInside)
             view.addSubview(button)
@@ -55,9 +62,14 @@ class SSPickLocationViewController: UIViewController {
                 b.setTitleColor(.white, for: .normal)
             } else {
                 b.backgroundColor = .white
-                b.setTitleColor(SSColors.SSDarkGray, for: .normal)
+                b.setTitleColor(color, for: .normal)
             }
         }
+        meetup?.location = locations[selectedIndex]
+        let vc = SSDescriptionViewController()
+        vc.color = color
+        vc.meetup = meetup
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func layoutTopBar () {
@@ -82,26 +94,28 @@ class SSPickLocationViewController: UIViewController {
             make.centerY.equalTo(titleView)
         }
         
-        let nextButton = UIButton(type: .custom)
-        let nextimage = UIImage(named: "next_icon")?.withRenderingMode(.alwaysTemplate)
-        nextButton.setImage(nextimage, for: .normal)
-        nextButton.tintColor = color
-        nextButton.sizeToFit()
-        view.addSubview(nextButton)
-        nextButton.addTarget(self, action: #selector(nextButtonSelected), for: .touchUpInside)
-        nextButton.snp.makeConstraints { (make) in
-            make.right.equalTo(-15)
-            make.centerY.equalTo(titleView)
-        }
+//        let nextButton = UIButton(type: .custom)
+//        let nextimage = UIImage(named: "next_icon")?.withRenderingMode(.alwaysTemplate)
+//        nextButton.setImage(nextimage, for: .normal)
+//        nextButton.tintColor = color
+//        nextButton.sizeToFit()
+//        view.addSubview(nextButton)
+//        nextButton.addTarget(self, action: #selector(nextButtonSelected), for: .touchUpInside)
+//        nextButton.snp.makeConstraints { (make) in
+//            make.right.equalTo(-15)
+//            make.centerY.equalTo(titleView)
+//        }
     }
     
     func backbuttonSelected() {
-        navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
     
     func nextButtonSelected() {
+        meetup?.location = locations[selectedIndex]
         let vc = SSDescriptionViewController()
         vc.color = color
+        vc.meetup = meetup
         navigationController?.pushViewController(vc, animated: true)
     }
 }

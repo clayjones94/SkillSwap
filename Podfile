@@ -13,5 +13,7 @@ target 'SkillSwap' do
   pod 'AnimatedTextInput', '~> 0.4.0'
   pod 'DynamicButton', '~> 3.1.0'
   pod 'PopupDialog', '~> 0.5'
+  pod 'Alamofire', '~> 4.3'
+  pod 'LFLoginController'
 end
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import DynamicButton
+import PopupDialog
 
 class SSSelectTimeViewController: UIViewController {
     
@@ -17,7 +18,8 @@ class SSSelectTimeViewController: UIViewController {
     let downButton = DynamicButton(style: DynamicButtonStyle.caretDown)
     let timeLabel = UILabel()
     var numMinutes = 0
-    let ownersMinutes = 60
+    let ownersMinutes = SSCurrentUser.sharedInstance.user?.time
+    var meetup: SSMeetup?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +43,7 @@ class SSSelectTimeViewController: UIViewController {
         
         let myTimeLabel = UILabel()
         view.addSubview(myTimeLabel)
-        myTimeLabel.text = "You have \n \(ownersMinutes) minutes \n to spend."
+        myTimeLabel.text = "You have \n \(ownersMinutes!) minutes \n to spend."
         myTimeLabel.numberOfLines = 0
         myTimeLabel.sizeToFit()
         myTimeLabel.textAlignment = .center
@@ -131,12 +133,12 @@ class SSSelectTimeViewController: UIViewController {
     }
     
     func addTime() {
-        if (numMinutes <= ownersMinutes - 5) {
+        if (numMinutes <= ownersMinutes! - 5) {
             numMinutes += 5
             updateTimeLabel()
         }
         
-        if (numMinutes > ownersMinutes - 5) {
+        if (numMinutes > ownersMinutes! - 5) {
             upButton.setStyle(DynamicButtonStyle.none, animated: false)
             upButton.isUserInteractionEnabled = false
         }
@@ -158,7 +160,7 @@ class SSSelectTimeViewController: UIViewController {
             downButton.isUserInteractionEnabled = false
         }
         
-        if (numMinutes <= ownersMinutes - 5 && upButton.style == DynamicButtonStyle.none) {
+        if (numMinutes <= ownersMinutes! - 5 && upButton.style == DynamicButtonStyle.none) {
             upButton.setStyle(DynamicButtonStyle.caretUp, animated: false)
             upButton.isUserInteractionEnabled = true
         }
@@ -170,12 +172,22 @@ class SSSelectTimeViewController: UIViewController {
     }
     
     func backbuttonSelected() {
-        navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
     
     func nextButtonSelected() {
+        if numMinutes == 0 {
+            let popup = PopupDialog(title: "Whoops", message: "Can't have 0 time")
+            let buttonOne = CancelButton(title: "dimiss") {}
+            popup.addButtons([buttonOne])
+            self.present(popup, animated: true, completion: nil)
+            return
+        }
+        
         let vc = SSPostSummaryViewController()
         vc.color = color
+        meetup?.timeExchange = numMinutes
+        vc.meetup = meetup
         navigationController?.pushViewController(vc, animated: true)
     }
 }

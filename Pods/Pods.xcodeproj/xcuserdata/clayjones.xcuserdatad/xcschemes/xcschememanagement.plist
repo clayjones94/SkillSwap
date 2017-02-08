@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>AnimatedTextInput-AnimatedTextInput.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -20,6 +25,11 @@
 			<false/>
 		</dict>
 		<key>DynamicButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LFLoginController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,7 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>366808B818AE99CE377BC8B975522F82</key>
+		<key>6C0A4CA574F58DE0E298727CFA613FEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +82,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8F6E0EAD56676F76ED59B2504C183EF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AAE24ACA00B7B35A5EB9168B684E5317</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D31DE475ACCE40D8821578739F0DE38D</key>
+		<key>B76451B045A1D19D9664922D77784C3A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D804B94BEED726968E8782734A324904</key>
+		<key>E7274CF7CF080315532B99653D347208</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA723B26DAE4E6A16EC312A3BFA42DF7</key>
+		<key>EF13F595C5D4374801C138AA2AF8F806</key>
 		<dict>
 			<key>primary</key>
 			<true/>

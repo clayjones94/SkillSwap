@@ -12,9 +12,14 @@ class SSCurrentUser: NSObject {
     
     static let sharedInstance = SSCurrentUser()
     
-    var name: String = ""
-    var phone: String = ""
-    var loggedIn: Bool = false
+    override init() {
+        user = SSStorage.sharedInstance.currentUser
+        user?.time = 120
+    }
+    
+    var user: SSUser?
+    var loggedIn = false
+    var currentMeetupPost: SSMeetup?
     
     var teachingStatus: TeachingStatus = .none
     var learningStatus: LearningStatus = .none
