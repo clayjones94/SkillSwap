@@ -19,10 +19,10 @@ class SSStorage: NSObject {
     let writing = SSSubject(id: "writing", name: "Writing", state: SubjectState.active, colorHex: "#FEDB8E")
     let physics = SSSubject(id: "physics", name: "Physics", state: SubjectState.active, colorHex: "#92D4F5")
     let chemistry = SSSubject(id: "chem", name: "Chemistry", state: SubjectState.active, colorHex: "#75DF98")
-    let economics = SSSubject(id: "economics", name: "Economics", state: SubjectState.active, colorHex: "#F3A273")
-    let engineering = SSSubject(id: "engineering", name: "Engineering", state: SubjectState.active, colorHex: "#EB6E7B")
-    let ushistory = SSSubject(id: "ushistory", name: "US History", state: SubjectState.active, colorHex: "#60D0E3")
-    let artHistory = SSSubject(id: "arthistory", name: "Art History", state: SubjectState.active, colorHex: "#D697DB")
+    let athletics = SSSubject(id: "athletics", name: "Athletics", state: SubjectState.active, colorHex: "#F3A273")
+    let music = SSSubject(id: "music", name: "Music", state: SubjectState.active, colorHex: "#EB6E7B")
+    let interviewPrep = SSSubject(id: "ushistory", name: "Interview Prep", state: SubjectState.active, colorHex: "#60D0E3")
+    let art = SSSubject(id: "art", name: "Art", state: SubjectState.active, colorHex: "#D697DB")
     
     let user1 = SSUser(id: "1", name: "Season Remsen", phone: "858-472-3180")
     let user2 = SSUser(id: "2", name: "Brenton Pettry", phone: "858-472-3180")
@@ -34,10 +34,10 @@ class SSStorage: NSObject {
     let user8 = SSUser(id: "8", name: "Leonida Elledge", phone: "858-472-3180")
     let user9 = SSUser(id: "9", name: "Jolyn Lorence", phone: "858-472-3180")
     
-    let loc1 = SSLocation(name: "Tressider Union", address: "address")
-    let loc2 = SSLocation(name: "Green Library", address: "address")
-    let loc3 = SSLocation(name: "Huang Basement", address: "address")
-    let loc4 = SSLocation(name: "Old Union", address: "address")
+    let loc1 = SSLocation(name: "Tressider Union", address: "address1")
+    let loc2 = SSLocation(name: "Green Library", address: "address2")
+    let loc3 = SSLocation(name: "Huang Basement", address: "address3")
+    let loc4 = SSLocation(name: "Old Union", address: "address4")
     
     override init() {
         math.image = #imageLiteral(resourceName: "math_icon")
@@ -45,10 +45,10 @@ class SSStorage: NSObject {
         writing.image = #imageLiteral(resourceName: "Writing")
         physics.image = #imageLiteral(resourceName: "physics_icon")
         chemistry.image = #imageLiteral(resourceName: "chem_icon")
-        economics.image = #imageLiteral(resourceName: "psych_icon")
-        engineering.image = #imageLiteral(resourceName: "comp_sci_icon")
-        ushistory.image = #imageLiteral(resourceName: "comp_sci_icon")
-        artHistory.image = #imageLiteral(resourceName: "math_icon")
+        athletics.image = #imageLiteral(resourceName: "sports_icon")
+        music.image = #imageLiteral(resourceName: "music_icon")
+        interviewPrep.image = #imageLiteral(resourceName: "history_icon")
+        art.image = #imageLiteral(resourceName: "art_icon")
     }
     
     func getTopicsForSubject(subject: SSSubject) -> Array<SSTopic> {
@@ -66,12 +66,61 @@ class SSStorage: NSObject {
             let topic4 = SSTopic(id: "cs105", name: "Math 53", subject: math, state: TopicState.active)
             let topic5 = SSTopic(id: "cs109", name: "CME 100", subject: math, state: TopicState.active)
             return [topic1, topic2, topic3, topic4, topic5]
+        } else if subject.id == writing.id {
+            let topic1 = SSTopic(id: "Grammar", name: "Grammar", subject: math, state: TopicState.active)
+            let topic2 = SSTopic(id: "Creative Writing", name: "Creative Writing", subject: math, state: TopicState.active)
+            let topic3 = SSTopic(id: "Poetry", name: "Poetry", subject: math, state: TopicState.active)
+            let topic4 = SSTopic(id: "Haiku", name: "Haiku", subject: math, state: TopicState.active)
+            let topic5 = SSTopic(id: "Syntax", name: "Syntax", subject: math, state: TopicState.active)
+            return [topic1, topic2, topic3, topic4, topic5]
+        } else if subject.id == physics.id {
+            let topic1 = SSTopic(id: "Math 19", name: "Math 19", subject: writing, state: TopicState.active)
+            let topic2 = SSTopic(id: "Math 20", name: "Math 20", subject: writing, state: TopicState.active)
+            let topic3 = SSTopic(id: "cs103", name: "Math 51", subject: writing, state: TopicState.active)
+            let topic4 = SSTopic(id: "cs105", name: "Math 53", subject: writing, state: TopicState.active)
+            let topic5 = SSTopic(id: "cs109", name: "CME 100", subject: writing, state: TopicState.active)
+            return [topic1, topic2, topic3, topic4, topic5]
+        } else if subject.id == chemistry.id {
+            let topic1 = SSTopic(id: "Math 19", name: "Chem 31", subject: chemistry, state: TopicState.active)
+            let topic2 = SSTopic(id: "Math 20", name: "Chem 45", subject: chemistry, state: TopicState.active)
+            let topic3 = SSTopic(id: "cs103", name: "Organic Chemistry", subject: chemistry, state: TopicState.active)
+            let topic4 = SSTopic(id: "cs105", name: "Chem 191", subject: chemistry, state: TopicState.active)
+            let topic5 = SSTopic(id: "cs109", name: "Moles", subject: chemistry, state: TopicState.active)
+            return [topic1, topic2, topic3, topic4, topic5]
+        } else if subject.id == athletics.id {
+            let topic1 = SSTopic(id: "Math 19", name: "Volleyball", subject: athletics, state: TopicState.active)
+            let topic2 = SSTopic(id: "Math 20", name: "Baseball", subject: athletics, state: TopicState.active)
+            let topic3 = SSTopic(id: "cs103", name: "Ballroom Dance", subject: athletics, state: TopicState.active)
+            let topic4 = SSTopic(id: "cs105", name: "Self Defense", subject: athletics, state: TopicState.active)
+            let topic5 = SSTopic(id: "cs109", name: "Basketball", subject: athletics, state: TopicState.active)
+            return [topic1, topic2, topic3, topic4, topic5]
+        } else if subject.id == music.id {
+            let topic1 = SSTopic(id: "Math 19", name: "Guitar", subject: music, state: TopicState.active)
+            let topic2 = SSTopic(id: "Math 20", name: "Piano", subject: music, state: TopicState.active)
+            let topic3 = SSTopic(id: "cs103", name: "Singing", subject: music, state: TopicState.active)
+            let topic4 = SSTopic(id: "cs105", name: "Viola", subject: music, state: TopicState.active)
+            let topic5 = SSTopic(id: "cs109", name: "Rapping", subject: music, state: TopicState.active)
+            return [topic1, topic2, topic3, topic4, topic5]
+        } else if subject.id == art.id {
+            let topic1 = SSTopic(id: "Math 19", name: "Watercolors", subject: art, state: TopicState.active)
+            let topic2 = SSTopic(id: "Math 20", name: "Painting", subject: art, state: TopicState.active)
+            let topic3 = SSTopic(id: "cs103", name: "Drawing", subject: art, state: TopicState.active)
+            let topic4 = SSTopic(id: "cs105", name: "Graphical Design", subject: art, state: TopicState.active)
+            let topic5 = SSTopic(id: "cs109", name: "Ceramics", subject: art, state: TopicState.active)
+            return [topic1, topic2, topic3, topic4, topic5]
+        }  else if subject.id == interviewPrep.id {
+            let topic1 = SSTopic(id: "Math 19", name: "Computer Science", subject: interviewPrep, state: TopicState.active)
+            let topic2 = SSTopic(id: "Math 20", name: "Consulting", subject: interviewPrep, state: TopicState.active)
+            let topic3 = SSTopic(id: "cs103", name: "Finance", subject: interviewPrep, state: TopicState.active)
+            let topic4 = SSTopic(id: "cs105", name: "Medical", subject: interviewPrep, state: TopicState.active)
+            let topic5 = SSTopic(id: "cs109", name: "Education", subject: interviewPrep, state: TopicState.active)
+            return [topic1, topic2, topic3, topic4, topic5]
         }
         return []
     }
     
     func getAllSubjects() -> Array<SSSubject> {
-        return [computerScience, math, writing, physics, chemistry, economics, engineering, ushistory, artHistory]
+        return [computerScience, math, writing, physics, chemistry, athletics, music, interviewPrep, art]
     }
     
     func getAllUsers() -> Array<SSUser> {

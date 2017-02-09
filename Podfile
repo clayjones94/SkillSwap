@@ -15,5 +15,7 @@ target 'SkillSwap' do
   pod 'PopupDialog', '~> 0.5'
   pod 'Alamofire', '~> 4.3'
   pod 'LFLoginController'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end
 

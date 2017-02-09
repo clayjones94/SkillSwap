@@ -33,7 +33,7 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func refresh() {
         SSDatabase.getAllMeetups { (success, meetups) in
-            self.meetups = meetups
+            self.meetups = meetups!
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

@@ -193,7 +193,14 @@ class SSPostSummaryViewController: UIViewController {
         navigationController?.dismiss(animated: true, completion: nil)
         SSCurrentUser.sharedInstance.learningStatus = .waiting
         
+        meetup?.student = SSCurrentUser.sharedInstance.user
         SSCurrentUser.sharedInstance.currentMeetupPost = meetup
+        
+        SSDatabase.postMeetup(meetup: meetup!) { (success) in
+            if(success){
+                
+            }
+        }
         
         let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
         NotificationCenter.default.post(name: notificationName, object: nil)

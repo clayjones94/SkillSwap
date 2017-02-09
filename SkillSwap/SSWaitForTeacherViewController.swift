@@ -316,7 +316,8 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
             print("You canceled the car dialog.")
         }
         
-        let buttonTwo = DefaultButton(title: "😃 Pay 30 minutes") {
+        let time = SSCurrentUser.sharedInstance.currentMeetupPost?.timeExchange!
+        let buttonTwo = DefaultButton(title: "😃 Pay \(time!) minutes") {
             SSCurrentUser.sharedInstance.learningStatus = .none
             
             let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)

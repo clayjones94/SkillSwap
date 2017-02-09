@@ -152,7 +152,7 @@
 		921669AE1E49818C002EA0DB /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				921669B81E4AEFA2002EA0DB /* SSUtils.swift */,
+				921669B61E4AD65A002EA0DB /* SSStorage.swift */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -161,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				921669B01E498305002EA0DB /* SSDatabase.swift */,
-				921669B61E4AD65A002EA0DB /* SSStorage.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -225,6 +224,7 @@
 				921938241E43AFC600C6A4C8 /* SSTeachDetailViewController.swift */,
 				921938281E43C28000C6A4C8 /* SSTeacherMatchViewController.swift */,
 				921938201E42677600C6A4C8 /* SSTeachTableViewCell.swift */,
+				921669B81E4AEFA2002EA0DB /* SSUtils.swift */,
 				921669AF1E4981C2002EA0DB /* Database */,
 				921669AE1E49818C002EA0DB /* Storage */,
 				921669A91E497CC4002EA0DB /* Models */,
@@ -289,6 +289,7 @@
 				92C075921E3C1F8100D0B063 /* Resources */,
 				E8010A7B77A83550991FD00B /* [CP] Embed Pods Frameworks */,
 				C1EA1D77C06A40ACCDD87D9A /* [CP] Copy Pods Resources */,
+				921669BE1E4C7F61002EA0DB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -369,6 +370,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		921669BE1E4C7F61002EA0DB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" e812dda8407c11c7fe8c6940d3fb2b7d65a22c87 7ea56a08c2180d33712435a90203c0f28b9b760492da03eb0eab28e0c5077734";
 		};
 		C1EA1D77C06A40ACCDD87D9A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
