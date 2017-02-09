@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class SSMeetupsViewController: UIViewController {
 
@@ -14,22 +15,27 @@ class SSMeetupsViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        layoutSideMenu()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func layoutSideMenu(){
+        
+        let menuButton = UIButton(type: .custom)
+        let image = UIImage(named: "side_menu")?.withRenderingMode(.alwaysTemplate)
+        menuButton.setImage(image, for: .normal)
+        menuButton.tintColor = SSColors.SSBlue
+        menuButton.sizeToFit()
+        view.addSubview(menuButton)
+        menuButton.snp.makeConstraints { (make) in
+            make.centerY.equalTo(view.snp.top).offset(UIApplication.shared.statusBarFrame.size.height + 28)
+            make.leftMargin.equalTo(10)
+        }
+        
+        menuButton.addTarget(self, action: #selector(self.menuPressed), for: .touchUpInside)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func menuPressed() {
+        present(SideMenuManager.menuLeftNavigationController!, animated: true, completion: nil)
     }
-    */
 
 }

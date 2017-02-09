@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import SideMenu
 
 class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let tableView = UITableView(frame: .zero, style: UITableViewStyle.plain)
     
     var menuItems: Array<Dictionary<String, Any>>?
+    
+    var mainViewController: SSMainViewController?
+    var meetupViewController: SSMeetupsViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,11 +99,15 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func home() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.navController?.viewControllers = [mainViewController!]
         dismiss(animated: true, completion: nil)
     }
     
     func meetups () {
-//        dismiss(animated: true, completion: nil)
-        navigationController?.pushViewController(SSMeetupsViewController(), animated: false)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.navController?.viewControllers = [meetupViewController!]
+        dismiss(animated: true, completion: nil)
+//        navigationController?.pushViewController(meetupViewController, animated: false)
     }
 }

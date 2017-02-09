@@ -77,14 +77,6 @@ class SSMainViewController: UIViewController {
     }
     
     private func layoutSideMenu(){
-        let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: SSSideMenuViewController())
-        menuLeftNavigationController.view.backgroundColor = .white
-        menuLeftNavigationController.leftSide = true
-        SideMenuManager.menuLeftNavigationController = menuLeftNavigationController
-        SideMenuManager.menuFadeStatusBar = true
-        SideMenuManager.menuAnimationBackgroundColor = .white
-        SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         
         let menuButton = UIButton(type: .custom)
         let image = UIImage(named: "side_menu")?.withRenderingMode(.alwaysTemplate)

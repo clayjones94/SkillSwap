@@ -7,24 +7,44 @@
 //
 
 import UIKit
+import SideMenu
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var navController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let mainViewController = UINavigationController(rootViewController: SSMainViewController())
+        let mainViewController = SSMainViewController()
         mainViewController.view.backgroundColor = .white
         
-        window?.rootViewController = mainViewController
+        navController = UINavigationController.init(rootViewController: mainViewController)
+        
+        let sideMenuController = SSSideMenuViewController()
+        sideMenuController.mainViewController = mainViewController
+        sideMenuController.meetupViewController = SSMeetupsViewController()
+        let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: sideMenuController)
+        menuLeftNavigationController.view.backgroundColor = .white
+        menuLeftNavigationController.leftSide = true
+        SideMenuManager.menuLeftNavigationController = menuLeftNavigationController
+        SideMenuManager.menuFadeStatusBar = true
+        SideMenuManager.menuAnimationBackgroundColor = .white
+        SideMenuManager.menuAddPanGestureToPresent(toView: (mainViewController.navigationController?.navigationBar)!)
+        SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: (mainViewController.navigationController?.view)!)
+        
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
         return true
+    }
+    
+    func setUpSideMenu () {
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
