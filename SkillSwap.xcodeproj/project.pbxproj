@@ -15,6 +15,9 @@
 		921669B71E4AD65A002EA0DB /* SSStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669B61E4AD65A002EA0DB /* SSStorage.swift */; };
 		921669B91E4AEFA2002EA0DB /* SSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669B81E4AEFA2002EA0DB /* SSUtils.swift */; };
 		921669BB1E4B9F30002EA0DB /* SSMeetupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669BA1E4B9F30002EA0DB /* SSMeetupsViewController.swift */; };
+		921669C01E552F26002EA0DB /* SSDropDownFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669BF1E552F26002EA0DB /* SSDropDownFilterView.swift */; };
+		921669C21E5552D8002EA0DB /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921669C11E5552D8002EA0DB /* DropDown.framework */; };
+		921669C41E5668FD002EA0DB /* SSRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */; };
 		921938131E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */; };
 		921938171E405C9E00C6A4C8 /* DynamicButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921938151E405C9E00C6A4C8 /* DynamicButton.framework */; };
 		9219381B1E41C7FC00C6A4C8 /* SSAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219381A1E41C7FC00C6A4C8 /* SSAnimations.swift */; };
@@ -68,6 +71,9 @@
 		921669B61E4AD65A002EA0DB /* SSStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSStorage.swift; sourceTree = "<group>"; };
 		921669B81E4AEFA2002EA0DB /* SSUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSUtils.swift; sourceTree = "<group>"; };
 		921669BA1E4B9F30002EA0DB /* SSMeetupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSMeetupsViewController.swift; sourceTree = "<group>"; };
+		921669BF1E552F26002EA0DB /* SSDropDownFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDropDownFilterView.swift; sourceTree = "<group>"; };
+		921669C11E5552D8002EA0DB /* DropDown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropDown.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/DropDown/DropDown.framework"; sourceTree = "<group>"; };
+		921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRegisterViewController.swift; sourceTree = "<group>"; };
 		921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSWaitForTeacherViewController.swift; sourceTree = "<group>"; };
 		921938141E405C9E00C6A4C8 /* CountdownLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CountdownLabel.framework; path = "Pods/../build/Debug-iphoneos/CountdownLabel/CountdownLabel.framework"; sourceTree = "<group>"; };
 		921938151E405C9E00C6A4C8 /* DynamicButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicButton.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/DynamicButton/DynamicButton.framework"; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921669C21E5552D8002EA0DB /* DropDown.framework in Frameworks */,
 				921669B41E499611002EA0DB /* Alamofire.framework in Frameworks */,
 				921669B51E499611002EA0DB /* LFLoginController.framework in Frameworks */,
 				921938231E431BD500C6A4C8 /* PopupDialog.framework in Frameworks */,
@@ -219,12 +226,14 @@
 				92C075A91E3C22E400D0B063 /* SSMainViewController.swift */,
 				923383F11E3D6DEE00C3FFF6 /* SSLearnViewController.swift */,
 				921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */,
+				921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */,
 				92C78E551E3FF19C003C8ED7 /* New Learn Post */,
 				923383F31E3D6E4300C3FFF6 /* SSTeachViewController.swift */,
 				921938241E43AFC600C6A4C8 /* SSTeachDetailViewController.swift */,
 				921938281E43C28000C6A4C8 /* SSTeacherMatchViewController.swift */,
 				921938201E42677600C6A4C8 /* SSTeachTableViewCell.swift */,
 				921669B81E4AEFA2002EA0DB /* SSUtils.swift */,
+				921669BF1E552F26002EA0DB /* SSDropDownFilterView.swift */,
 				921669AF1E4981C2002EA0DB /* Database */,
 				921669AE1E49818C002EA0DB /* Storage */,
 				921669A91E497CC4002EA0DB /* Models */,
@@ -259,6 +268,7 @@
 		DAE1D88DF9B462E543EADB02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				921669C11E5552D8002EA0DB /* DropDown.framework */,
 				921669B21E499611002EA0DB /* Alamofire.framework */,
 				921669B31E499611002EA0DB /* LFLoginController.framework */,
 				921938221E431BD500C6A4C8 /* PopupDialog.framework */,
@@ -434,11 +444,13 @@
 				921669AB1E498085002EA0DB /* SSSubject.swift in Sources */,
 				9219382B1E457FAB00C6A4C8 /* SSMeetup.swift in Sources */,
 				923383DC1E3C2EA800C3FFF6 /* SSColors.swift in Sources */,
+				921669C01E552F26002EA0DB /* SSDropDownFilterView.swift in Sources */,
 				921669BB1E4B9F30002EA0DB /* SSMeetupsViewController.swift in Sources */,
 				921669AD1E498097002EA0DB /* SSTopic.swift in Sources */,
 				92C075AA1E3C22E400D0B063 /* SSMainViewController.swift in Sources */,
 				921669B91E4AEFA2002EA0DB /* SSUtils.swift in Sources */,
 				9219382F1E45834000C6A4C8 /* SSLocation.swift in Sources */,
+				921669C41E5668FD002EA0DB /* SSRegisterViewController.swift in Sources */,
 				92C075981E3C1F8100D0B063 /* AppDelegate.swift in Sources */,
 				921938291E43C28000C6A4C8 /* SSTeacherMatchViewController.swift in Sources */,
 				923383F41E3D6E4300C3FFF6 /* SSTeachViewController.swift in Sources */,

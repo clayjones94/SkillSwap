@@ -4,6 +4,7 @@ PODS:
   - BetterSegmentedControl (0.7)
   - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
+  - DropDown (2)
   - DynamicButton (3.1.0)
   - Fabric (1.6.11)
   - LFLoginController (0.2.8)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - AnimatedTextInput (~> 0.4.0)
   - BetterSegmentedControl (~> 0.7)
   - Crashlytics
+  - DropDown
   - DynamicButton (~> 3.1.0)
   - Fabric
   - LFLoginController
@@ -28,6 +30,7 @@ SPEC CHECKSUMS:
   AnimatedTextInput: 283f38c106399b809b126f80af79fca9f4aabfd6
   BetterSegmentedControl: 0b4dde1caac22de345820858a5e2789132378c1c
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   DynamicButton: 37968af761a31274aeac427f40204688fa810342
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   LFLoginController: 9c658847b55f30dfa0c780f5331fb63117853aef
@@ -35,6 +38,6 @@ SPEC CHECKSUMS:
   SideMenu: eeff6b85456c5c6e14165655691d2033f6b24969
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
 
-PODFILE CHECKSUM: ce9219fa9c0b95518a416f977d1bfd1599623f4c
+PODFILE CHECKSUM: 54cc9f6b258ee8a53ab272a9e63ed22cc8e9bfa0
 
 COCOAPODS: 1.1.1

@@ -47,7 +47,7 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
     
     func layoutWaitingBar() {
         view.addSubview(waitingBar)
-        waitingBar.backgroundColor = color
+        waitingBar.backgroundColor = .white
         waitingBar.snp.makeConstraints { (make) in
             make.left.right.bottom.equalToSuperview()
             make.top.equalToSuperview().offset(20)
@@ -57,7 +57,7 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
         waitingBar.addSubview(titleView)
         titleView.text = "looking for help"
         titleView.font = UIFont(name: "Gotham-Book", size: 20)
-        titleView.textColor = .white
+        titleView.textColor = color
         titleView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(15)
@@ -84,7 +84,7 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
         waitingBar.addSubview(timeExpire)
         timeExpire.text = "60:00"
         timeExpire.font = UIFont(name: "Gotham-Book", size: 28)
-        timeExpire.textColor = .white
+        timeExpire.textColor = color
         timeExpire.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(timeExpireTitle.snp.bottom).offset(0)
@@ -96,8 +96,8 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 2
         button.titleLabel?.font = UIFont(name: "Gotham-Medium", size: 18)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = color
+        button.setTitleColor(color, for: .normal)
+        button.backgroundColor = .clear
         button.addTarget(self, action: #selector(seePostSelected), for: .touchUpInside)
         view.addSubview(button)
         button.snp.makeConstraints({ (make) in
@@ -110,7 +110,7 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
         let cancelButton = DynamicButton(style: DynamicButtonStyle.circleClose)
         waitingBar.addSubview(cancelButton)
         cancelButton.lineWidth = 3
-        cancelButton.strokeColor = .white
+        cancelButton.strokeColor = color
         cancelButton.highlightStokeColor = .gray
         cancelButton.addTarget(self, action: #selector(cancelPost), for: .touchUpInside)
         cancelButton.snp.makeConstraints { (make) in
@@ -158,10 +158,18 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
     }
     
     func cancelPost() {
-        SSCurrentUser.sharedInstance.learningStatus = .none
-        
-        let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
-        NotificationCenter.default.post(name: notificationName, object: nil)
+        let popup = PopupDialog(title: "Are you sure?", message: "If you cancel this you will delete your post.")
+        let buttonOne = CancelButton(title: "dimiss") {}
+        let buttonTwo = PopupDialogButton(title: "Yes, I'm sure") {
+            SSDatabase.cancelMeetup(completion: { (success) in
+                SSCurrentUser.sharedInstance.learningStatus = .none
+                
+                let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+                NotificationCenter.default.post(name: notificationName, object: nil)
+            })
+        }
+        popup.addButtons([buttonOne, buttonTwo])
+        self.present(popup, animated: true, completion: nil)
     }
     
     func layoutMatchedBar() {

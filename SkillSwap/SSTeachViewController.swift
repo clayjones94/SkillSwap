@@ -8,14 +8,89 @@
 
 import UIKit
 import PopupDialog
+import DropDown
 
 class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let tableView = UITableView(frame: .zero, style: .plain)
+    let filterView = UIView()
+    let subjectsButton = UIButton()
+    let subjectDropDown = DropDown()
+    let locationsButton = UIButton()
+    let locationDropDown = DropDown()
     var meetups: Array<SSMeetup> = []
+    var subjects: Array<SSSubject> = []
+    var locations: Array<SSLocation> = []
+    var filteredMeetups: Array<SSMeetup> = []
+    
+    var selectedSubject: SSSubject?
+    var selectedLocation: SSLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(filterView)
+        filterView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.top.equalToSuperview().offset(10)
+            make.height.equalTo(50)
+        }
+        
+        var seperator = UIView()
+        seperator.backgroundColor = SSColors.SSLightGray
+        filterView.addSubview(seperator)
+        seperator.snp.makeConstraints { (make) in
+            make.left.top.right.equalToSuperview()
+            make.height.equalTo(1)
+        }
+        
+        seperator = UIView()
+        seperator.backgroundColor = SSColors.SSLightGray
+        filterView.addSubview(seperator)
+        seperator.snp.makeConstraints { (make) in
+            make.left.bottom.right.equalToSuperview()
+            make.height.equalTo(1)
+        }
+        
+        seperator = UIView()
+        seperator.backgroundColor = SSColors.SSLightGray
+        filterView.addSubview(seperator)
+        seperator.snp.makeConstraints { (make) in
+            make.centerX.top.bottom.equalToSuperview()
+            make.width.equalTo(1)
+        }
+        
+        filterView.addSubview(subjectsButton)
+        subjectDropDown.anchorView = subjectsButton
+        subjectDropDown.backgroundColor = .white
+        subjectDropDown.textFont = UIFont(name: "Gotham-Book", size: 12)!
+        subjectDropDown.textColor = SSColors.SSBlue
+        subjectsButton.addTarget(self, action: #selector(filterSubjects), for: .touchUpInside)
+        subjectsButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 14)
+        subjectsButton.setTitleColor(SSColors.SSBlue, for: .normal)
+        subjectsButton.setTitle("▼All Subjects", for: .normal)
+        subjectsButton.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview().offset(-view.frame.size.width/4)
+            make.height.equalTo(30)
+            make.width.equalTo(view.frame.size.width/2)
+        }
+        
+        filterView.addSubview(locationsButton)
+        locationsButton.setTitle("▼All Locations", for: .normal)
+        locationDropDown.anchorView = locationsButton
+        locationDropDown.backgroundColor = .white
+        locationDropDown.textFont = UIFont(name: "Gotham-Book", size: 12)!
+        locationDropDown.textColor = SSColors.SSBlue
+        locationsButton.addTarget(self, action: #selector(filterLocations), for: .touchUpInside)
+        locationsButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 14)
+        locationsButton.setTitleColor(SSColors.SSBlue, for: .normal)
+        locationsButton.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview().offset(view.frame.size.width/4)
+            make.height.equalTo(30)
+            make.width.equalTo(view.frame.size.width/2)
+        }
 
         view.backgroundColor = .white
         view.addSubview(tableView)
@@ -23,12 +98,58 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.snp.makeConstraints { (make) in
             make.bottom.left.right.equalToSuperview()
-            make.top.equalToSuperview().offset(20)
+            make.top.equalTo(filterView.snp.bottom)
         }
         
         tableView.register(SSTeachTableViewCell.self, forCellReuseIdentifier: "teach cell")
         
         refresh()
+    }
+    
+    func filterLocations() {
+        var names: Array<String> = ["All Locations"]
+        for location in self.locations {
+            names.append(location.name!)
+        }
+        locationDropDown.dataSource = names
+        
+        locationDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            for location in self.locations {
+                if item == location.name {
+                    self.selectedLocation = location
+                    self.locationsButton.setTitle("▼ " + (self.selectedLocation?.name)!, for: .normal)
+                } else if item == "All Locations" {
+                    self.locationsButton.setTitle("▼ All Locations", for: .normal)
+                    self.selectedLocation = nil
+                }
+            }
+        }
+        
+        locationDropDown.show()
+        locationDropDown.dismissMode = .onTap
+    }
+    
+    func filterSubjects() {
+        var names: Array<String> = ["All Subjects"]
+        for subject in self.subjects {
+            names.append(subject.name!)
+        }
+        subjectDropDown.dataSource = names
+        
+        subjectDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            for subject in self.subjects {
+                if item == subject.name {
+                    self.selectedSubject = subject
+                    self.subjectsButton.setTitle("▼ " + (self.selectedSubject?.name)!, for: .normal)
+                } else if item == "All Subjects" {
+                    self.subjectsButton.setTitle("▼ All Subjects", for: .normal)
+                    self.selectedSubject = nil
+                }
+            }
+        }
+        
+        subjectDropDown.show()
+        subjectDropDown.dismissMode = .onTap
     }
     
     func refresh() {
@@ -37,6 +158,14 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+        }
+        
+        SSDatabase.getAllSubjects { (success, subjects) in
+            self.subjects = subjects
+        }
+        
+        SSDatabase.getAllMeetupLocations { (success, locations) in
+            self.locations = locations
         }
     }
  

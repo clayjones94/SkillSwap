@@ -17,5 +17,6 @@ target 'SkillSwap' do
   pod 'LFLoginController'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'DropDown'
 end
 

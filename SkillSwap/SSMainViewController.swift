@@ -36,9 +36,9 @@ class SSMainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         controlValueChanged()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-//        if !SSCurrentUser.sharedInstance.loggedIn {
-//            loginUser()
-//        }
+        if !SSCurrentUser.sharedInstance.loggedIn {
+            loginUser()
+        }
     }
     
     let segControl = BetterSegmentedControl(
@@ -123,8 +123,7 @@ class SSMainViewController: UIViewController {
 
     func loginUser() {
         //1. Create a LFLoginController instance
-        let loginController = LFLoginController()
-        loginController.delegate = self
+        let loginController = SSRegisterViewController()
         
         self.navigationController?.pushViewController(loginController, animated: true)
     }
