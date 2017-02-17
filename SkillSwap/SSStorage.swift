@@ -67,18 +67,18 @@ class SSStorage: NSObject {
             let topic5 = SSTopic(id: "cs109", name: "CME 100", subject: math, state: TopicState.active)
             return [topic1, topic2, topic3, topic4, topic5]
         } else if subject.id == writing.id {
-            let topic1 = SSTopic(id: "Grammar", name: "Grammar", subject: math, state: TopicState.active)
-            let topic2 = SSTopic(id: "Creative Writing", name: "Creative Writing", subject: math, state: TopicState.active)
-            let topic3 = SSTopic(id: "Poetry", name: "Poetry", subject: math, state: TopicState.active)
-            let topic4 = SSTopic(id: "Haiku", name: "Haiku", subject: math, state: TopicState.active)
-            let topic5 = SSTopic(id: "Syntax", name: "Syntax", subject: math, state: TopicState.active)
+            let topic1 = SSTopic(id: "Grammar", name: "Grammar", subject: writing, state: TopicState.active)
+            let topic2 = SSTopic(id: "Creative Writing", name: "Creative Writing", subject: writing, state: TopicState.active)
+            let topic3 = SSTopic(id: "Poetry", name: "Poetry", subject: writing, state: TopicState.active)
+            let topic4 = SSTopic(id: "Haiku", name: "Haiku", subject: writing, state: TopicState.active)
+            let topic5 = SSTopic(id: "Syntax", name: "Syntax", subject: writing, state: TopicState.active)
             return [topic1, topic2, topic3, topic4, topic5]
         } else if subject.id == physics.id {
-            let topic1 = SSTopic(id: "Math 19", name: "Math 19", subject: writing, state: TopicState.active)
-            let topic2 = SSTopic(id: "Math 20", name: "Math 20", subject: writing, state: TopicState.active)
-            let topic3 = SSTopic(id: "cs103", name: "Math 51", subject: writing, state: TopicState.active)
-            let topic4 = SSTopic(id: "cs105", name: "Math 53", subject: writing, state: TopicState.active)
-            let topic5 = SSTopic(id: "cs109", name: "CME 100", subject: writing, state: TopicState.active)
+            let topic1 = SSTopic(id: "Math 19", name: "Math 19", subject: physics, state: TopicState.active)
+            let topic2 = SSTopic(id: "Math 20", name: "Math 20", subject: physics, state: TopicState.active)
+            let topic3 = SSTopic(id: "cs103", name: "Math 51", subject: physics, state: TopicState.active)
+            let topic4 = SSTopic(id: "cs105", name: "Math 53", subject: physics, state: TopicState.active)
+            let topic5 = SSTopic(id: "cs109", name: "CME 100", subject: physics, state: TopicState.active)
             return [topic1, topic2, topic3, topic4, topic5]
         } else if subject.id == chemistry.id {
             let topic1 = SSTopic(id: "Math 19", name: "Chem 31", subject: chemistry, state: TopicState.active)
@@ -139,5 +139,12 @@ class SSStorage: NSObject {
         let meetup5 = SSMeetup(id: "5", student: user5, summary: "Combinations", details: "Please I really need help on this one assignment associated with this specific topic", location: loc1, topic: getTopicsForSubject(subject: computerScience)[4], timeExchange: 30)
         let meetup6 = SSMeetup(id: "6", student: user6, summary: "Boggle Recursion", details: "Please I really need help on this one assignment associated with this specific topic", location: loc4, topic: getTopicsForSubject(subject: computerScience)[1], timeExchange: 20)
         return [meetup1, meetup2, meetup3, meetup4, meetup5, meetup6]
+    }
+    
+    func getHistory() -> Array<SSMeetup>{
+        let meetup7 = SSMeetup(id: "7", student: user7, summary: "PWR Grammar Check", details: "I am an international student and need help with editing my PWR paper", location: loc1, topic: getTopicsForSubject(subject: writing)[0], timeExchange: 20)
+        let meetup8 = SSMeetup(id: "8", student: user8, summary: "Want to Learn Chords", details: "I just got a guitar and I just want to play Wonderwall", location: loc2, topic: getTopicsForSubject(subject: music)[0], timeExchange: 30)
+        let meetup9 = SSMeetup(id: "9", student: user9, summary: "PSET 1 Help", details: "I'm dying send help pls", location: loc3, topic: getTopicsForSubject(subject: math)[0], timeExchange: 45)
+        return [meetup7, meetup8, meetup9]
     }
 }

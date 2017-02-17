@@ -124,29 +124,31 @@ class SSMainViewController: UIViewController {
     func loginUser() {
         //1. Create a LFLoginController instance
         let loginController = SSRegisterViewController()
+        let nav = UINavigationController(rootViewController: loginController)
+        nav.setToolbarHidden(true, animated: false)
         
-        self.navigationController?.pushViewController(loginController, animated: true)
+        self.present(nav, animated: true, completion: nil)
     }
 }
 
-extension SSMainViewController: LFLoginControllerDelegate {
-    
-    func loginDidFinish(email: String, password: String, type: LFLoginController.SendType) {
-        print(email)
-        print(password)
-        print(type)
-        
-        SSDatabase.registerUser(user: SSUser(id: "1", name: "Clay Jones", phone: "858-472-3180")) { (success, newUser) in
-            if success {
-                SSCurrentUser.sharedInstance.loggedIn = true
-                SSCurrentUser.sharedInstance.user = newUser
-                _ = self.navigationController?.popViewController(animated: true)
-            }
-        }
-    }
-    
-    func forgotPasswordTapped() {
-        
-        print("forgot password")
-    }
-}
+//extension SSMainViewController: LFLoginControllerDelegate {
+//    
+//    func loginDidFinish(email: String, password: String, type: LFLoginController.SendType) {
+//        print(email)
+//        print(password)
+//        print(type)
+//        
+//        SSDatabase.registerUser(user: SSUser(id: "1", name: "Clay Jones", phone: "858-472-3180")) { (success, newUser) in
+//            if success {
+//                SSCurrentUser.sharedInstance.loggedIn = true
+//                SSCurrentUser.sharedInstance.user = newUser
+//                _ = self.navigationController?.popViewController(animated: true)
+//            }
+//        }
+//    }
+//    
+//    func forgotPasswordTapped() {
+//        
+//        print("forgot password")
+//    }
+//}

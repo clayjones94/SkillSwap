@@ -18,6 +18,8 @@
 		921669C01E552F26002EA0DB /* SSDropDownFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669BF1E552F26002EA0DB /* SSDropDownFilterView.swift */; };
 		921669C21E5552D8002EA0DB /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921669C11E5552D8002EA0DB /* DropDown.framework */; };
 		921669C41E5668FD002EA0DB /* SSRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */; };
+		921669C61E56B266002EA0DB /* SSHistoryTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669C51E56B266002EA0DB /* SSHistoryTableTableViewCell.swift */; };
+		921669C81E56BBA8002EA0DB /* SSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669C71E56BBA8002EA0DB /* SSLoginViewController.swift */; };
 		921938131E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */; };
 		921938171E405C9E00C6A4C8 /* DynamicButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921938151E405C9E00C6A4C8 /* DynamicButton.framework */; };
 		9219381B1E41C7FC00C6A4C8 /* SSAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219381A1E41C7FC00C6A4C8 /* SSAnimations.swift */; };
@@ -74,6 +76,8 @@
 		921669BF1E552F26002EA0DB /* SSDropDownFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDropDownFilterView.swift; sourceTree = "<group>"; };
 		921669C11E5552D8002EA0DB /* DropDown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropDown.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/DropDown/DropDown.framework"; sourceTree = "<group>"; };
 		921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRegisterViewController.swift; sourceTree = "<group>"; };
+		921669C51E56B266002EA0DB /* SSHistoryTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHistoryTableTableViewCell.swift; sourceTree = "<group>"; };
+		921669C71E56BBA8002EA0DB /* SSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLoginViewController.swift; sourceTree = "<group>"; };
 		921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSWaitForTeacherViewController.swift; sourceTree = "<group>"; };
 		921938141E405C9E00C6A4C8 /* CountdownLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CountdownLabel.framework; path = "Pods/../build/Debug-iphoneos/CountdownLabel/CountdownLabel.framework"; sourceTree = "<group>"; };
 		921938151E405C9E00C6A4C8 /* DynamicButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicButton.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/DynamicButton/DynamicButton.framework"; sourceTree = "<group>"; };
@@ -223,10 +227,12 @@
 				9219381A1E41C7FC00C6A4C8 /* SSAnimations.swift */,
 				923383EF1E3D67D000C3FFF6 /* SSSideMenuViewController.swift */,
 				921669BA1E4B9F30002EA0DB /* SSMeetupsViewController.swift */,
+				921669C51E56B266002EA0DB /* SSHistoryTableTableViewCell.swift */,
 				92C075A91E3C22E400D0B063 /* SSMainViewController.swift */,
 				923383F11E3D6DEE00C3FFF6 /* SSLearnViewController.swift */,
 				921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */,
 				921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */,
+				921669C71E56BBA8002EA0DB /* SSLoginViewController.swift */,
 				92C78E551E3FF19C003C8ED7 /* New Learn Post */,
 				923383F31E3D6E4300C3FFF6 /* SSTeachViewController.swift */,
 				921938241E43AFC600C6A4C8 /* SSTeachDetailViewController.swift */,
@@ -432,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				923383F01E3D67D000C3FFF6 /* SSSideMenuViewController.swift in Sources */,
+				921669C61E56B266002EA0DB /* SSHistoryTableTableViewCell.swift in Sources */,
 				923383F61E3EA15800C3FFF6 /* SSPickClassViewController.swift in Sources */,
 				9219381D1E41D3EB00C6A4C8 /* SSCurrentUser.swift in Sources */,
 				921938211E42677600C6A4C8 /* SSTeachTableViewCell.swift in Sources */,
@@ -459,6 +466,7 @@
 				9219382D1E4580C700C6A4C8 /* SSUser.swift in Sources */,
 				92C78E521E3FC46F003C8ED7 /* SSSelectTimeViewController.swift in Sources */,
 				9219381F1E41D50800C6A4C8 /* SSConstants.swift in Sources */,
+				921669C81E56BBA8002EA0DB /* SSLoginViewController.swift in Sources */,
 				923383F21E3D6DEE00C3FFF6 /* SSLearnViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

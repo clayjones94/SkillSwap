@@ -13,20 +13,41 @@ let url = "https://skillswapserver.herokuapp.com"
 
 class SSDatabase {
     
-    class func registerUser (user: SSUser, completion: @escaping (_ success: Bool, _ user: SSUser)->()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-            completion(true, SSStorage.sharedInstance.currentUser)
-        })
+    class func registerUser (user: SSUser, password: String, completion: @escaping (_ success: Bool, _ user: SSUser?)->()) {
+        let parameters: Parameters = [
+            "phone": user.phone,
+            "name": user.name,
+            "photo": "/profile",
+            "major": "Computer Science",
+            "password": password
+        ]
+        Alamofire.request("\(url)/register", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
+            .responseJSON { response in
+                let json = response.result.value as? [String: Any]
+                print(json)
+//                let success = json?["success"] as? Bool
+                if (json?["phone"] as? String) != nil {
+                    let phone = json?["phone"] as? String
+                    let name = json?["name"] as? String
+                    let user = SSUser(id: phone!, name: name!, phone: phone!)
+                    user.time = json?["timeBank"] as? Int
+                    completion(true, user)
+                } else {
+                    completion(false, nil)
+                }
+        }
     }
     
-    class func loginUser(user: SSUser?, completion: @escaping (_ success: Bool, _ user: SSUser?)->()) {
+    class func loginUser(user: SSUser, password: String, completion: @escaping (_ success: Bool, _ user: SSUser?)->()) {
         let parameters: Parameters = [
-            "phone": "8318219707",
-            "password": "password1"
+            "phone": user.phone,
+            "name": user.name,
+            "password": password
         ]
         Alamofire.request("\(url)/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 let json = response.result.value as? [String: Any]
+                print(json)
                 let success = json?["success"] as? Bool
                 if (success == true) {
                     let data = json?["data"] as? [String: Any]
@@ -84,8 +105,9 @@ class SSDatabase {
                         
                         // student { name, phone }
                         let studentPhone = meetupJson["student"] as! String
-//                        let student = meetupJson["studentInfo"] as! [String: String]
-                        let ssStudent = SSUser(id: studentPhone, name: studentPhone, phone: studentPhone)
+                        let student = meetupJson["studentInfo"] as! [String: String]
+                        let studentName = student["name"]
+                        let ssStudent = SSUser(id: studentPhone, name: studentName!, phone: studentPhone)
                         
                         //time and state
                         let timeExchange = meetupJson["timeExchange"] as! Int
@@ -222,5 +244,10 @@ class SSDatabase {
                     completion(false)
                 }
         }
+    }
+    
+    class func getHistory(completion: @escaping (_ success: Bool, _ subjects: Array<SSMeetup>?)->()) {
+        
+        completion(true, SSStorage.sharedInstance.getHistory())
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SSRegisterViewController.swift
+//  SSLoginViewController.swift
 //  SkillSwap
 //
 //  Created by Clay Jones on 2/16/17.
@@ -9,19 +9,17 @@
 import UIKit
 import PopupDialog
 
-class SSRegisterViewController: UIViewController {
+class SSLoginViewController: UIViewController {
+
     
     let nameField = UITextField()
     let phoneField = UITextField()
     let passwordField = UITextField()
-    let registerButton = UIButton()
     let loginButton = UIButton()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.setNavigationBarHidden(true, animated: false)
-
         let backgroundImageView = UIImageView(image: #imageLiteral(resourceName: "login_background"))
         backgroundImageView.contentMode = UIViewContentMode.scaleAspectFill
         view.addSubview(backgroundImageView)
@@ -46,20 +44,7 @@ class SSRegisterViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(50)
         }
-        
-        nameField.font = UIFont(name: "Gotham-Book", size: 14)
-        view.addSubview(nameField)
-        nameField.backgroundColor = SSColors.SSGray.withAlphaComponent(0.35)
-        nameField.textColor = .white
-        nameField.placeholder = "name"
-        nameField.textAlignment = .center
-        nameField.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
-            make.width.equalTo(250)
-            make.height.equalTo(40)
-        }
-        
+
         phoneField.font = UIFont(name: "Gotham-Book", size: 14)
         view.addSubview(phoneField)
         phoneField.backgroundColor = SSColors.SSGray.withAlphaComponent(0.35)
@@ -68,7 +53,7 @@ class SSRegisterViewController: UIViewController {
         phoneField.textAlignment = .center
         phoneField.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(nameField.snp.bottom).offset(20)
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.width.equalTo(250)
             make.height.equalTo(40)
         }
@@ -87,38 +72,39 @@ class SSRegisterViewController: UIViewController {
             make.height.equalTo(40)
         }
         
-        registerButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 14)
-        view.addSubview(registerButton)
-        registerButton.backgroundColor = SSColors.SSBlue
-        registerButton.setTitleColor(.white, for: .normal)
-        registerButton.setTitle("REGISTER", for: .normal)
-        registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
-        registerButton.snp.makeConstraints { (make) in
+        loginButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 14)
+        view.addSubview(loginButton)
+        loginButton.backgroundColor = SSColors.SSBlue
+        loginButton.setTitleColor(.white, for: .normal)
+        loginButton.setTitle("LOGIN", for: .normal)
+        loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        loginButton.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(passwordField.snp.bottom).offset(20)
             make.width.equalTo(250)
             make.height.equalTo(40)
         }
         
-        loginButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 12)
-        view.addSubview(loginButton)
-        loginButton.setTitleColor(.white, for: .normal)
-        loginButton.setTitle("Already have an account? Sign in", for: .normal)
-        loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
-        loginButton.snp.makeConstraints { (make) in
+        let registerButton = UIButton()
+        registerButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 12)
+        view.addSubview(registerButton)
+        registerButton.setTitleColor(.white, for: .normal)
+        registerButton.setTitle("Don't have an account? Register", for: .normal)
+        registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        registerButton.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(registerButton.snp.bottom).offset(15)
+            make.top.equalTo(loginButton.snp.bottom).offset(15)
             make.width.equalTo(250)
             make.height.equalTo(20)
         }
     }
     
-    func login() {
-        navigationController?.pushViewController(SSLoginViewController(), animated: false)
+    func register() {
+        _ = navigationController?.popViewController(animated: false)
     }
     
-    func register() {
-        if (nameField.text?.characters.count)! < 1 || (passwordField.text?.characters.count)! < 1 || (phoneField.text?.characters.count)! < 1 {
+    func login() {
+        if (passwordField.text?.characters.count)! < 1 || (phoneField.text?.characters.count)! < 1 {
             let popup = PopupDialog(title: "Whoops", message: "Must fill in fields!")
             let buttonOne = CancelButton(title: "dimiss") {}
             popup.addButtons([buttonOne])
@@ -126,7 +112,7 @@ class SSRegisterViewController: UIViewController {
             return
         }
         let user = SSUser(id: "", name: nameField.text!, phone: phoneField.text!)
-        SSDatabase.registerUser(user: user, password: passwordField.text!) { (success, user) in
+        SSDatabase.loginUser(user: user, password: passwordField.text!) { (success, user) in
             if success {
                 SSCurrentUser.sharedInstance.user = user
                 SSCurrentUser.sharedInstance.loggedIn = true
@@ -134,7 +120,7 @@ class SSRegisterViewController: UIViewController {
                     self.dismiss(animated: true, completion: nil)
                 }
             } else {
-                let popup = PopupDialog(title: "Error", message: "Could not register")
+                let popup = PopupDialog(title: "Error", message: "Could not login")
                 let buttonOne = CancelButton(title: "dimiss") {}
                 popup.addButtons([buttonOne])
                 self.present(popup, animated: true, completion: nil)

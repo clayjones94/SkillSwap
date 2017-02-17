@@ -9,18 +9,71 @@
 import UIKit
 import SideMenu
 
-class SSMeetupsViewController: UIViewController {
-
+class SSMeetupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let tableView = UITableView(frame: .zero, style: .plain)
+    var history: Array<SSMeetup> = []
+    let menuButton = UIButton(type: .custom)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .white
+        
         layoutSideMenu()
+        
+        let historyTitle = UILabel()
+        view.addSubview(historyTitle)
+        historyTitle.font = UIFont(name: "Gotham-Medium", size: 18)
+        historyTitle.textColor = SSColors.SSBlue
+        historyTitle.text = "History"
+        historyTitle.sizeToFit()
+        historyTitle.snp.makeConstraints { (make) in
+            make.top.equalTo(menuButton)
+            make.centerX.equalToSuperview()
+        }
+        
+        view.backgroundColor = .white
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.snp.makeConstraints { (make) in
+            make.bottom.left.right.equalToSuperview()
+            make.top.equalTo(menuButton.snp.bottom).offset(10)
+        }
+        
+        tableView.register(SSHistoryTableViewCell.self, forCellReuseIdentifier: "teach cell")
+        refresh()
     }
-
+    
+    func refresh() {
+        SSDatabase.getHistory { (success, history) in
+            self.history = history!
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return history.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "teach cell") as! SSHistoryTableViewCell
+        cell.meetup = history[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
+    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        let cell = tableView.cellForRow(at: indexPath)
+    //        cell?.setSelected(false, animated: false)
+    //    }
+    
     private func layoutSideMenu(){
         
-        let menuButton = UIButton(type: .custom)
         let image = UIImage(named: "side_menu")?.withRenderingMode(.alwaysTemplate)
         menuButton.setImage(image, for: .normal)
         menuButton.tintColor = SSColors.SSBlue
@@ -37,5 +90,5 @@ class SSMeetupsViewController: UIViewController {
     func menuPressed() {
         present(SideMenuManager.menuLeftNavigationController!, animated: true, completion: nil)
     }
-
+    
 }
