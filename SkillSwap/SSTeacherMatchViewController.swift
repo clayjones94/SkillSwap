@@ -10,6 +10,8 @@ import UIKit
 import MessageUI
 
 class SSTeacherMatchViewController: UIViewController, MFMessageComposeViewControllerDelegate {
+    
+    var meetup: SSMeetup?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +48,7 @@ class SSTeacherMatchViewController: UIViewController, MFMessageComposeViewContro
         
         let nameLabel = UILabel()
         view.addSubview(nameLabel)
-        nameLabel.text = "Clay Jones"
+        nameLabel.text = meetup?.student?.name!
         nameLabel.font = UIFont(name: "Gotham-Book", size: 14)
         nameLabel.textColor = .white
         nameLabel.snp.makeConstraints { (make) in
@@ -117,8 +119,8 @@ class SSTeacherMatchViewController: UIViewController, MFMessageComposeViewContro
             composeVC.messageComposeDelegate = self
             
             // Configure the fields of the interface.
-            composeVC.recipients = ["8584723180"]
-            composeVC.body = "Hello, Clay! It's your tutor from SkillSwap. Where can I meet you?"
+            composeVC.recipients = [(meetup?.student?.phone!)!]
+            composeVC.body = "Hello, \(meetup?.student?.name!) It's your tutor from SkillSwap. Where can I meet you?"
             
             // Present the view controller modally.
             self.present(composeVC, animated: true, completion: nil)

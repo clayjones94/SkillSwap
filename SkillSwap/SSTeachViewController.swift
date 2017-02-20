@@ -22,6 +22,7 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
     var subjects: Array<SSSubject> = []
     var locations: Array<SSLocation> = []
     var filteredMeetups: Array<SSMeetup> = []
+    let refreshControl = UIRefreshControl()
     
     var selectedSubject: SSSubject?
     var selectedLocation: SSLocation?
@@ -96,6 +97,8 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        refreshControl.addTarget(self, action: #selector(SSTeachViewController.refresh), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl)
         tableView.snp.makeConstraints { (make) in
             make.bottom.left.right.equalToSuperview()
             make.top.equalTo(filterView.snp.bottom)
@@ -123,6 +126,7 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.selectedLocation = nil
                 }
             }
+            self.refresh()
         }
         
         locationDropDown.show()
@@ -146,6 +150,7 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.selectedSubject = nil
                 }
             }
+            self.refresh()
         }
         
         subjectDropDown.show()
@@ -153,9 +158,13 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func refresh() {
-        SSDatabase.getAllMeetups { (success, meetups) in
+        refreshControl.beginRefreshing()
+        refreshControl.isHidden = false
+        SSDatabase.getAllMeetups(plocation: selectedLocation, psubject: selectedSubject) { (success, meetups) in
             self.meetups = meetups!
             DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
+                self.refreshControl.isHidden = true
                 self.tableView.reloadData()
             }
         }
@@ -202,8 +211,16 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         let buttonTwo = DefaultButton(title: "🤓 Teach") {
-            SSCurrentUser.sharedInstance.teachingStatus = .matched
-            self.present(SSTeacherMatchViewController(), animated: true, completion: nil)
+            SSDatabase.acceptMeetup(meetup: self.meetups[indexPath.row], completion: { (success) in
+                if success {
+                    SSCurrentUser.sharedInstance.teachingStatus = .matched
+                    let vc = SSTeacherMatchViewController()
+                    vc.meetup = self.meetups[indexPath.row]
+                    self.present(vc, animated: true, completion: nil)
+                } else {
+                    
+                }
+            })
         }
         
         popup.addButtons([buttonOne, buttonTwo])

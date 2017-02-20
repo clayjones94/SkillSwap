@@ -15,8 +15,8 @@ class SSDatabase {
     
     class func registerUser (user: SSUser, password: String, completion: @escaping (_ success: Bool, _ user: SSUser?)->()) {
         let parameters: Parameters = [
-            "phone": user.phone,
-            "name": user.name,
+            "phone": user.phone!,
+            "name": user.name!,
             "photo": "/profile",
             "major": "Computer Science",
             "password": password
@@ -30,7 +30,7 @@ class SSDatabase {
                     let phone = json?["phone"] as? String
                     let name = json?["name"] as? String
                     let user = SSUser(id: phone!, name: name!, phone: phone!)
-                    user.time = json?["timeBank"] as? Int
+                    user.time = json?["timebank"] as? Int
                     completion(true, user)
                 } else {
                     completion(false, nil)
@@ -40,8 +40,7 @@ class SSDatabase {
     
     class func loginUser(user: SSUser, password: String, completion: @escaping (_ success: Bool, _ user: SSUser?)->()) {
         let parameters: Parameters = [
-            "phone": user.phone,
-            "name": user.name,
+            "phone": user.phone!,
             "password": password
         ]
         Alamofire.request("\(url)/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
@@ -54,7 +53,7 @@ class SSDatabase {
                     let phone = data?["phone"] as? String
                     let name = data?["name"] as? String
                     let user = SSUser(id: phone!, name: name!, phone: phone!)
-                    
+                    user.time = data?["timebank"] as? Int
                     completion(true, user)
                 } else {
                     completion(false, nil)
@@ -79,10 +78,13 @@ class SSDatabase {
 //        })
     }
     
-    class func getAllMeetups(completion: @escaping (_ success: Bool, _ subjects: Array<SSMeetup>?)->()) {
+    class func getAllMeetups(plocation: SSLocation?, psubject: SSSubject?, completion: @escaping (_ success: Bool, _ subjects: Array<SSMeetup>?)->()) {
         
-//        let parameters: Parameters
-        Alamofire.request("\(url)/getMeetups", method: .post, parameters: nil, encoding: JSONEncoding.default, headers: nil)
+        var parameters: Parameters = [
+            "state": 1
+        ]
+        
+        Alamofire.request("\(url)/getMeetups", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 let json = response.result.value as? [String: Any]
                 print(json)
@@ -121,6 +123,9 @@ class SSDatabase {
                                 location = sslocation
                             }
                         }
+                        
+                        let createdDate = meetupJson["createddate"] as! TimeInterval
+                        let date = NSDate.init(timeIntervalSinceReferenceDate: createdDate)
                         
 //                        let topicInfo = meetupJson["topicInfo"] as! [String: Any]
                         
@@ -164,7 +169,17 @@ class SSDatabase {
                         
                         let meetup = SSMeetup(id: "", student: ssStudent, summary: summary, details: details, location: location!, topic: topic!, timeExchange: timeExchange)
                         meetup.state = meetupState
-                        meetups.append(meetup)
+                        meetup.createdDate = date
+                        var insert = true
+                        if(plocation != nil && meetup.location?.address != plocation?.address){
+                            insert = false
+                        }
+                        if (psubject != nil && meetup.topic?.subject?.name != psubject?.name) {
+                            insert = false
+                        }
+                        if insert {
+                            meetups.append(meetup)
+                        }
                     }
                     completion(true, meetups)
                 } else {
@@ -207,7 +222,7 @@ class SSDatabase {
     
     class func cancelMeetup(completion: @escaping (_ success: Bool)->()) {
         let parameters: Parameters = [
-            "phone": "858-472-3180",
+            "phone": SSCurrentUser.sharedInstance.user?.phone! as Any,
             "createdDate": (SSCurrentUser.sharedInstance.currentMeetupPost?.createdDate?.timeIntervalSinceReferenceDate)!,
             "state": 3
         ]
@@ -223,14 +238,64 @@ class SSDatabase {
         }
     }
     
-    class func requestToTeach(meetup: SSMeetup, completion: @escaping (_ success: Bool)->()) {
-        
+    class func acceptMeetup(meetup: SSMeetup, completion: @escaping (_ success: Bool)->()) {
+        let parameters: Parameters = [
+            "teacher": SSCurrentUser.sharedInstance.user?.phone! as Any,
+            "student": meetup.student?.phone! as Any,
+            "createdDate": (meetup.createdDate?.timeIntervalSinceReferenceDate)!,
+            "state": 2
+        ]
+        Alamofire.request("\(url)/acceptMeetup", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
+            .responseJSON { response in
+                let json = response.result.value as? [String: Any]
+                let success = json?["success"] as? Bool
+                if (success == true) {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+        }
         completion(true)
+    }
+    
+    class func checkMeetup(meetup: SSMeetup, completion: @escaping (_ success: Bool, _ state: MeetupState?)->()) {
+        let parameters: Parameters = [
+            "student": meetup.student?.phone! as Any,
+            "createdDate": (meetup.createdDate?.timeIntervalSinceReferenceDate)!,
+        ]
+        Alamofire.request("\(url)/checkMeetup", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
+            .responseJSON { response in
+                let json = response.result.value as? [String: Any]
+                print(json)
+                let success = json?["success"] as? Bool
+                if (success == true) {
+                    let data = json?["data"] as? [String: Any]
+                    let state = data?["state"] as? Int
+                    
+                    var meetupState: MeetupState = MeetupState.active
+                    
+                    switch state! {
+                    case 2:
+                        meetupState = MeetupState.matched
+                    case 3:
+                        meetupState = MeetupState.canceled
+                    case 4:
+                        meetupState = MeetupState.expired
+                    case 5:
+                        meetupState = MeetupState.finished
+                    default:
+                        meetupState = .canceled
+                    }
+                    completion(true, meetupState)
+                } else {
+                    completion(false, nil)
+                }
+        }
     }
     
     class func payMeetup(meetup: SSMeetup, withExchange exchange: Int, completion: @escaping (_ success: Bool)->()){
         let parameters: Parameters = [
-            "phone": "858-472-3180",
+            "phone": SSCurrentUser.sharedInstance.user?.phone as Any,
             "createdDate": (SSCurrentUser.sharedInstance.currentMeetupPost?.createdDate?.timeIntervalSinceReferenceDate)!,
             "state": 4
         ]
