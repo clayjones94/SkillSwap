@@ -19,6 +19,7 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
     let color = SSColors.SSBlue
     var timer = Timer()
     var popup: PopupDialog = PopupDialog(title: "", message: "")
+    let teacherNameLabel = UILabel()
     
     var time = 60 * 60
     
@@ -230,12 +231,11 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
             make.width.height.equalTo(80)
         }
         
-        let nameLabel = UILabel()
-        matchedBar.addSubview(nameLabel)
-        nameLabel.text = "Clay Jones"
-        nameLabel.font = UIFont(name: "Gotham-Book", size: 14)
-        nameLabel.textColor = .white
-        nameLabel.snp.makeConstraints { (make) in
+        matchedBar.addSubview(teacherNameLabel)
+        teacherNameLabel.text = SSCurrentUser.sharedInstance.currentMeetupPost?.teacher?.name!
+        teacherNameLabel.font = UIFont(name: "Gotham-Book", size: 14)
+        teacherNameLabel.textColor = .white
+        teacherNameLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(iconView.snp.bottom).offset(10)
         }
@@ -347,10 +347,14 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
         
         let time = SSCurrentUser.sharedInstance.currentMeetupPost?.timeExchange!
         let buttonTwo = DefaultButton(title: "😃 Pay \(time!) minutes") {
-            SSCurrentUser.sharedInstance.learningStatus = .none
             
-            let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
-            NotificationCenter.default.post(name: notificationName, object: nil)
+            SSDatabase.payMeetup(meetup: SSCurrentUser.sharedInstance.currentMeetupPost!, completion: { (success) in
+                SSCurrentUser.sharedInstance.learningStatus = .none
+                
+                let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+                NotificationCenter.default.post(name: notificationName, object: nil)
+            })
+            
         }
         
         let buttonFour = DefaultButton(title: "🙁 We never met", height: 60) {
@@ -423,6 +427,7 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
     func updateBar(){
         matchedBar.isHidden = SSCurrentUser.sharedInstance.learningStatus == .waiting
         waitingBar.isHidden = SSCurrentUser.sharedInstance.learningStatus != .waiting
+        teacherNameLabel.text = SSCurrentUser.sharedInstance.currentMeetupPost?.teacher?.name!
     }
     
     func sendMessageButtonPressed () {
@@ -431,8 +436,8 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
             composeVC.messageComposeDelegate = self
             
             // Configure the fields of the interface.
-            composeVC.recipients = ["8584723180"]
-            composeVC.body = "Hello, Clay! Thanks for accepting my help request on SkillSwap. Where can I meet you?"
+            composeVC.recipients = [(SSCurrentUser.sharedInstance.currentMeetupPost?.teacher?.phone!)!]
+            composeVC.body = "Hello, \((SSCurrentUser.sharedInstance.currentMeetupPost?.teacher?.name!)!)! Thanks for accepting my help request on SkillSwap. Where can I meet you?"
             
             // Present the view controller modally.
             self.present(composeVC, animated: true, completion: nil)

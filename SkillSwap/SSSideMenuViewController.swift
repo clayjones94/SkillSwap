@@ -17,6 +17,19 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var mainViewController: SSMainViewController?
     var meetupViewController: SSMeetupsViewController?
+    let nameLabel = UILabel()
+    let timeLabel = UILabel()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        layoutView()
+        getUser()
+    }
+    
+    func getUser () {
+        SSDatabase.getUserInfo { (success) in
+            self.layoutView()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +49,7 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
             ],
             [
                 "title": "Logout",
-                "action": #selector(SSSideMenuViewController.home)
+                "action": #selector(SSSideMenuViewController.logout)
             ]
         ]
         
@@ -44,12 +57,9 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.dataSource = self
         tableView.frame = view.frame
         view.addSubview(tableView)
-        
-        layoutView()
     }
     
     func layoutView() {
-        let nameLabel = UILabel()
         view.addSubview(nameLabel)
         nameLabel.text = SSCurrentUser.sharedInstance.user?.name
         nameLabel.font = UIFont(name: "Gotham-Book", size: 18)
@@ -59,7 +69,6 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
             make.top.equalToSuperview().offset(40)
         }
         
-        let timeLabel = UILabel()
         view.addSubview(timeLabel)
         let time = SSCurrentUser.sharedInstance.user?.time
         timeLabel.text = "\(time!) minutes"
@@ -109,5 +118,21 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
         appDelegate.navController?.viewControllers = [meetupViewController!]
         dismiss(animated: true, completion: nil)
 //        navigationController?.pushViewController(meetupViewController, animated: false)
+    }
+    
+    func logout () {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.navController?.viewControllers = [mainViewController!]
+        dismiss(animated: true) { 
+            SSCurrentUser.sharedInstance.loggedIn = false
+            SSCurrentUser.sharedInstance.user = nil
+            SSCurrentUser.sharedInstance.learningStatus = .none
+            SSCurrentUser.sharedInstance.teachingStatus = .none
+            let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+            NotificationCenter.default.post(name: notificationName, object: nil)
+            let loginnotificationName = Notification.Name(LOGIN_STATUS_CHANGED_NOTIFICATION)
+            NotificationCenter.default.post(name: loginnotificationName, object: nil)
+        }
     }
 }

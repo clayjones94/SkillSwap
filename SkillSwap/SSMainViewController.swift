@@ -36,9 +36,7 @@ class SSMainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         controlValueChanged()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        if !SSCurrentUser.sharedInstance.loggedIn {
-            loginUser()
-        }
+        checkLogin()
     }
     
     let segControl = BetterSegmentedControl(
@@ -55,6 +53,17 @@ class SSMainViewController: UIViewController {
         
         // Register to receive notification
         NotificationCenter.default.addObserver(self, selector: #selector(SSMainViewController.controlValueChanged), name: notificationName, object: nil)
+        
+        let loginnotificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+        
+        // Register to receive notification
+        NotificationCenter.default.addObserver(self, selector: #selector(SSMainViewController.checkLogin), name: loginnotificationName, object: nil)
+    }
+    
+    func checkLogin () {
+        if !SSCurrentUser.sharedInstance.loggedIn {
+            loginUser()
+        }
     }
     
     private func layoutSegmentedControl() {

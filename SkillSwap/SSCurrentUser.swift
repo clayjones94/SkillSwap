@@ -13,8 +13,7 @@ class SSCurrentUser: NSObject {
     static let sharedInstance = SSCurrentUser()
     
     override init() {
-        user = SSStorage.sharedInstance.currentUser
-        user?.time = 120
+//        user = SSStorage.sharedInstance.currentUser
     }
     
     var user: SSUser?

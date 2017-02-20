@@ -120,7 +120,7 @@ class SSTeacherMatchViewController: UIViewController, MFMessageComposeViewContro
             
             // Configure the fields of the interface.
             composeVC.recipients = [(meetup?.student?.phone!)!]
-            composeVC.body = "Hello, \(meetup?.student?.name!) It's your tutor from SkillSwap. Where can I meet you?"
+            composeVC.body = "Hello, \((meetup?.student?.name!)!) It's your tutor from SkillSwap. Where can I meet you?"
             
             // Present the view controller modally.
             self.present(composeVC, animated: true, completion: nil)
