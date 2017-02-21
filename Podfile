@@ -18,5 +18,6 @@ target 'SkillSwap' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'DropDown'
+  pod 'KeychainSwift', '~> 7.0'
 end
 

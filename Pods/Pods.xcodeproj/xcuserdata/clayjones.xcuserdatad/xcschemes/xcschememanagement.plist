@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KeychainSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>LFLoginController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,7 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2BB5A847E0D666E9FD56D9C3659A8D59</key>
+		<key>2B01DDAE08BC73DCB0FDFB684F53D10E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,7 +82,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>38ACA430605AFB4229712A18BDDF5086</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48184B06D7700BDF0DD8DF5A75F4B3B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5168099F2EBFC99A707C03C9EADE01A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>561FDC327DCDD80127AC4F33EC1E886D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,27 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8C588D07CE859EF2D808F8A3CF8D4411</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>AAE24ACA00B7B35A5EB9168B684E5317</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9D393A11698C953784F080301E8F051</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BE90371095C0DBE48778D77EC0A451AE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>E7274CF7CF080315532B99653D347208</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5F0DA1AEF649D7B934F080BF435B23D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

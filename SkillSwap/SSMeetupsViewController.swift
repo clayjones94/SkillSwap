@@ -8,12 +8,15 @@
 
 import UIKit
 import SideMenu
+import MessageUI
 
-class SSMeetupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SSMeetupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate {
     
     let tableView = UITableView(frame: .zero, style: .plain)
     var history: Array<SSMeetup> = []
+    var active: Array<SSMeetup> = []
     let menuButton = UIButton(type: .custom)
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +27,7 @@ class SSMeetupsViewController: UIViewController, UITableViewDelegate, UITableVie
         view.addSubview(historyTitle)
         historyTitle.font = UIFont(name: "Gotham-Medium", size: 18)
         historyTitle.textColor = SSColors.SSBlue
-        historyTitle.text = "History"
+        historyTitle.text = "Meetups"
         historyTitle.sizeToFit()
         historyTitle.snp.makeConstraints { (make) in
             make.top.equalTo(menuButton)
@@ -39,38 +42,96 @@ class SSMeetupsViewController: UIViewController, UITableViewDelegate, UITableVie
             make.bottom.left.right.equalToSuperview()
             make.top.equalTo(menuButton.snp.bottom).offset(10)
         }
-        
-        tableView.register(SSHistoryTableViewCell.self, forCellReuseIdentifier: "teach cell")
+        refreshControl.addTarget(self, action: #selector(SSMeetupsViewController.refresh), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl)
+        tableView.register(SSHistoryTableViewCell.self, forCellReuseIdentifier: "history cell")
+        tableView.register(SSMeetupsActiveTableViewCell.self, forCellReuseIdentifier: "active cell")
+        refresh()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         refresh()
     }
     
     func refresh() {
-        SSDatabase.getHistory { (success, history) in
-            self.history = history!
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        refreshControl.beginRefreshing()
+        refreshControl.isHidden = false
+        SSDatabase.getUsersMeetups(astate: 2) { (success, meetups) in
+            self.active = meetups!
+            self.refreshControl.endRefreshing()
+            self.refreshControl.isHidden = true
+            self.tableView.reloadData()
+        }
+        SSDatabase.getUsersMeetups(astate: 5) { (success, meetups) in
+            self.history = meetups!
+            self.refreshControl.endRefreshing()
+            self.refreshControl.isHidden = true
+            self.tableView.reloadData()
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Active"
+        } else {
+            return "History"
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return history.count
+        if section == 0 {
+            return active.count
+        } else {
+            return history.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "teach cell") as! SSHistoryTableViewCell
-        cell.meetup = history[indexPath.row]
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "active cell") as! SSMeetupsActiveTableViewCell
+            cell.meetup = active[indexPath.row]
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "history cell") as! SSHistoryTableViewCell
+            cell.meetup = history[indexPath.row]
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
     
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        let cell = tableView.cellForRow(at: indexPath)
-    //        cell?.setSelected(false, animated: false)
-    //    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.setSelected(false, animated: false)
+        if indexPath.section == 0 {
+            let meetup = active[indexPath.row]
+            if (MFMessageComposeViewController.canSendText()) {
+                let composeVC = MFMessageComposeViewController()
+                composeVC.messageComposeDelegate = self
+                
+                // Configure the fields of the interface.
+                composeVC.recipients = [(meetup.student?.phone!)!]
+                
+                // Present the view controller modally.
+                self.present(composeVC, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    func dismissButtonPressed(){
+        self.dismiss(animated: true, completion: nil)
+    }
     
     private func layoutSideMenu(){
         

@@ -11,6 +11,7 @@ import BetterSegmentedControl
 import SnapKit
 import SideMenu
 import LFLoginController
+import KeychainSwift
 
 class SSMainViewController: UIViewController {
     
@@ -54,14 +55,17 @@ class SSMainViewController: UIViewController {
         // Register to receive notification
         NotificationCenter.default.addObserver(self, selector: #selector(SSMainViewController.controlValueChanged), name: notificationName, object: nil)
         
-        let loginnotificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+        let loginnotificationName = Notification.Name(LOGIN_STATUS_CHANGED_NOTIFICATION)
         
         // Register to receive notification
         NotificationCenter.default.addObserver(self, selector: #selector(SSMainViewController.checkLogin), name: loginnotificationName, object: nil)
     }
     
     func checkLogin () {
-        if !SSCurrentUser.sharedInstance.loggedIn {
+        let loggedIn = KeychainSwift().getBool(LOGGED_IN_KEY)
+        if loggedIn == nil {
+            loginUser()
+        } else if !(loggedIn!) {
             loginUser()
         }
     }
@@ -132,11 +136,32 @@ class SSMainViewController: UIViewController {
 
     func loginUser() {
         //1. Create a LFLoginController instance
-        let loginController = SSRegisterViewController()
-        let nav = UINavigationController(rootViewController: loginController)
-        nav.setToolbarHidden(true, animated: false)
+        let name = KeychainSwift().get(NAME_KEY)
+        let username = KeychainSwift().get(USERNAME_KEY)
+        let password = KeychainSwift().get(PASSWORD_KEY)
         
-        self.present(nav, animated: true, completion: nil)
+        if(name == nil || username == nil || password == nil) {
+            let loginController = SSRegisterViewController()
+            let nav = UINavigationController(rootViewController: loginController)
+            nav.setToolbarHidden(true, animated: false)
+            
+            self.present(nav, animated: true, completion: nil)
+            return
+        }
+        
+        let user = SSUser(id: "", name: name!, phone: username!)
+        SSDatabase.loginUser(user: user, password: password!) { (success, user) in
+            if success {
+                SSCurrentUser.sharedInstance.user = user
+                SSCurrentUser.sharedInstance.loggedIn = true
+            } else {
+                let loginController = SSRegisterViewController()
+                let nav = UINavigationController(rootViewController: loginController)
+                nav.setToolbarHidden(true, animated: false)
+                
+                self.present(nav, animated: true, completion: nil)
+            }
+        }
     }
 }
 

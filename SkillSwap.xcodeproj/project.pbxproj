@@ -20,6 +20,8 @@
 		921669C41E5668FD002EA0DB /* SSRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */; };
 		921669C61E56B266002EA0DB /* SSHistoryTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669C51E56B266002EA0DB /* SSHistoryTableTableViewCell.swift */; };
 		921669C81E56BBA8002EA0DB /* SSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669C71E56BBA8002EA0DB /* SSLoginViewController.swift */; };
+		921669CA1E5AA9EC002EA0DB /* SSMeetupsActiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669C91E5AA9EC002EA0DB /* SSMeetupsActiveTableViewCell.swift */; };
+		921669CD1E5C0C6D002EA0DB /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921669CC1E5C0C6D002EA0DB /* KeychainSwift.framework */; };
 		921938131E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */; };
 		921938171E405C9E00C6A4C8 /* DynamicButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921938151E405C9E00C6A4C8 /* DynamicButton.framework */; };
 		9219381B1E41C7FC00C6A4C8 /* SSAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219381A1E41C7FC00C6A4C8 /* SSAnimations.swift */; };
@@ -78,6 +80,9 @@
 		921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRegisterViewController.swift; sourceTree = "<group>"; };
 		921669C51E56B266002EA0DB /* SSHistoryTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHistoryTableTableViewCell.swift; sourceTree = "<group>"; };
 		921669C71E56BBA8002EA0DB /* SSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLoginViewController.swift; sourceTree = "<group>"; };
+		921669C91E5AA9EC002EA0DB /* SSMeetupsActiveTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSMeetupsActiveTableViewCell.swift; sourceTree = "<group>"; };
+		921669CB1E5B9606002EA0DB /* SkillSwap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkillSwap.entitlements; sourceTree = "<group>"; };
+		921669CC1E5C0C6D002EA0DB /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = "Pods/../build/Debug-iphoneos/KeychainSwift/KeychainSwift.framework"; sourceTree = "<group>"; };
 		921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSWaitForTeacherViewController.swift; sourceTree = "<group>"; };
 		921938141E405C9E00C6A4C8 /* CountdownLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CountdownLabel.framework; path = "Pods/../build/Debug-iphoneos/CountdownLabel/CountdownLabel.framework"; sourceTree = "<group>"; };
 		921938151E405C9E00C6A4C8 /* DynamicButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicButton.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/DynamicButton/DynamicButton.framework"; sourceTree = "<group>"; };
@@ -129,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921669CD1E5C0C6D002EA0DB /* KeychainSwift.framework in Frameworks */,
 				921669C21E5552D8002EA0DB /* DropDown.framework in Frameworks */,
 				921669B41E499611002EA0DB /* Alamofire.framework in Frameworks */,
 				921669B51E499611002EA0DB /* LFLoginController.framework in Frameworks */,
@@ -220,6 +226,7 @@
 		92C075961E3C1F8100D0B063 /* SkillSwap */ = {
 			isa = PBXGroup;
 			children = (
+				921669CB1E5B9606002EA0DB /* SkillSwap.entitlements */,
 				92C075AB1E3C23FF00D0B063 /* Default-568h@2x.png */,
 				92C075971E3C1F8100D0B063 /* AppDelegate.swift */,
 				923383DB1E3C2EA800C3FFF6 /* SSColors.swift */,
@@ -227,6 +234,7 @@
 				9219381A1E41C7FC00C6A4C8 /* SSAnimations.swift */,
 				923383EF1E3D67D000C3FFF6 /* SSSideMenuViewController.swift */,
 				921669BA1E4B9F30002EA0DB /* SSMeetupsViewController.swift */,
+				921669C91E5AA9EC002EA0DB /* SSMeetupsActiveTableViewCell.swift */,
 				921669C51E56B266002EA0DB /* SSHistoryTableTableViewCell.swift */,
 				92C075A91E3C22E400D0B063 /* SSMainViewController.swift */,
 				923383F11E3D6DEE00C3FFF6 /* SSLearnViewController.swift */,
@@ -274,6 +282,7 @@
 		DAE1D88DF9B462E543EADB02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				921669CC1E5C0C6D002EA0DB /* KeychainSwift.framework */,
 				921669C11E5552D8002EA0DB /* DropDown.framework */,
 				921669B21E499611002EA0DB /* Alamofire.framework */,
 				921669B31E499611002EA0DB /* LFLoginController.framework */,
@@ -330,6 +339,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = CG5WBEU96D;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -462,6 +476,7 @@
 				921938291E43C28000C6A4C8 /* SSTeacherMatchViewController.swift in Sources */,
 				923383F41E3D6E4300C3FFF6 /* SSTeachViewController.swift in Sources */,
 				921938131E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift in Sources */,
+				921669CA1E5AA9EC002EA0DB /* SSMeetupsActiveTableViewCell.swift in Sources */,
 				92C78E4A1E3FB4F1003C8ED7 /* SSDescriptionViewController.swift in Sources */,
 				9219382D1E4580C700C6A4C8 /* SSUser.swift in Sources */,
 				92C78E521E3FC46F003C8ED7 /* SSSelectTimeViewController.swift in Sources */,
@@ -575,11 +590,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SkillSwap/SkillSwap.entitlements;
 				DEVELOPMENT_TEAM = CG5WBEU96D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/CountdownLabel",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/LFLoginController",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/KeychainSwift",
 				);
 				INFOPLIST_FILE = SkillSwap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -595,11 +612,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SkillSwap/SkillSwap.entitlements;
 				DEVELOPMENT_TEAM = CG5WBEU96D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/CountdownLabel",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/LFLoginController",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/KeychainSwift",
 				);
 				INFOPLIST_FILE = SkillSwap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

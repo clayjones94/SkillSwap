@@ -8,6 +8,7 @@
 
 import UIKit
 import SideMenu
+import KeychainSwift
 
 class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -129,6 +130,8 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
             SSCurrentUser.sharedInstance.user = nil
             SSCurrentUser.sharedInstance.learningStatus = .none
             SSCurrentUser.sharedInstance.teachingStatus = .none
+            let keychain = KeychainSwift()
+            keychain.clear()
             let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
             NotificationCenter.default.post(name: notificationName, object: nil)
             let loginnotificationName = Notification.Name(LOGIN_STATUS_CHANGED_NOTIFICATION)

@@ -8,6 +8,7 @@
 
 import UIKit
 import PopupDialog
+import KeychainSwift
 
 class SSRegisterViewController: UIViewController {
     
@@ -118,6 +119,7 @@ class SSRegisterViewController: UIViewController {
     }
     
     func register() {
+        SSAnimations().popAnimateButton(button: registerButton)
         if (nameField.text?.characters.count)! < 1 || (passwordField.text?.characters.count)! < 1 || (phoneField.text?.characters.count)! < 1 {
             let popup = PopupDialog(title: "Whoops", message: "Must fill in fields!")
             let buttonOne = CancelButton(title: "dimiss") {}
@@ -125,8 +127,10 @@ class SSRegisterViewController: UIViewController {
             self.present(popup, animated: true, completion: nil)
             return
         }
+        registerButton.isUserInteractionEnabled = false
         let user = SSUser(id: "", name: nameField.text!, phone: phoneField.text!)
         SSDatabase.registerUser(user: user, password: passwordField.text!) { (success, user) in
+            self.registerButton.isUserInteractionEnabled = true
             if success {
                 SSCurrentUser.sharedInstance.user = user
                 SSCurrentUser.sharedInstance.loggedIn = true
@@ -135,7 +139,7 @@ class SSRegisterViewController: UIViewController {
                 }
             } else {
                 let popup = PopupDialog(title: "Error", message: "Could not register")
-                let buttonOne = CancelButton(title: "dimiss") {}
+                let buttonOne = CancelButton(title: "dismiss") {}
                 popup.addButtons([buttonOne])
                 self.present(popup, animated: true, completion: nil)
             }

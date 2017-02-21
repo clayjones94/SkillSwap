@@ -104,6 +104,7 @@ class SSLoginViewController: UIViewController {
     }
     
     func login() {
+        SSAnimations().popAnimateButton(button: loginButton)
         if (passwordField.text?.characters.count)! < 1 || (phoneField.text?.characters.count)! < 1 {
             let popup = PopupDialog(title: "Whoops", message: "Must fill in fields!")
             let buttonOne = CancelButton(title: "dimiss") {}
@@ -112,7 +113,9 @@ class SSLoginViewController: UIViewController {
             return
         }
         let user = SSUser(id: "", name: nameField.text!, phone: phoneField.text!)
+        loginButton.isUserInteractionEnabled = false
         SSDatabase.loginUser(user: user, password: passwordField.text!) { (success, user) in
+            self.loginButton.isUserInteractionEnabled = true
             if success {
                 SSCurrentUser.sharedInstance.user = user
                 SSCurrentUser.sharedInstance.loggedIn = true

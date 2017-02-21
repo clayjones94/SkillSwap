@@ -1,5 +1,5 @@
 //
-//  SSMeetupsHistoryTableViewCell.swift
+//  SSMeetupsActiveTableViewCell.swift
 //  SkillSwap
 //
 //  Created by Clay Jones on 2/1/17.
@@ -7,48 +7,34 @@
 //
 
 import UIKit
+import MessageUI
 
-class SSHistoryTableViewCell: UITableViewCell {
+class SSMeetupsActiveTableViewCell: UITableViewCell, MFMessageComposeViewControllerDelegate {
     
-    //let iconBackdrop = UIView()
     let iconView = UIImageView()
     let nameLabel = UILabel()
     let summaryLabel = UILabel()
+    let timeLabel = UILabel()
+    let paidLabel = UILabel()
     let line = UIView()
+    let messageLabel = UILabel()
+    //let messageIcon = UIImageView()
     var meetup: SSMeetup?
     
     override func layoutSubviews() {
         
-        //        addSubview(iconBackdrop)
-        //        //iconBackdrop.backgroundColor = meetup?.topic?.subject?.color
-        //        iconBackdrop.backgroundColor = SSColors.SSLightGray
-        //        iconBackdrop.layer.cornerRadius = (self.frame.size.height - 40)/2
-        //        iconBackdrop.snp.makeConstraints { (make) in
-        //            make.left.equalToSuperview().offset(10)
-        //            make.top.equalToSuperview().offset(20)
-        //            make.bottom.equalToSuperview().offset(-20)
-        //            make.width.equalTo(self.snp.height).offset(-40)
-        //        }
-        //
-        //iconBackdrop.addSubview(iconView)
-        //iconView.image = meetup?.topic?.subject?.image
         addSubview(iconView)
         iconView.image = #imageLiteral(resourceName: "profile_sub_image")
         iconView.image = iconView.image!.withRenderingMode(.alwaysTemplate)
         iconView.tintColor = SSColors.SSGray
         iconView.layer.cornerRadius = (self.frame.size.height - 40)/2
-        //iconView.image = iconView.image!.withRenderingMode(.alwaysTemplate)
-        //iconView.tintColor = detailColorForColor(color: (meetup?.topic?.subject?.color)!)
-        //        iconView.backgroundColor = meetup?.topic?.subject?.color
-        //        iconView.layer.cornerRadius = (self.frame.size.height - 40)/2
         iconView.snp.makeConstraints { (make) in
-            //            make.centerX.centerY.equalToSuperview()
-            //            make.width.height.equalToSuperview().offset(-25)
             make.left.equalToSuperview().offset(10)
             make.top.equalToSuperview().offset(20)
             make.bottom.equalToSuperview().offset(-20)
             make.width.equalTo(self.snp.height).offset(-40)
         }
+
         
         addSubview(summaryLabel)
         let summary = meetup?.summary!
@@ -71,6 +57,39 @@ class SSHistoryTableViewCell: UITableViewCell {
             make.bottom.equalTo(summaryLabel.snp.top).offset(-5)
         }
         
+//        addSubview(messageIcon)
+//        messageIcon.image = #imageLiteral(resourceName: "chat_icon")
+//        messageIcon.image = messageIcon.image!.withRenderingMode(.alwaysTemplate)
+//        messageIcon.tintColor = SSColors.SSBlue
+//        messageIcon.layer.cornerRadius = (self.frame.size.height - 40)/2
+//        iconView.snp.makeConstraints { (make) in
+//            make.left.equalToSuperview().offset(10)
+//            make.top.equalToSuperview().offset(20)
+//            make.bottom.equalToSuperview().offset(-20)
+//            make.width.equalTo(self.snp.height).offset(-40)
+//        }
+        
+        addSubview(messageLabel)
+        messageLabel.text = "message"
+        messageLabel.font = UIFont(name: "Gotham-Medium", size: 16)
+        messageLabel.textColor = SSColors.SSBlue
+        messageLabel.snp.makeConstraints({ (make) in
+            //make.right.equalToSuperview().offset(-10)
+            //make.top.equalTo(nameLabel.snp.top).offset(10)
+            make.left.equalTo(summaryLabel)
+            make.top.equalTo(summaryLabel.snp.bottom).offset(5)
+        })
+//
+//        addSubview(timeLabel)
+//        let time = meetup?.timeExchange!
+//        timeLabel.text = "\(time!) minutes"
+//        timeLabel.font = UIFont(name: "Gotham-Book", size: 10)
+//        timeLabel.textColor = SSColors.SSDarkGray
+//        timeLabel.snp.makeConstraints { (make) in
+//            make.left.equalTo(summaryLabel)
+//            make.top.equalTo(summaryLabel.snp.bottom).offset(5)
+//        }
+        
         addSubview(line)
         line.backgroundColor = SSColors.SSLightGray
         line.snp.makeConstraints { (make) in
@@ -78,6 +97,10 @@ class SSHistoryTableViewCell: UITableViewCell {
             make.height.equalTo(1)
             make.right.bottom.equalToSuperview()
         }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        //self.dismiss(animated: false, completion: nil)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
