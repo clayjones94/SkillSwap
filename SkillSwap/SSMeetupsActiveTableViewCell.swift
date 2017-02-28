@@ -14,11 +14,13 @@ class SSMeetupsActiveTableViewCell: UITableViewCell, MFMessageComposeViewControl
     let iconView = UIImageView()
     let nameLabel = UILabel()
     let summaryLabel = UILabel()
-    let timeLabel = UILabel()
-    let paidLabel = UILabel()
+    
+    let requestButton = SSIconLabelButton(detail: "Request time", icon: #imageLiteral(resourceName: "request_button"))
+    let messageButton = SSIconLabelButton(detail: "Message", icon: #imageLiteral(resourceName: "message_button"))
+    let infoButton = SSIconLabelButton(detail: "Info", icon: #imageLiteral(resourceName: "info_button"))
+    let cancelButton = SSIconLabelButton(detail: "Cancel", icon: #imageLiteral(resourceName: "cancel_button_icon"))
+    
     let line = UIView()
-    let messageLabel = UILabel()
-    //let messageIcon = UIImageView()
     var meetup: SSMeetup?
     
     override func layoutSubviews() {
@@ -30,11 +32,19 @@ class SSMeetupsActiveTableViewCell: UITableViewCell, MFMessageComposeViewControl
         iconView.layer.cornerRadius = (self.frame.size.height - 40)/2
         iconView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
-            make.top.equalToSuperview().offset(20)
-            make.bottom.equalToSuperview().offset(-20)
-            make.width.equalTo(self.snp.height).offset(-40)
+            make.top.equalToSuperview().offset(10)
+            make.width.height.equalTo(40)
         }
-
+        
+        addSubview(nameLabel)
+        nameLabel.text = meetup?.student?.name!
+        nameLabel.font = UIFont(name: "Gotham-Medium", size: 16)
+        nameLabel.textColor = SSColors.SSDarkGray
+        nameLabel.sizeToFit()
+        nameLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(iconView.snp.right).offset(10)
+            make.bottom.equalTo(iconView.snp.centerY)
+        }
         
         addSubview(summaryLabel)
         let summary = meetup?.summary!
@@ -43,52 +53,9 @@ class SSMeetupsActiveTableViewCell: UITableViewCell, MFMessageComposeViewControl
         summaryLabel.font = UIFont(name: "Gotham-Book", size: 12)
         summaryLabel.textColor = SSColors.SSDarkGray
         summaryLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(iconView.snp.right).offset(10)
-            make.centerY.equalToSuperview()
+            make.left.equalTo(nameLabel)
+            make.top.equalTo(nameLabel.snp.bottom).offset(2)
         }
-        
-        addSubview(nameLabel)
-        nameLabel.text = meetup?.student?.name!
-        nameLabel.font = UIFont(name: "Gotham-Book", size: 16)
-        nameLabel.textColor = SSColors.SSDarkGray
-        nameLabel.sizeToFit()
-        nameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(summaryLabel)
-            make.bottom.equalTo(summaryLabel.snp.top).offset(-5)
-        }
-        
-//        addSubview(messageIcon)
-//        messageIcon.image = #imageLiteral(resourceName: "chat_icon")
-//        messageIcon.image = messageIcon.image!.withRenderingMode(.alwaysTemplate)
-//        messageIcon.tintColor = SSColors.SSBlue
-//        messageIcon.layer.cornerRadius = (self.frame.size.height - 40)/2
-//        iconView.snp.makeConstraints { (make) in
-//            make.left.equalToSuperview().offset(10)
-//            make.top.equalToSuperview().offset(20)
-//            make.bottom.equalToSuperview().offset(-20)
-//            make.width.equalTo(self.snp.height).offset(-40)
-//        }
-        
-        addSubview(messageLabel)
-        messageLabel.text = "message"
-        messageLabel.font = UIFont(name: "Gotham-Medium", size: 16)
-        messageLabel.textColor = SSColors.SSBlue
-        messageLabel.snp.makeConstraints({ (make) in
-            //make.right.equalToSuperview().offset(-10)
-            //make.top.equalTo(nameLabel.snp.top).offset(10)
-            make.left.equalTo(summaryLabel)
-            make.top.equalTo(summaryLabel.snp.bottom).offset(5)
-        })
-//
-//        addSubview(timeLabel)
-//        let time = meetup?.timeExchange!
-//        timeLabel.text = "\(time!) minutes"
-//        timeLabel.font = UIFont(name: "Gotham-Book", size: 10)
-//        timeLabel.textColor = SSColors.SSDarkGray
-//        timeLabel.snp.makeConstraints { (make) in
-//            make.left.equalTo(summaryLabel)
-//            make.top.equalTo(summaryLabel.snp.bottom).offset(5)
-//        }
         
         addSubview(line)
         line.backgroundColor = SSColors.SSLightGray
@@ -97,16 +64,65 @@ class SSMeetupsActiveTableViewCell: UITableViewCell, MFMessageComposeViewControl
             make.height.equalTo(1)
             make.right.bottom.equalToSuperview()
         }
+        
+        addSubview(requestButton)
+        requestButton.addTarget(self, action: #selector(SSMeetupsActiveTableViewCell.request), for: .touchUpInside)
+        requestButton.tintColor = hexStringToUIColor(hex: "#75DF98")
+        requestButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.frame.size.width/5)
+            make.bottom.equalToSuperview().offset(-5)
+            make.width.equalTo(self.frame.size.width/5)
+            make.height.equalTo(40)
+        }
+        
+        addSubview(messageButton)
+        messageButton.tintColor = hexStringToUIColor(hex: "#92D4F5")
+        messageButton.addTarget(self, action: #selector(SSMeetupsActiveTableViewCell.message), for: .touchUpInside)
+        messageButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.frame.size.width * 2/5)
+            make.bottom.equalTo(requestButton)
+            make.width.equalTo(self.frame.size.width/5)
+            make.height.equalTo(40)
+        }
+        
+        addSubview(infoButton)
+        infoButton.tintColor = hexStringToUIColor(hex: "#FEDB8E")
+        infoButton.addTarget(self, action: #selector(SSMeetupsActiveTableViewCell.info), for: .touchUpInside)
+        infoButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.frame.size.width * 3/5)
+            make.bottom.equalTo(requestButton)
+            make.width.equalTo(self.frame.size.width/5)
+            make.height.equalTo(40)
+        }
+        
+        addSubview(cancelButton)
+        cancelButton.tintColor = hexStringToUIColor(hex: "#EB6E7B")
+        cancelButton.addTarget(self, action: #selector(SSMeetupsActiveTableViewCell.cancel), for: .touchUpInside)
+        cancelButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.frame.size.width * 4/5)
+            make.bottom.equalTo(requestButton)
+            make.height.equalTo(40)
+            make.width.equalTo(self.frame.size.width/5)
+        }
     }
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         //self.dismiss(animated: false, completion: nil)
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+    func request() {
+        SSAnimations().popAnimateButton(button: requestButton)
     }
     
+    func message() {
+        SSAnimations().popAnimateButton(button: messageButton)
+    }
+    
+    func info() {
+        SSAnimations().popAnimateButton(button: infoButton)
+    }
+    
+    func cancel() {
+        SSAnimations().popAnimateButton(button: cancelButton)
+    }
 }

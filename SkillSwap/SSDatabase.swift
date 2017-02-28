@@ -15,13 +15,24 @@ let url = "https://skillswapserver.herokuapp.com"
 class SSDatabase {
     
     class func registerUser (user: SSUser, password: String, completion: @escaping (_ success: Bool, _ user: SSUser?)->()) {
-        let parameters: Parameters = [
+        var parameters: Parameters = [
             "phone": user.phone!,
             "name": user.name!,
             "photo": "/profile",
             "major": "Computer Science",
             "password": password
         ]
+        
+        if let apns = SSCurrentUser.sharedInstance.apnsToken {
+            parameters = [
+                "phone": user.phone!,
+                "name": user.name!,
+                "photo": "/profile",
+                "major": "Computer Science",
+                "password": password,
+                "apnsToken":apns
+            ]
+        }
         Alamofire.request("\(url)/register", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 let json = response.result.value as? [String: Any]
@@ -31,12 +42,16 @@ class SSDatabase {
                     let phone = json?["phone"] as? String
                     let name = json?["name"] as? String
                     let user = SSUser(id: phone!, name: name!, phone: phone!)
-                    user.time = json?["timebank"] as? Int
+                    let time = json?["timebank"] as? Int
+                    user.time = time
                     let keychain = KeychainSwift()
                     keychain.set(phone!, forKey: USERNAME_KEY)
                     keychain.set(password, forKey: PASSWORD_KEY)
                     keychain.set(name!, forKey: NAME_KEY)
                     keychain.set(true, forKey: LOGGED_IN_KEY)
+                    if let timeString = NumberFormatter().string(from: NSNumber.init(value: time!)) {
+                        keychain.set(timeString, forKey: TIME_BANK_KEY)
+                    }
                     completion(true, user)
                 } else {
                     completion(false, nil)
@@ -45,9 +60,11 @@ class SSDatabase {
     }
     
     class func loginUser(user: SSUser, password: String, completion: @escaping (_ success: Bool, _ user: SSUser?)->()) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let parameters: Parameters = [
             "phone": user.phone!,
-            "password": password
+            "password": password,
+            "apnsToken":appDelegate.strDeviceToken
         ]
         Alamofire.request("\(url)/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
@@ -64,7 +81,11 @@ class SSDatabase {
                     keychain.set(password, forKey: PASSWORD_KEY)
                     keychain.set(name!, forKey: NAME_KEY)
                     keychain.set(true, forKey: LOGGED_IN_KEY)
-                    user.time = data?["timebank"] as? Int
+                    let time = json?["timebank"] as? Int
+                    user.time = time
+                    if let timeString = NumberFormatter().string(from: NSNumber.init(value: time!)) {
+                        keychain.set(timeString, forKey: TIME_BANK_KEY)
+                    }
                     completion(true, user)
                 } else {
                     completion(false, nil)
@@ -91,14 +112,14 @@ class SSDatabase {
     
     class func getAllMeetups(plocation: SSLocation?, psubject: SSSubject?, completion: @escaping (_ success: Bool, _ subjects: Array<SSMeetup>?)->()) {
         
-        var parameters: Parameters = [
+        let parameters: Parameters = [
             "state": 1
         ]
         
         Alamofire.request("\(url)/getMeetups", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 let json = response.result.value as? [String: Any]
-                print(json)
+                print(json as Any)
                 let success = json?["success"] as? Bool
                 var meetups: Array<SSMeetup> = []
                 if (success == true) {
@@ -118,9 +139,9 @@ class SSDatabase {
                         
                         // student { name, phone }
                         let studentPhone = meetupJson["student"] as! String
-                        let student = meetupJson["studentInfo"] as! [String: String]
-                        let studentName = student["name"]
-                        let ssStudent = SSUser(id: studentPhone, name: studentName!, phone: studentPhone)
+                        let student = meetupJson["studentInfo"] as! [String: Any]
+                        let studentName = student["name"]  as! String
+                        let ssStudent = SSUser(id: studentPhone, name: studentName, phone: studentPhone)
                         
                         //time and state
                         let timeExchange = meetupJson["timeExchange"] as! Int
@@ -232,9 +253,229 @@ class SSDatabase {
                         
                         // student { name, phone }
                         let studentPhone = meetupJson["student"] as! String
-                        let student = meetupJson["studentInfo"] as! [String: String]
-                        let studentName = student["name"]
-                        let ssStudent = SSUser(id: studentPhone, name: studentName!, phone: studentPhone)
+                        let student = meetupJson["studentInfo"] as! [String: Any]
+                        let studentName = student["name"]  as! String
+                        let ssStudent = SSUser(id: studentPhone, name: studentName, phone: studentPhone)
+                        
+                        //time and state
+                        let timeExchange = meetupJson["timeExchange"] as! Int
+                        let state = meetupJson["state"] as! Int
+                        
+                        //location { name, address }
+                        let address = meetupJson["address"] as! String
+                        var location: SSLocation?
+                        for sslocation in SSStorage.sharedInstance.getLocations() {
+                            if sslocation.address == address {
+                                location = sslocation
+                            }
+                        }
+                        
+                        let createdDate = meetupJson["createddate"] as! TimeInterval
+                        let date = NSDate.init(timeIntervalSinceReferenceDate: createdDate)
+                        
+                        //                        let topicInfo = meetupJson["topicInfo"] as! [String: Any]
+                        
+                        let subjectName = meetupJson["subject"] as! String
+                        var subject: SSSubject?
+                        for sssubject in SSStorage.sharedInstance.getAllSubjects() {
+                            if sssubject.name == subjectName {
+                                subject = sssubject
+                            }
+                        }
+                        
+                        //topic { name }
+                        let topicName = meetupJson["topic"] as! String
+                        var topic: SSTopic?
+                        for sstopic in SSStorage.sharedInstance.getTopicsForSubject(subject: subject!) {
+                            if sstopic.name == topicName {
+                                topic = sstopic
+                            }
+                        }
+                        
+                        //                        let skillswapState = SubjectState.active
+                        
+                        //                        let sssubject = SSSubject(id: "na", name: subject, state: skillswapState, colorHex: "8A8FFC")
+                        //
+                        //                        let sstopic = SSTopic(id: "na", name: topicName, subject: sssubject, state: TopicState.active)
+                        
+                        var meetupState: MeetupState = MeetupState.active
+                        
+                        switch state {
+                        case 2:
+                            meetupState = MeetupState.matched
+                        case 3:
+                            meetupState = MeetupState.canceled
+                        case 4:
+                            meetupState = MeetupState.expired
+                        case 5:
+                            meetupState = MeetupState.finished
+                        default:
+                            meetupState = .canceled
+                        }
+                        
+                        let meetup = SSMeetup(id: "", student: ssStudent, summary: summary, details: details, location: location!, topic: topic!, timeExchange: timeExchange)
+                        meetup.state = meetupState
+                        meetup.createdDate = date
+                        meetups.append(meetup)
+                    }
+                    completion(true, meetups)
+                } else {
+                    let error = json?["error"] as? [String: Any]
+                    print("\(error)")
+                    completion(true, SSStorage.sharedInstance.getAllMeetups())
+                }
+        }
+        //        completion(true, SSStorage.sharedInstance.getAllMeetups())
+    }
+    
+    class func checkWaitingMeetups(completion: @escaping (_ success: Bool, _ subjects: Array<SSMeetup>?)->()) {
+        var parameters: Parameters
+        if let phone = SSCurrentUser.sharedInstance.user?.phone {
+            parameters = [
+                "student": phone,
+                "state": 1
+            ]
+        } else {
+            return
+        }
+
+        
+        Alamofire.request("\(url)/getMeetups", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
+            .responseJSON { response in
+                let json = response.result.value as? [String: Any]
+                print(json)
+                let success = json?["success"] as? Bool
+                var meetups: Array<SSMeetup> = []
+                if (success == true) {
+                    let data = json?["data"] as? Array<[String: Any]>
+                    for meetupJson in data! {
+                        
+                        //summary and details
+                        let summary = meetupJson["summary"] as! String
+                        let details = meetupJson["details"] as! String
+                        
+                        // teacher { name, phone }
+                        //                        let teacher = meetupJson["teacherInfo"] as! [String: String]?
+                        //                        var ssTeacher: SSUser?
+                        //                        if teacher != nil{
+                        //                            ssTeacher = SSUser(id: "na", name: (teacher?["name"]!)!, phone: (teacher?["phone"]!)!)
+                        //                        }
+                        
+                        // student { name, phone }
+                        let studentPhone = meetupJson["student"] as! String
+                        let student = meetupJson["studentInfo"] as! [String: Any]
+                        let studentName = student["name"]  as! String
+                        let ssStudent = SSUser(id: studentPhone, name: studentName, phone: studentPhone)
+                        
+                        //time and state
+                        let timeExchange = meetupJson["timeExchange"] as! Int
+                        let state = meetupJson["state"] as! Int
+                        
+                        //location { name, address }
+                        let address = meetupJson["address"] as! String
+                        var location: SSLocation?
+                        for sslocation in SSStorage.sharedInstance.getLocations() {
+                            if sslocation.address == address {
+                                location = sslocation
+                            }
+                        }
+                        
+                        let createdDate = meetupJson["createddate"] as! TimeInterval
+                        let date = NSDate.init(timeIntervalSinceReferenceDate: createdDate)
+                        
+                        //                        let topicInfo = meetupJson["topicInfo"] as! [String: Any]
+                        
+                        let subjectName = meetupJson["subject"] as! String
+                        var subject: SSSubject?
+                        for sssubject in SSStorage.sharedInstance.getAllSubjects() {
+                            if sssubject.name == subjectName {
+                                subject = sssubject
+                            }
+                        }
+                        
+                        //topic { name }
+                        let topicName = meetupJson["topic"] as! String
+                        var topic: SSTopic?
+                        for sstopic in SSStorage.sharedInstance.getTopicsForSubject(subject: subject!) {
+                            if sstopic.name == topicName {
+                                topic = sstopic
+                            }
+                        }
+                        
+                        //                        let skillswapState = SubjectState.active
+                        
+                        //                        let sssubject = SSSubject(id: "na", name: subject, state: skillswapState, colorHex: "8A8FFC")
+                        //
+                        //                        let sstopic = SSTopic(id: "na", name: topicName, subject: sssubject, state: TopicState.active)
+                        
+                        var meetupState: MeetupState = MeetupState.active
+                        
+                        switch state {
+                        case 2:
+                            meetupState = MeetupState.matched
+                        case 3:
+                            meetupState = MeetupState.canceled
+                        case 4:
+                            meetupState = MeetupState.expired
+                        case 5:
+                            meetupState = MeetupState.finished
+                        default:
+                            meetupState = .canceled
+                        }
+                        
+                        let meetup = SSMeetup(id: "", student: ssStudent, summary: summary, details: details, location: location!, topic: topic!, timeExchange: timeExchange)
+                        meetup.state = meetupState
+                        meetup.createdDate = date
+                        meetups.append(meetup)
+                    }
+                    completion(true, meetups)
+                } else {
+                    let error = json?["error"] as? [String: Any]
+                    print("\(error)")
+                    completion(true, SSStorage.sharedInstance.getAllMeetups())
+                }
+        }
+        //        completion(true, SSStorage.sharedInstance.getAllMeetups())
+    }
+    
+    class func checkMatchedMeetups(completion: @escaping (_ success: Bool, _ subjects: Array<SSMeetup>?)->()) {
+        var parameters: Parameters
+        if let phone = SSCurrentUser.sharedInstance.user?.phone {
+            parameters = [
+                "student": phone,
+                "state": 2
+            ]
+        } else {
+            return
+        }
+        
+        
+        Alamofire.request("\(url)/getMeetups", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
+            .responseJSON { response in
+                let json = response.result.value as? [String: Any]
+                print(json)
+                let success = json?["success"] as? Bool
+                var meetups: Array<SSMeetup> = []
+                if (success == true) {
+                    let data = json?["data"] as? Array<[String: Any]>
+                    for meetupJson in data! {
+                        
+                        //summary and details
+                        let summary = meetupJson["summary"] as! String
+                        let details = meetupJson["details"] as! String
+                        
+                        // teacher { name, phone }
+                        //                        let teacher = meetupJson["teacherInfo"] as! [String: String]?
+                        //                        var ssTeacher: SSUser?
+                        //                        if teacher != nil{
+                        //                            ssTeacher = SSUser(id: "na", name: (teacher?["name"]!)!, phone: (teacher?["phone"]!)!)
+                        //                        }
+                        
+                        // student { name, phone }
+                        let studentPhone = meetupJson["student"] as! String
+                        let student = meetupJson["studentInfo"] as! [String: Any]
+                        let studentName = student["name"]  as! String
+                        let ssStudent = SSUser(id: studentPhone, name: studentName, phone: studentPhone)
                         
                         //time and state
                         let timeExchange = meetupJson["timeExchange"] as! Int
@@ -315,7 +556,7 @@ class SSDatabase {
             "details": meetup.details!,
             "address":meetup.location!.address! ,
             "topic":meetup.topic!.name!,
-            "subject":meetup.topic?.subject?.name!,
+            "subject":meetup.topic?.subject?.name! as Any,
             "state": 1,
             "timeExchange": meetup.timeExchange!
         ]

@@ -44,6 +44,11 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
         
         // Register to receive notification
         NotificationCenter.default.addObserver(self, selector: #selector(SSWaitForTeacherViewController.updateBar), name: notificationName, object: nil)
+        
+        let notificationName1 = Notification.Name(LEARNING_ACCEPTED_NOTIFICATION)
+        
+        // Register to receive notification
+        NotificationCenter.default.addObserver(self, selector: #selector(SSWaitForTeacherViewController.checkMeetup), name: notificationName1, object: nil)
     }
     
     func layoutWaitingBar() {
@@ -125,17 +130,17 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
     
     func countDown() {
         if time == 0 {
-//            timer.invalidate()
-//            SSCurrentUser.sharedInstance.learningStatus = .none
-//            
-//            let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
-//            NotificationCenter.default.post(name: notificationName, object: nil)
-//            
-//            let popup = PopupDialog(title: "Sorry 🙁", message: "There were no tutors available for you.")
-//            let buttonOne = CancelButton(title: "dimiss") {}
-//            popup.addButtons([buttonOne])
-//            self.present(popup, animated: true, completion: nil)
-//            return
+            timer.invalidate()
+            SSCurrentUser.sharedInstance.learningStatus = .none
+            
+            let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+            NotificationCenter.default.post(name: notificationName, object: nil)
+            
+            let popup = PopupDialog(title: "Sorry 🙁", message: "There were no tutors available for you.")
+            let buttonOne = CancelButton(title: "dimiss") {}
+            popup.addButtons([buttonOne])
+            self.present(popup, animated: true, completion: nil)
+            return
         }
         
         let sec = time % 60
@@ -145,34 +150,34 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
             timeExpire.text = "\(time/60):\(time % 60)"
         }
         time -= 1
-        if time % 10 == 1 {
-            
-            SSDatabase.checkMeetup(meetup: SSCurrentUser.sharedInstance.currentMeetupPost!, completion: { (success, state) in
-                if state == nil {
-                    return
-                }
-                if state! == MeetupState.matched {
-                    self.timer.invalidate()
-                    self.time = 0
-                    SSCurrentUser.sharedInstance.learningStatus = .matched
-                    
-                    let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
-                    NotificationCenter.default.post(name: notificationName, object: nil)
-                } else if state! == MeetupState.expired {
-                    self.timer.invalidate()
-                    self.time = 0
-                    SSCurrentUser.sharedInstance.learningStatus = .none
-                    
-                    let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
-                    NotificationCenter.default.post(name: notificationName, object: nil)
-                    
-                    let popup = PopupDialog(title: "Sorry 🙁", message: "There were no tutors available for you.")
-                    let buttonOne = CancelButton(title: "dimiss") {}
-                    popup.addButtons([buttonOne])
-                    self.present(popup, animated: true, completion: nil)
-                }
-            })
-        }
+    }
+    
+    func checkMeetup () {
+        SSDatabase.checkMeetup(meetup: SSCurrentUser.sharedInstance.currentMeetupPost!, completion: { (success, state) in
+            if state == nil {
+                return
+            }
+            if state! == MeetupState.matched {
+                self.timer.invalidate()
+                self.time = 0
+                SSCurrentUser.sharedInstance.learningStatus = .matched
+                
+                let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+                NotificationCenter.default.post(name: notificationName, object: nil)
+            } else if state! == MeetupState.expired {
+                self.timer.invalidate()
+                self.time = 0
+                SSCurrentUser.sharedInstance.learningStatus = .none
+                
+                let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+                NotificationCenter.default.post(name: notificationName, object: nil)
+                
+                let popup = PopupDialog(title: "Sorry 🙁", message: "There were no tutors available for you.")
+                let buttonOne = CancelButton(title: "dimiss") {}
+                popup.addButtons([buttonOne])
+                self.present(popup, animated: true, completion: nil)
+            }
+        })
     }
     
     func seePostSelected(){

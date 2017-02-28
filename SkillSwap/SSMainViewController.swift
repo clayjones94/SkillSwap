@@ -25,6 +25,10 @@ class SSMainViewController: UIViewController {
         
         view.backgroundColor = .white
         
+        SSDatabase.getUserInfo { (success) in
+            
+        }
+        
         layoutSegmentedControl()
         layoutSideMenu()
         
@@ -38,6 +42,7 @@ class SSMainViewController: UIViewController {
         controlValueChanged()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         checkLogin()
+        checkLearningStatus()
     }
     
     let segControl = BetterSegmentedControl(
@@ -67,7 +72,39 @@ class SSMainViewController: UIViewController {
             loginUser()
         } else if !(loggedIn!) {
             loginUser()
+        } else {
+            SSCurrentUser.sharedInstance.loggedIn = true
+            let phone = KeychainSwift().get(USERNAME_KEY)
+            let name = KeychainSwift().get(NAME_KEY)
+            SSCurrentUser.sharedInstance.user = SSUser(id: phone!, name: name!, phone: phone!)
+            if let timeString = KeychainSwift().get(TIME_BANK_KEY) {
+                if let time = NumberFormatter().number(from: timeString) {
+                    SSCurrentUser.sharedInstance.user?.time = time as Int?
+                }
+            }
         }
+    }
+    
+    func checkLearningStatus () {
+        SSDatabase.checkWaitingMeetups(completion: { (success, meetups) in
+            if (success && (meetups?.count)! > 0){
+                SSCurrentUser.sharedInstance.currentMeetupPost = meetups?.first
+                SSCurrentUser.sharedInstance.learningStatus = LearningStatus.waiting
+                DispatchQueue.main.async {
+                    self.controlValueChanged()
+                }
+            }
+        })
+        
+        SSDatabase.checkMatchedMeetups(completion: { (success, meetups) in
+            if (success && (meetups?.count)! > 0){
+                SSCurrentUser.sharedInstance.currentMeetupPost = meetups?.first
+                SSCurrentUser.sharedInstance.learningStatus = LearningStatus.matched
+                DispatchQueue.main.async {
+                    self.controlValueChanged()
+                }
+            }
+        })
     }
     
     private func layoutSegmentedControl() {
@@ -135,11 +172,10 @@ class SSMainViewController: UIViewController {
     }
 
     func loginUser() {
-        //1. Create a LFLoginController instance
         let name = KeychainSwift().get(NAME_KEY)
         let username = KeychainSwift().get(USERNAME_KEY)
         let password = KeychainSwift().get(PASSWORD_KEY)
-        
+
         if(name == nil || username == nil || password == nil) {
             let loginController = SSRegisterViewController()
             let nav = UINavigationController(rootViewController: loginController)

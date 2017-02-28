@@ -11,6 +11,7 @@ import SideMenu
 import Fabric
 import Crashlytics
 import UserNotifications
+import KeychainSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -66,6 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         print("Device Token = ", token)
         self.strDeviceToken = token
+        SSCurrentUser.sharedInstance.apnsToken = token
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error)
@@ -93,10 +95,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
+    enum NotificationType {
+        case acceptTeacher
+        case other
+    }
+    
     //Called when a notification is delivered to a foreground app.
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("User Info = ",notification.request.content.userInfo)
+        let info: [AnyHashable : Any] = notification.request.content.userInfo
+//        let message = info["messageFrom"] as! String
+        let typeInt = info["type"] as! Int
+        var type: NotificationType = .other
+        switch typeInt {
+        case 1:
+            type = .acceptTeacher
+        default:
+            type = .other
+        }
+        if (type == .acceptTeacher){
+            let notificationName = Notification.Name(LEARNING_ACCEPTED_NOTIFICATION)
+            NotificationCenter.default.post(name: notificationName, object: nil)
+        }
+        
         completionHandler([.alert, .badge, .sound])
     }
     

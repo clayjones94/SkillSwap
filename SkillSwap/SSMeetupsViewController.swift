@@ -104,6 +104,9 @@ class SSMeetupsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 105
+        }
         return 90
     }
     

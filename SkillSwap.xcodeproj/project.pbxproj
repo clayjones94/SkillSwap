@@ -61,6 +61,8 @@
 		92C78E501E3FBA47003C8ED7 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C78E4F1E3FBA47003C8ED7 /* SnapKit.framework */; };
 		92C78E521E3FC46F003C8ED7 /* SSSelectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C78E511E3FC46F003C8ED7 /* SSSelectTimeViewController.swift */; };
 		92C78E541E3FF194003C8ED7 /* SSPostSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C78E531E3FF194003C8ED7 /* SSPostSummaryViewController.swift */; };
+		92F2A9FA1E653C2100F6CF70 /* SSIconLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2A9F91E653C2100F6CF70 /* SSIconLabelButton.swift */; };
+		92F2A9FC1E662F4200F6CF70 /* SSAdjustPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2A9FB1E662F4200F6CF70 /* SSAdjustPayViewController.swift */; };
 		C2C955BA714E073ACDE047EB /* Pods_SkillSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFC40E0F1585E77AB3F93AB /* Pods_SkillSwap.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +128,8 @@
 		92C78E4F1E3FBA47003C8ED7 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		92C78E511E3FC46F003C8ED7 /* SSSelectTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSelectTimeViewController.swift; sourceTree = "<group>"; };
 		92C78E531E3FF194003C8ED7 /* SSPostSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSPostSummaryViewController.swift; sourceTree = "<group>"; };
+		92F2A9F91E653C2100F6CF70 /* SSIconLabelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSIconLabelButton.swift; sourceTree = "<group>"; };
+		92F2A9FB1E662F4200F6CF70 /* SSAdjustPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSAdjustPayViewController.swift; sourceTree = "<group>"; };
 		FAFC40E0F1585E77AB3F93AB /* Pods_SkillSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkillSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -235,6 +239,7 @@
 				923383EF1E3D67D000C3FFF6 /* SSSideMenuViewController.swift */,
 				921669BA1E4B9F30002EA0DB /* SSMeetupsViewController.swift */,
 				921669C91E5AA9EC002EA0DB /* SSMeetupsActiveTableViewCell.swift */,
+				92F2A9F91E653C2100F6CF70 /* SSIconLabelButton.swift */,
 				921669C51E56B266002EA0DB /* SSHistoryTableTableViewCell.swift */,
 				92C075A91E3C22E400D0B063 /* SSMainViewController.swift */,
 				923383F11E3D6DEE00C3FFF6 /* SSLearnViewController.swift */,
@@ -248,6 +253,7 @@
 				921938201E42677600C6A4C8 /* SSTeachTableViewCell.swift */,
 				921669B81E4AEFA2002EA0DB /* SSUtils.swift */,
 				921669BF1E552F26002EA0DB /* SSDropDownFilterView.swift */,
+				92F2A9FB1E662F4200F6CF70 /* SSAdjustPayViewController.swift */,
 				921669AF1E4981C2002EA0DB /* Database */,
 				921669AE1E49818C002EA0DB /* Storage */,
 				921669A91E497CC4002EA0DB /* Models */,
@@ -457,6 +463,7 @@
 				9219381D1E41D3EB00C6A4C8 /* SSCurrentUser.swift in Sources */,
 				921938211E42677600C6A4C8 /* SSTeachTableViewCell.swift in Sources */,
 				921938251E43AFC600C6A4C8 /* SSTeachDetailViewController.swift in Sources */,
+				92F2A9FC1E662F4200F6CF70 /* SSAdjustPayViewController.swift in Sources */,
 				92C78E541E3FF194003C8ED7 /* SSPostSummaryViewController.swift in Sources */,
 				921669B11E498305002EA0DB /* SSDatabase.swift in Sources */,
 				92C78E481E3F237C003C8ED7 /* SSPickLocationViewController.swift in Sources */,
@@ -479,6 +486,7 @@
 				921669CA1E5AA9EC002EA0DB /* SSMeetupsActiveTableViewCell.swift in Sources */,
 				92C78E4A1E3FB4F1003C8ED7 /* SSDescriptionViewController.swift in Sources */,
 				9219382D1E4580C700C6A4C8 /* SSUser.swift in Sources */,
+				92F2A9FA1E653C2100F6CF70 /* SSIconLabelButton.swift in Sources */,
 				92C78E521E3FC46F003C8ED7 /* SSSelectTimeViewController.swift in Sources */,
 				9219381F1E41D50800C6A4C8 /* SSConstants.swift in Sources */,
 				921669C81E56BBA8002EA0DB /* SSLoginViewController.swift in Sources */,

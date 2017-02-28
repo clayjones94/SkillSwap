@@ -20,12 +20,6 @@ class SSColors: NSObject {
     open class var SSPink: UIColor { return UIColor(colorLiteralRed: 255/255, green: 122/255, blue: 147/255, alpha: 1.0) }
     open class var SSPinkDetail: UIColor { return UIColor(colorLiteralRed: 0/255, green: 129/255, blue: 189/255, alpha: 1.0) }
     
-    
-    
-    
-    
-    
-    
     open class var SSDarkYellow: UIColor { return UIColor(colorLiteralRed: 242/255, green: 193/255, blue: 78/255, alpha: 1.0) }
     open class var SSDarkYellowDetail: UIColor { return UIColor(colorLiteralRed: 196/255, green: 156/255, blue: 63/255, alpha: 1.0) }
     

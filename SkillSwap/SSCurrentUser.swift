@@ -19,6 +19,7 @@ class SSCurrentUser: NSObject {
     var user: SSUser?
     var loggedIn = false
     var currentMeetupPost: SSMeetup?
+    var apnsToken: String?
     
     var teachingStatus: TeachingStatus = .none
     var learningStatus: LearningStatus = .none

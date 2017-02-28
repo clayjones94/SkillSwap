@@ -71,8 +71,11 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
         view.addSubview(timeLabel)
-        let time = SSCurrentUser.sharedInstance.user?.time
-        timeLabel.text = "\(time!) minutes"
+        if let time = SSCurrentUser.sharedInstance.user?.time {
+            timeLabel.text = "\(time) minutes"
+        } else {
+            timeLabel.text = ""
+        }
         timeLabel.font = UIFont(name: "Gotham-Book", size: 12)
         timeLabel.textColor = SSColors.SSDarkGray
         timeLabel.textAlignment = .center
