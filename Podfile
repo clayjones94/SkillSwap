@@ -19,5 +19,7 @@ target 'SkillSwap' do
   pod 'Crashlytics'
   pod 'DropDown'
   pod 'KeychainSwift', '~> 7.0'
+  pod 'Digits'
+  pod 'TwitterCore'
 end
 

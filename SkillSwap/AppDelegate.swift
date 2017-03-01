@@ -10,6 +10,7 @@ import UIKit
 import SideMenu
 import Fabric
 import Crashlytics
+import DigitsKit
 import UserNotifications
 import KeychainSwift
 
@@ -25,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         registerForRemoteNotification()
-        Fabric.with([Crashlytics.self])
+        Fabric.with([Crashlytics.self, Digits.self])
         
         window = UIWindow(frame: UIScreen.main.bounds)
         

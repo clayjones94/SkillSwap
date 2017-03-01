@@ -186,7 +186,7 @@ class SSMainViewController: UIViewController {
         }
         
         let user = SSUser(id: "", name: name!, phone: username!)
-        SSDatabase.loginUser(user: user, password: password!) { (success, user) in
+        SSDatabase.loginUser(phone: user.phone!, password: password!) { (success, exists, user) in
             if success {
                 SSCurrentUser.sharedInstance.user = user
                 SSCurrentUser.sharedInstance.loggedIn = true

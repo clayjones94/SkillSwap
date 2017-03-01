@@ -59,10 +59,10 @@ class SSDatabase {
         }
     }
     
-    class func loginUser(user: SSUser, password: String, completion: @escaping (_ success: Bool, _ user: SSUser?)->()) {
+    class func loginUser(phone: String, password: String, completion: @escaping (_ success: Bool, _ exists: Bool, _ user: SSUser?)->()) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let parameters: Parameters = [
-            "phone": user.phone!,
+            "phone": phone,
             "password": password,
             "apnsToken":appDelegate.strDeviceToken
         ]
@@ -81,14 +81,14 @@ class SSDatabase {
                     keychain.set(password, forKey: PASSWORD_KEY)
                     keychain.set(name!, forKey: NAME_KEY)
                     keychain.set(true, forKey: LOGGED_IN_KEY)
-                    let time = json?["timebank"] as? Int
+                    let time = data?["timebank"] as? Int
                     user.time = time
-                    if let timeString = NumberFormatter().string(from: NSNumber.init(value: time!)) {
+                    if let timeString = NumberFormatter().string(from: NSNumber.init(value: user.time!)) {
                         keychain.set(timeString, forKey: TIME_BANK_KEY)
                     }
-                    completion(true, user)
+                    completion(true, true, user)
                 } else {
-                    completion(false, nil)
+                    completion(false, false, nil)
                 }
         }
     }
@@ -609,6 +609,9 @@ class SSDatabase {
                     let data = json?["data"] as? [String: Any]
                     let time = data?["timebank"] as? Int
                     SSCurrentUser.sharedInstance.user?.time = time
+                    if let timeString = NumberFormatter().string(from: NSNumber.init(value: time!)) {
+                        KeychainSwift().set(timeString, forKey: TIME_BANK_KEY)
+                    }
                     
                     completion(true)
                 } else {
@@ -681,12 +684,13 @@ class SSDatabase {
         }
     }
     
-    class func payMeetup(meetup: SSMeetup, completion: @escaping (_ success: Bool)->()){
+    class func payMeetup(exchange: Int, meetup: SSMeetup, completion: @escaping (_ success: Bool)->()){
         let parameters: Parameters = [
             "student": SSCurrentUser.sharedInstance.user?.phone as Any,
             "teacher": meetup.teacher?.phone as Any,
             "createdDate": meetup.createdDate?.timeIntervalSinceReferenceDate as Any,
-            "state": 5
+            "state": 5,
+            "exchange": exchange
         ]
         Alamofire.request("\(url)/payMeetup", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in

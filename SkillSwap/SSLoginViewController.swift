@@ -114,7 +114,7 @@ class SSLoginViewController: UIViewController {
         }
         let user = SSUser(id: "", name: nameField.text!, phone: phoneField.text!)
         loginButton.isUserInteractionEnabled = false
-        SSDatabase.loginUser(user: user, password: passwordField.text!) { (success, user) in
+        SSDatabase.loginUser(phone: user.phone!, password: passwordField.text!) { (success, exists, user) in
             self.loginButton.isUserInteractionEnabled = true
             if success {
                 SSCurrentUser.sharedInstance.user = user

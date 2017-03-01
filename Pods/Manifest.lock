@@ -4,6 +4,8 @@ PODS:
   - BetterSegmentedControl (0.7)
   - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
+  - Digits (2.8.0):
+    - TwitterCore (= 2.8.0)
   - DropDown (2)
   - DynamicButton (3.1.0)
   - Fabric (1.6.11)
@@ -12,12 +14,15 @@ PODS:
   - PopupDialog (0.5.3)
   - SideMenu (2.2.0)
   - SnapKit (3.1.2)
+  - TwitterCore (2.8.0):
+    - Fabric
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
   - AnimatedTextInput (~> 0.4.0)
   - BetterSegmentedControl (~> 0.7)
   - Crashlytics
+  - Digits
   - DropDown
   - DynamicButton (~> 3.1.0)
   - Fabric
@@ -26,12 +31,14 @@ DEPENDENCIES:
   - PopupDialog (~> 0.5)
   - SideMenu (~> 2.2)
   - SnapKit (~> 3.1.2)
+  - TwitterCore
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   AnimatedTextInput: 283f38c106399b809b126f80af79fca9f4aabfd6
   BetterSegmentedControl: 0b4dde1caac22de345820858a5e2789132378c1c
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Digits: 401151fdcc955738142d53b89112960d3c2e3930
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   DynamicButton: 37968af761a31274aeac427f40204688fa810342
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
@@ -40,7 +47,8 @@ SPEC CHECKSUMS:
   PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
   SideMenu: eeff6b85456c5c6e14165655691d2033f6b24969
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
+  TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
 
-PODFILE CHECKSUM: 976014b51646f524c9ede3fca5920b96e2c0d422
+PODFILE CHECKSUM: 533d258acd59d26cf42d83217df1df5318c6282d
 
 COCOAPODS: 1.1.1

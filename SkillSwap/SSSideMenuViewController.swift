@@ -9,6 +9,7 @@
 import UIKit
 import SideMenu
 import KeychainSwift
+import DigitsKit
 
 class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 

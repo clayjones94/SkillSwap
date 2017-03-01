@@ -63,6 +63,7 @@
 		92C78E541E3FF194003C8ED7 /* SSPostSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C78E531E3FF194003C8ED7 /* SSPostSummaryViewController.swift */; };
 		92F2A9FA1E653C2100F6CF70 /* SSIconLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2A9F91E653C2100F6CF70 /* SSIconLabelButton.swift */; };
 		92F2A9FC1E662F4200F6CF70 /* SSAdjustPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2A9FB1E662F4200F6CF70 /* SSAdjustPayViewController.swift */; };
+		92F2A9FE1E66A32400F6CF70 /* SSRegisterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2A9FD1E66A32400F6CF70 /* SSRegisterNameViewController.swift */; };
 		C2C955BA714E073ACDE047EB /* Pods_SkillSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFC40E0F1585E77AB3F93AB /* Pods_SkillSwap.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +131,7 @@
 		92C78E531E3FF194003C8ED7 /* SSPostSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSPostSummaryViewController.swift; sourceTree = "<group>"; };
 		92F2A9F91E653C2100F6CF70 /* SSIconLabelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSIconLabelButton.swift; sourceTree = "<group>"; };
 		92F2A9FB1E662F4200F6CF70 /* SSAdjustPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSAdjustPayViewController.swift; sourceTree = "<group>"; };
+		92F2A9FD1E66A32400F6CF70 /* SSRegisterNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRegisterNameViewController.swift; sourceTree = "<group>"; };
 		FAFC40E0F1585E77AB3F93AB /* Pods_SkillSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkillSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -245,6 +247,7 @@
 				923383F11E3D6DEE00C3FFF6 /* SSLearnViewController.swift */,
 				921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */,
 				921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */,
+				92F2A9FD1E66A32400F6CF70 /* SSRegisterNameViewController.swift */,
 				921669C71E56BBA8002EA0DB /* SSLoginViewController.swift */,
 				92C78E551E3FF19C003C8ED7 /* New Learn Post */,
 				923383F31E3D6E4300C3FFF6 /* SSTeachViewController.swift */,
@@ -473,6 +476,7 @@
 				9219382B1E457FAB00C6A4C8 /* SSMeetup.swift in Sources */,
 				923383DC1E3C2EA800C3FFF6 /* SSColors.swift in Sources */,
 				921669C01E552F26002EA0DB /* SSDropDownFilterView.swift in Sources */,
+				92F2A9FE1E66A32400F6CF70 /* SSRegisterNameViewController.swift in Sources */,
 				921669BB1E4B9F30002EA0DB /* SSMeetupsViewController.swift in Sources */,
 				921669AD1E498097002EA0DB /* SSTopic.swift in Sources */,
 				92C075AA1E3C22E400D0B063 /* SSMainViewController.swift in Sources */,

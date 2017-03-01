@@ -343,7 +343,7 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
         let title = "Finish + Pay"
         
         // Create the dialog
-        popup = PopupDialog(title: title, message: "", image: #imageLiteral(resourceName: "money_transfer"))
+        let popup = PopupDialog(title: title, message: "", image: #imageLiteral(resourceName: "money_transfer"))
         
         // Create buttons
         let buttonOne = CancelButton(title: "Cancel") {
@@ -351,15 +351,8 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
         }
         
         let time = SSCurrentUser.sharedInstance.currentMeetupPost?.timeExchange!
-        let buttonTwo = DefaultButton(title: "😃 Pay \(time!) minutes") {
-            
-            SSDatabase.payMeetup(meetup: SSCurrentUser.sharedInstance.currentMeetupPost!, completion: { (success) in
-                SSCurrentUser.sharedInstance.learningStatus = .none
-                
-                let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
-                NotificationCenter.default.post(name: notificationName, object: nil)
-            })
-            
+        let buttonTwo = DefaultButton(title: "😃 Pay") {
+            self.layoutAdjustPayment()
         }
         
         let buttonFour = DefaultButton(title: "🙁 We never met", height: 60) {
@@ -370,6 +363,34 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
         }
         
         popup.addButtons([buttonOne, buttonTwo, buttonFour])
+        self.present(popup, animated: true, completion: nil)
+    }
+    
+    func layoutAdjustPayment () {
+        // Create the dialog
+        let time = SSCurrentUser.sharedInstance.currentMeetupPost?.timeExchange!
+        let adjustVC = SSAdjustPayViewController()
+        adjustVC.minTime = time!
+        let popup = PopupDialog(viewController: adjustVC)
+        
+        // Create buttons
+        let buttonOne = CancelButton(title: "Cancel") {
+
+        }
+        
+        let buttonTwo = DefaultButton(title: "Confirm Payment") {
+            
+            SSDatabase.payMeetup(exchange: adjustVC.numMinutes, meetup: SSCurrentUser.sharedInstance.currentMeetupPost!, completion: { (success) in
+                SSCurrentUser.sharedInstance.learningStatus = .none
+                
+                let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+                NotificationCenter.default.post(name: notificationName, object: nil)
+            })
+            
+        }
+        
+        popup.addButtons([buttonOne, buttonTwo])
+        self.present(popup, animated: true, completion: nil)
     }
     
     func layoutReportPopup(){
