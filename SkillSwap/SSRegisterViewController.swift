@@ -19,6 +19,7 @@ class SSRegisterViewController: UIViewController {
     let passwordField = UITextField()
     let registerButton = UIButton()
     let loginButton = UIButton()
+    var authButton: DGTAuthenticateButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,18 @@ class SSRegisterViewController: UIViewController {
             make.top.bottom.left.right.equalToSuperview()
         }
         
+        let iconView = UIImageView(image: #imageLiteral(resourceName: "logo_100"))
+        iconView.image = iconView.image!.withRenderingMode(.alwaysTemplate)
+        iconView.tintColor = .white
+        overlayView.addSubview(iconView)
+        iconView.sizeToFit()
+        iconView.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+//            make.top.equalTo(view).offset(50)
+            make.centerY.equalToSuperview().offset(-100)
+//            make.width.height.equalTo(80)
+        }
+        
         let titleLabel = UILabel()
         titleLabel.textColor = .white
         view.addSubview(titleLabel)
@@ -47,7 +60,7 @@ class SSRegisterViewController: UIViewController {
         titleLabel.sizeToFit()
         titleLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(120)
+            make.top.equalTo(iconView.snp.bottom).offset(10)
         }
         
 //        nameField.font = UIFont(name: "Gotham-Book", size: 14)
@@ -115,7 +128,8 @@ class SSRegisterViewController: UIViewController {
 //            make.height.equalTo(20)
 //        }
         
-        let authButton = DGTAuthenticateButton(authenticationCompletion: { (session: DGTSession?, error: Error?) in
+        authButton = DGTAuthenticateButton(authenticationCompletion: { (session: DGTSession?, error: Error?) in
+            self.authButton?.isUserInteractionEnabled = true
             if (session != nil) {
                 SSDatabase.loginUser(phone: session!.phoneNumber, password: session!.userID!, completion: { (success, exists, user) in
                     if (success && exists){
@@ -135,10 +149,13 @@ class SSRegisterViewController: UIViewController {
                 NSLog("Authentication error: %@", error!.localizedDescription)
             }
         })
+        
+        authButton?.addTarget(self, action: #selector(authSelected), for: .touchUpInside)
+        
         self.view.addSubview(authButton!)
         authButton?.snp.makeConstraints({ (make) in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(0)
+            make.bottom.equalToSuperview().offset(-40)
             make.height.equalTo(40)
         })
         authButton?.setTitle("Phone Number", for: .normal)
@@ -156,6 +173,11 @@ class SSRegisterViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.bottom.equalTo((authButton?.snp.top)!).offset(-10)
         }
+    }
+    
+    func authSelected () {
+        SSAnimations().popAnimateButton(button: authButton!)
+        self.authButton?.isUserInteractionEnabled = false
     }
     
     func makeTheme() -> DGTAppearance {

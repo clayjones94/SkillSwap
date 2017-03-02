@@ -216,6 +216,9 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
                     SSCurrentUser.sharedInstance.teachingStatus = .matched
                     let vc = SSTeacherMatchViewController()
                     vc.meetup = self.meetups[indexPath.row]
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    let newVC = appDelegate.sideMenuController.meetupViewController
+                    appDelegate.navController?.viewControllers = [newVC!]
                     self.present(vc, animated: true, completion: nil)
                 } else {
                     

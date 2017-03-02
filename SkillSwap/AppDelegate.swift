@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var navController: UINavigationController?
     
     var strDeviceToken : String = ""
+    
+    let sideMenuController = SSSideMenuViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -35,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         navController = UINavigationController.init(rootViewController: mainViewController)
         
-        let sideMenuController = SSSideMenuViewController()
         sideMenuController.mainViewController = mainViewController
         sideMenuController.meetupViewController = SSMeetupsViewController()
         let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: sideMenuController)

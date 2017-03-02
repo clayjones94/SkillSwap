@@ -17,6 +17,7 @@ class SSMainViewController: UIViewController {
     
     let learnVC = SSLearnViewController()
     let teachVC = SSTeachViewController()
+    let timeButton = UIButton(type: UIButtonType.custom)
     var waitVC: SSWaitForTeacherViewController?
     var currentVC :UIViewController? = nil
 
@@ -31,6 +32,7 @@ class SSMainViewController: UIViewController {
         
         layoutSegmentedControl()
         layoutSideMenu()
+        layoutTime()
         
         setUpNotifications()
         
@@ -41,8 +43,17 @@ class SSMainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         controlValueChanged()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        checkLogin()
-        checkLearningStatus()
+//        checkLogin()
+//        checkLearningStatus()
+        layoutTime()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        let loginController = SSRegisterViewController()
+//        let nav = UINavigationController(rootViewController: loginController)
+//        nav.setToolbarHidden(true, animated: false)
+//        self.present(nav, animated: true, completion: nil)
     }
     
     let segControl = BetterSegmentedControl(
@@ -142,6 +153,27 @@ class SSMainViewController: UIViewController {
         menuButton.addTarget(self, action: #selector(self.menuPressed), for: .touchUpInside)
     }
     
+    func layoutTime() {
+        if let time = SSCurrentUser.sharedInstance.user?.time {
+            timeButton.setTitle("\(time)", for: .normal)
+        } else {
+            timeButton.setTitle("120", for: .normal)
+        }
+        
+        timeButton.tintColor = SSColors.SSBlue
+        timeButton.titleLabel?.font = UIFont(name: "Gotham-Medium", size: 16)
+        timeButton.setTitleColor(SSColors.SSBlue, for: .normal)
+        timeButton.sizeToFit()
+        view.addSubview(timeButton)
+        timeButton.snp.makeConstraints { (make) in
+            make.centerY.equalTo(segControl)
+            make.right.equalToSuperview().offset(-10)
+//            make.leftMargin.equalTo(10)
+        }
+        
+        timeButton.addTarget(self, action: #selector(self.timePressed), for: .touchUpInside)
+    }
+    
     func controlValueChanged() {
         if segControl.index == 0 {
             if SSCurrentUser.sharedInstance.learningStatus != .none {
@@ -169,6 +201,10 @@ class SSMainViewController: UIViewController {
     
     func menuPressed() {
         present(SideMenuManager.menuLeftNavigationController!, animated: true, completion: nil)
+    }
+    
+    func timePressed() {
+        
     }
 
     func loginUser() {

@@ -26,16 +26,16 @@ class SSLearnViewController: UIViewController, UITextFieldDelegate, UICollection
     }
 
     private func layoutViews() {
-        let titleLabel = UILabel()
-        view.addSubview(titleLabel)
-        titleLabel.font = UIFont(name: "Gotham-Medium", size: 16)
-        titleLabel.textColor = SSColors.SSBlue
-        titleLabel.text = "Need a tutor?"
-        titleLabel.sizeToFit()
-        titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(10)
-            make.centerX.equalTo(view)
-        }
+//        let titleLabel = UILabel()
+//        view.addSubview(titleLabel)
+//        titleLabel.font = UIFont(name: "Gotham-Medium", size: 16)
+//        titleLabel.textColor = SSColors.SSBlue
+//        titleLabel.text = "Need a tutor?"
+//        titleLabel.sizeToFit()
+//        titleLabel.snp.makeConstraints { (make) in
+//            make.top.equalTo(10)
+//            make.centerX.equalTo(view)
+//        }
         
         subjectCollectionView.register(SSSubjectCell.self, forCellWithReuseIdentifier: "subject")
         subjectCollectionView.backgroundColor = .white
@@ -44,7 +44,7 @@ class SSLearnViewController: UIViewController, UITextFieldDelegate, UICollection
         subjectCollectionView.bounces = true
         view.addSubview(subjectCollectionView)
         subjectCollectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.top.equalToSuperview().offset(10)
             make.bottom.left.right.equalToSuperview()
         }
     }
