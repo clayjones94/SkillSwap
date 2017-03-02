@@ -244,13 +244,6 @@ class SSDatabase {
                         let summary = meetupJson["summary"] as! String
                         let details = meetupJson["details"] as! String
                         
-                        // teacher { name, phone }
-                        //                        let teacher = meetupJson["teacherInfo"] as! [String: String]?
-                        //                        var ssTeacher: SSUser?
-                        //                        if teacher != nil{
-                        //                            ssTeacher = SSUser(id: "na", name: (teacher?["name"]!)!, phone: (teacher?["phone"]!)!)
-                        //                        }
-                        
                         // student { name, phone }
                         let studentPhone = meetupJson["student"] as! String
                         let student = meetupJson["studentInfo"] as! [String: Any]
@@ -314,6 +307,13 @@ class SSDatabase {
                         }
                         
                         let meetup = SSMeetup(id: "", student: ssStudent, summary: summary, details: details, location: location!, topic: topic!, timeExchange: timeExchange)
+                        
+                        // teacher { name, phone }
+                        if let teacher = meetupJson["teacherInfo"] as! [String: String]? {
+                            let ssTeacher = SSUser(id: "na", name: (teacher["name"]!), phone: (teacher["phone"]!))
+                            meetup.teacher = ssTeacher
+                        }
+                        
                         meetup.state = meetupState
                         meetup.createdDate = date
                         meetups.append(meetup)
@@ -354,13 +354,6 @@ class SSDatabase {
                         let summary = meetupJson["summary"] as! String
                         let details = meetupJson["details"] as! String
                         
-                        // teacher { name, phone }
-                        //                        let teacher = meetupJson["teacherInfo"] as! [String: String]?
-                        //                        var ssTeacher: SSUser?
-                        //                        if teacher != nil{
-                        //                            ssTeacher = SSUser(id: "na", name: (teacher?["name"]!)!, phone: (teacher?["phone"]!)!)
-                        //                        }
-                        
                         // student { name, phone }
                         let studentPhone = meetupJson["student"] as! String
                         let student = meetupJson["studentInfo"] as! [String: Any]
@@ -424,6 +417,13 @@ class SSDatabase {
                         }
                         
                         let meetup = SSMeetup(id: "", student: ssStudent, summary: summary, details: details, location: location!, topic: topic!, timeExchange: timeExchange)
+                        
+                        // teacher { name, phone }
+                        if let teacher = meetupJson["teacherInfo"] as! [String: String]? {
+                            let ssTeacher = SSUser(id: "na", name: (teacher["name"]!), phone: (teacher["phone"]!))
+                            meetup.teacher = ssTeacher
+                        }
+                        
                         meetup.state = meetupState
                         meetup.createdDate = date
                         meetups.append(meetup)
@@ -512,12 +512,6 @@ class SSDatabase {
                             }
                         }
                         
-                        //                        let skillswapState = SubjectState.active
-                        
-                        //                        let sssubject = SSSubject(id: "na", name: subject, state: skillswapState, colorHex: "8A8FFC")
-                        //
-                        //                        let sstopic = SSTopic(id: "na", name: topicName, subject: sssubject, state: TopicState.active)
-                        
                         var meetupState: MeetupState = MeetupState.active
                         
                         switch state {
@@ -534,6 +528,12 @@ class SSDatabase {
                         }
                         
                         let meetup = SSMeetup(id: "", student: ssStudent, summary: summary, details: details, location: location!, topic: topic!, timeExchange: timeExchange)
+                        // teacher { name, phone }
+                        if let teacher = meetupJson["teacherInfo"] as! [String: String]? {
+                            let ssTeacher = SSUser(id: "na", name: (teacher["name"]!), phone: (teacher["phone"]!))
+                            meetup.teacher = ssTeacher
+                        }
+                        
                         meetup.state = meetupState
                         meetup.createdDate = date
                         meetups.append(meetup)

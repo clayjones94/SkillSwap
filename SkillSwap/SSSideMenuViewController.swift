@@ -136,6 +136,7 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
             SSCurrentUser.sharedInstance.teachingStatus = .none
             let keychain = KeychainSwift()
             keychain.clear()
+            Digits.sharedInstance().logOut()
             let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
             NotificationCenter.default.post(name: notificationName, object: nil)
             let loginnotificationName = Notification.Name(LOGIN_STATUS_CHANGED_NOTIFICATION)
