@@ -190,20 +190,22 @@ class SSPostSummaryViewController: UIViewController {
     }
     
     func postButtonSelected() {
-        navigationController?.dismiss(animated: true, completion: nil)
         SSCurrentUser.sharedInstance.learningStatus = .waiting
-        
         meetup?.student = SSCurrentUser.sharedInstance.user
+        
         SSCurrentUser.sharedInstance.currentMeetupPost = meetup
         
         SSDatabase.postMeetup(meetup: meetup!) { (success) in
             if(success){
+                self.navigationController?.dismiss(animated: true, completion: nil)
+                
+                let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
+                NotificationCenter.default.post(name: notificationName, object: nil)
+            } else {
                 
             }
         }
         
-        let notificationName = Notification.Name(LEARNING_STATUS_CHANGED_NOTIFICATION)
-        NotificationCenter.default.post(name: notificationName, object: nil)
     }
 
     func backbuttonSelected() {

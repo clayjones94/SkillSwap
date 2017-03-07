@@ -157,7 +157,7 @@ class SSDatabase {
                         }
                         
                         let createdDate = meetupJson["createddate"] as! TimeInterval
-                        let date = NSDate.init(timeIntervalSinceReferenceDate: createdDate)
+                        let date = NSDate.init(timeIntervalSince1970: (createdDate))
                         
 //                        let topicInfo = meetupJson["topicInfo"] as! [String: Any]
                         
@@ -264,7 +264,7 @@ class SSDatabase {
                         }
                         
                         let createdDate = meetupJson["createddate"] as! TimeInterval
-                        let date = NSDate.init(timeIntervalSinceReferenceDate: createdDate)
+                        let date = NSDate.init(timeIntervalSince1970: (createdDate))
                         
                         //                        let topicInfo = meetupJson["topicInfo"] as! [String: Any]
                         
@@ -309,8 +309,8 @@ class SSDatabase {
                         let meetup = SSMeetup(id: "", student: ssStudent, summary: summary, details: details, location: location!, topic: topic!, timeExchange: timeExchange)
                         
                         // teacher { name, phone }
-                        if let teacher = meetupJson["teacherInfo"] as! [String: String]? {
-                            let ssTeacher = SSUser(id: "na", name: (teacher["name"]!), phone: (teacher["phone"]!))
+                        if let teacher = meetupJson["teacherInfo"] as? [String: String]? {
+                            let ssTeacher = SSUser(id: "na", name: (teacher?["name"]!)!, phone: (teacher?["phone"]!)!)
                             meetup.teacher = ssTeacher
                         }
                         
@@ -374,7 +374,7 @@ class SSDatabase {
                         }
                         
                         let createdDate = meetupJson["createddate"] as! TimeInterval
-                        let date = NSDate.init(timeIntervalSinceReferenceDate: createdDate)
+                        let date = NSDate.init(timeIntervalSince1970: (createdDate))
                         
                         //                        let topicInfo = meetupJson["topicInfo"] as! [String: Any]
                         
@@ -419,8 +419,8 @@ class SSDatabase {
                         let meetup = SSMeetup(id: "", student: ssStudent, summary: summary, details: details, location: location!, topic: topic!, timeExchange: timeExchange)
                         
                         // teacher { name, phone }
-                        if let teacher = meetupJson["teacherInfo"] as! [String: String]? {
-                            let ssTeacher = SSUser(id: "na", name: (teacher["name"]!), phone: (teacher["phone"]!))
+                        if let teacher = meetupJson["teacherInfo"] as? [String: String]? {
+                            let ssTeacher = SSUser(id: "na", name: (teacher?["name"]!)!, phone: (teacher?["phone"]!)!)
                             meetup.teacher = ssTeacher
                         }
                         
@@ -432,7 +432,8 @@ class SSDatabase {
                 } else {
                     let error = json?["error"] as? [String: Any]
                     print("\(error)")
-                    completion(true, SSStorage.sharedInstance.getAllMeetups())
+//                    completion(true, SSStorage.sharedInstance.getAllMeetups())
+                    completion(false, nil)
                 }
         }
         //        completion(true, SSStorage.sharedInstance.getAllMeetups())
@@ -491,7 +492,7 @@ class SSDatabase {
                         }
                         
                         let createdDate = meetupJson["createddate"] as! TimeInterval
-                        let date = NSDate.init(timeIntervalSinceReferenceDate: createdDate)
+                        let date = NSDate.init(timeIntervalSince1970: createdDate)
                         
                         //                        let topicInfo = meetupJson["topicInfo"] as! [String: Any]
                         
@@ -529,8 +530,8 @@ class SSDatabase {
                         
                         let meetup = SSMeetup(id: "", student: ssStudent, summary: summary, details: details, location: location!, topic: topic!, timeExchange: timeExchange)
                         // teacher { name, phone }
-                        if let teacher = meetupJson["teacherInfo"] as! [String: String]? {
-                            let ssTeacher = SSUser(id: "na", name: (teacher["name"]!), phone: (teacher["phone"]!))
+                        if let teacher = meetupJson["teacherInfo"] as? [String: String]? {
+                            let ssTeacher = SSUser(id: "na", name: (teacher?["name"]!)!, phone: (teacher?["phone"]!)!)
                             meetup.teacher = ssTeacher
                         }
                         
@@ -542,7 +543,7 @@ class SSDatabase {
                 } else {
                     let error = json?["error"] as? [String: Any]
                     print("\(error)")
-                    completion(true, SSStorage.sharedInstance.getAllMeetups())
+                    completion(false, nil)
                 }
         }
         //        completion(true, SSStorage.sharedInstance.getAllMeetups())
@@ -567,7 +568,7 @@ class SSDatabase {
                 let success = json?["success"] as? Bool
                 if (success == true) {
                     let createdDate = json?["createdDate"] as? TimeInterval
-                    let date = NSDate.init(timeIntervalSinceReferenceDate: createdDate!)
+                    let date = NSDate.init(timeIntervalSince1970: createdDate!)
                     SSCurrentUser.sharedInstance.currentMeetupPost?.createdDate = date
                     completion(true)
                 } else {
@@ -581,10 +582,27 @@ class SSDatabase {
     class func cancelMeetup(completion: @escaping (_ success: Bool)->()) {
         let parameters: Parameters = [
             "phone": SSCurrentUser.sharedInstance.user?.phone! as Any,
-            "createdDate": (SSCurrentUser.sharedInstance.currentMeetupPost?.createdDate?.timeIntervalSinceReferenceDate)!,
+            "createdDate": (SSCurrentUser.sharedInstance.currentMeetupPost?.createdDate?.timeIntervalSince1970)!,
             "state": 3
         ]
         Alamofire.request("\(url)/cancelMeetup", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
+            .responseJSON { response in
+                let json = response.result.value as? [String: Any]
+                let success = json?["success"] as? Bool
+                if (success == true) {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+        }
+    }
+    
+    class func remindStudent(studentPhone: String, createdDate: NSDate, completion: @escaping (_ success: Bool)->()) {
+        let parameters: Parameters = [
+            "student": studentPhone,
+            "createdDate": createdDate.timeIntervalSince1970
+        ]
+        Alamofire.request("\(url)/remindStudent", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 let json = response.result.value as? [String: Any]
                 let success = json?["success"] as? Bool
@@ -624,7 +642,7 @@ class SSDatabase {
         let parameters: Parameters = [
             "teacher": SSCurrentUser.sharedInstance.user?.phone! as Any,
             "student": meetup.student?.phone! as Any,
-            "createdDate": (meetup.createdDate?.timeIntervalSinceReferenceDate)!,
+            "createdDate": (meetup.createdDate?.timeIntervalSince1970)!,
             "state": 2
         ]
         Alamofire.request("\(url)/acceptMeetup", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
@@ -637,13 +655,12 @@ class SSDatabase {
                     completion(false)
                 }
         }
-        completion(true)
     }
     
     class func checkMeetup(meetup: SSMeetup, completion: @escaping (_ success: Bool, _ state: MeetupState?)->()) {
         let parameters: Parameters = [
             "student": meetup.student?.phone! as Any,
-            "createdDate": (meetup.createdDate?.timeIntervalSinceReferenceDate)!,
+            "createdDate": (meetup.createdDate?.timeIntervalSince1970)!,
         ]
         Alamofire.request("\(url)/checkMeetup", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
@@ -688,7 +705,7 @@ class SSDatabase {
         let parameters: Parameters = [
             "student": SSCurrentUser.sharedInstance.user?.phone as Any,
             "teacher": meetup.teacher?.phone as Any,
-            "createdDate": meetup.createdDate?.timeIntervalSinceReferenceDate as Any,
+            "createdDate": meetup.createdDate?.timeIntervalSince1970 as Any,
             "state": 5,
             "exchange": exchange
         ]

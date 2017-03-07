@@ -221,7 +221,10 @@ class SSTeachViewController: UIViewController, UITableViewDelegate, UITableViewD
                     appDelegate.navController?.viewControllers = [newVC!]
                     self.present(vc, animated: true, completion: nil)
                 } else {
-                    
+                    let popup = PopupDialog(title: "Whoops", message: "Your teach request couldn't be accepted at this time.")
+                    let buttonOne = CancelButton(title: "dimiss") {}
+                    popup.addButtons([buttonOne])
+                    self.present(popup, animated: true, completion: nil)
                 }
             })
         }

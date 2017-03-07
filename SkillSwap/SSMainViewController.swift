@@ -43,8 +43,8 @@ class SSMainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         controlValueChanged()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-//        checkLogin()
-//        checkLearningStatus()
+        checkLogin()
+        checkLearningStatus()
         layoutTime()
     }
     
@@ -161,7 +161,7 @@ class SSMainViewController: UIViewController {
         }
         
         timeButton.tintColor = SSColors.SSBlue
-        timeButton.titleLabel?.font = UIFont(name: "Gotham-Medium", size: 16)
+        timeButton.titleLabel?.font = UIFont(name: "Gotham-Book", size: 16)
         timeButton.setTitleColor(SSColors.SSBlue, for: .normal)
         timeButton.sizeToFit()
         view.addSubview(timeButton)
@@ -204,7 +204,7 @@ class SSMainViewController: UIViewController {
     }
     
     func timePressed() {
-        
+        present(SSTutorialViewController(), animated: true, completion: nil)
     }
 
     func loginUser() {

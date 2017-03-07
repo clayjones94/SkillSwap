@@ -2,6 +2,9 @@ PODS:
   - Alamofire (4.3.0)
   - AnimatedTextInput (0.4.0)
   - BetterSegmentedControl (0.7)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
   - Digits (2.8.0):
@@ -21,6 +24,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.3)
   - AnimatedTextInput (~> 0.4.0)
   - BetterSegmentedControl (~> 0.7)
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Crashlytics
   - Digits
   - DropDown
@@ -33,10 +37,20 @@ DEPENDENCIES:
   - SnapKit (~> 3.1.2)
   - TwitterCore
 
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: acc480fbe023c6e5fe40f68593f4a70a8c4c7ad5
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   AnimatedTextInput: 283f38c106399b809b126f80af79fca9f4aabfd6
   BetterSegmentedControl: 0b4dde1caac22de345820858a5e2789132378c1c
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   Digits: 401151fdcc955738142d53b89112960d3c2e3930
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
@@ -49,6 +63,6 @@ SPEC CHECKSUMS:
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
 
-PODFILE CHECKSUM: 533d258acd59d26cf42d83217df1df5318c6282d
+PODFILE CHECKSUM: 31c8353ed98bdcf1b0406c0e5372cffbbb8e92d9
 
 COCOAPODS: 1.1.1

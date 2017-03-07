@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DropDown.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,11 +77,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2B01DDAE08BC73DCB0FDFB684F53D10E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>2E13B5BED48305DAFCA2C71A8E98913B</key>
 		<dict>
 			<key>primary</key>
@@ -87,17 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>48184B06D7700BDF0DD8DF5A75F4B3B4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5168099F2EBFC99A707C03C9EADE01A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>561FDC327DCDD80127AC4F33EC1E886D</key>
+		<key>706FD707D09D1CEA21F564224CD4E0CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76BD4592010354D6C23D6ECCA20D83A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +117,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B02C7CA7E6AE71985F7539F59E26E4DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B65C26BBA7091935FD1EF703F7BBE326</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E7274CF7CF080315532B99653D347208</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F5F0DA1AEF649D7B934F080BF435B23D</key>
+		<key>F48B01F7986CEDF6EB1B2593A4023B88</key>
 		<dict>
 			<key>primary</key>
 			<true/>

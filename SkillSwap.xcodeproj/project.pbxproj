@@ -15,7 +15,6 @@
 		921669B71E4AD65A002EA0DB /* SSStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669B61E4AD65A002EA0DB /* SSStorage.swift */; };
 		921669B91E4AEFA2002EA0DB /* SSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669B81E4AEFA2002EA0DB /* SSUtils.swift */; };
 		921669BB1E4B9F30002EA0DB /* SSMeetupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669BA1E4B9F30002EA0DB /* SSMeetupsViewController.swift */; };
-		921669C01E552F26002EA0DB /* SSDropDownFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669BF1E552F26002EA0DB /* SSDropDownFilterView.swift */; };
 		921669C21E5552D8002EA0DB /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921669C11E5552D8002EA0DB /* DropDown.framework */; };
 		921669C41E5668FD002EA0DB /* SSRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */; };
 		921669C61E56B266002EA0DB /* SSHistoryTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669C51E56B266002EA0DB /* SSHistoryTableTableViewCell.swift */; };
@@ -64,6 +63,8 @@
 		92F2A9FA1E653C2100F6CF70 /* SSIconLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2A9F91E653C2100F6CF70 /* SSIconLabelButton.swift */; };
 		92F2A9FC1E662F4200F6CF70 /* SSAdjustPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2A9FB1E662F4200F6CF70 /* SSAdjustPayViewController.swift */; };
 		92F2A9FE1E66A32400F6CF70 /* SSRegisterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2A9FD1E66A32400F6CF70 /* SSRegisterNameViewController.swift */; };
+		92F2AA021E68BDFF00F6CF70 /* SSTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2AA011E68BDFF00F6CF70 /* SSTutorialViewController.swift */; };
+		92F2AA051E69193600F6CF70 /* ChameleonFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F2AA041E69193600F6CF70 /* ChameleonFramework.framework */; };
 		C2C955BA714E073ACDE047EB /* Pods_SkillSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFC40E0F1585E77AB3F93AB /* Pods_SkillSwap.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +79,6 @@
 		921669B61E4AD65A002EA0DB /* SSStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSStorage.swift; sourceTree = "<group>"; };
 		921669B81E4AEFA2002EA0DB /* SSUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSUtils.swift; sourceTree = "<group>"; };
 		921669BA1E4B9F30002EA0DB /* SSMeetupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSMeetupsViewController.swift; sourceTree = "<group>"; };
-		921669BF1E552F26002EA0DB /* SSDropDownFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDropDownFilterView.swift; sourceTree = "<group>"; };
 		921669C11E5552D8002EA0DB /* DropDown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropDown.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphoneos/DropDown/DropDown.framework"; sourceTree = "<group>"; };
 		921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRegisterViewController.swift; sourceTree = "<group>"; };
 		921669C51E56B266002EA0DB /* SSHistoryTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHistoryTableTableViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +132,8 @@
 		92F2A9F91E653C2100F6CF70 /* SSIconLabelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSIconLabelButton.swift; sourceTree = "<group>"; };
 		92F2A9FB1E662F4200F6CF70 /* SSAdjustPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSAdjustPayViewController.swift; sourceTree = "<group>"; };
 		92F2A9FD1E66A32400F6CF70 /* SSRegisterNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRegisterNameViewController.swift; sourceTree = "<group>"; };
+		92F2AA011E68BDFF00F6CF70 /* SSTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTutorialViewController.swift; sourceTree = "<group>"; };
+		92F2AA041E69193600F6CF70 /* ChameleonFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ChameleonFramework.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/SkillSwap-bbschmmhttippjbntjpbyxpwfdti/Build/Products/Debug-iphonesimulator/ChameleonFramework/ChameleonFramework.framework"; sourceTree = "<group>"; };
 		FAFC40E0F1585E77AB3F93AB /* Pods_SkillSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkillSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F2AA051E69193600F6CF70 /* ChameleonFramework.framework in Frameworks */,
 				921669CD1E5C0C6D002EA0DB /* KeychainSwift.framework in Frameworks */,
 				921669C21E5552D8002EA0DB /* DropDown.framework in Frameworks */,
 				921669B41E499611002EA0DB /* Alamofire.framework in Frameworks */,
@@ -234,28 +237,16 @@
 			children = (
 				921669CB1E5B9606002EA0DB /* SkillSwap.entitlements */,
 				92C075AB1E3C23FF00D0B063 /* Default-568h@2x.png */,
-				92C075971E3C1F8100D0B063 /* AppDelegate.swift */,
-				923383DB1E3C2EA800C3FFF6 /* SSColors.swift */,
-				9219381E1E41D50800C6A4C8 /* SSConstants.swift */,
-				9219381A1E41C7FC00C6A4C8 /* SSAnimations.swift */,
 				923383EF1E3D67D000C3FFF6 /* SSSideMenuViewController.swift */,
-				921669BA1E4B9F30002EA0DB /* SSMeetupsViewController.swift */,
-				921669C91E5AA9EC002EA0DB /* SSMeetupsActiveTableViewCell.swift */,
-				92F2A9F91E653C2100F6CF70 /* SSIconLabelButton.swift */,
-				921669C51E56B266002EA0DB /* SSHistoryTableTableViewCell.swift */,
+				92F2AA061E6922D100F6CF70 /* meetups */,
 				92C075A91E3C22E400D0B063 /* SSMainViewController.swift */,
 				923383F11E3D6DEE00C3FFF6 /* SSLearnViewController.swift */,
+				92F2AA031E68BEE900F6CF70 /* tutorial */,
 				921938121E4050F400C6A4C8 /* SSWaitForTeacherViewController.swift */,
-				921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */,
-				92F2A9FD1E66A32400F6CF70 /* SSRegisterNameViewController.swift */,
-				921669C71E56BBA8002EA0DB /* SSLoginViewController.swift */,
+				92F2A9FF1E68BCF800F6CF70 /* Register */,
 				92C78E551E3FF19C003C8ED7 /* New Learn Post */,
-				923383F31E3D6E4300C3FFF6 /* SSTeachViewController.swift */,
-				921938241E43AFC600C6A4C8 /* SSTeachDetailViewController.swift */,
-				921938281E43C28000C6A4C8 /* SSTeacherMatchViewController.swift */,
-				921938201E42677600C6A4C8 /* SSTeachTableViewCell.swift */,
-				921669B81E4AEFA2002EA0DB /* SSUtils.swift */,
-				921669BF1E552F26002EA0DB /* SSDropDownFilterView.swift */,
+				92F2AA071E69230B00F6CF70 /* Other */,
+				92F2AA001E68BD1400F6CF70 /* Teach */,
 				92F2A9FB1E662F4200F6CF70 /* SSAdjustPayViewController.swift */,
 				921669AF1E4981C2002EA0DB /* Database */,
 				921669AE1E49818C002EA0DB /* Storage */,
@@ -279,6 +270,58 @@
 			name = "New Learn Post";
 			sourceTree = "<group>";
 		};
+		92F2A9FF1E68BCF800F6CF70 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				921669C31E5668FD002EA0DB /* SSRegisterViewController.swift */,
+				92F2A9FD1E66A32400F6CF70 /* SSRegisterNameViewController.swift */,
+				921669C71E56BBA8002EA0DB /* SSLoginViewController.swift */,
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		92F2AA001E68BD1400F6CF70 /* Teach */ = {
+			isa = PBXGroup;
+			children = (
+				923383F31E3D6E4300C3FFF6 /* SSTeachViewController.swift */,
+				921938241E43AFC600C6A4C8 /* SSTeachDetailViewController.swift */,
+				921938281E43C28000C6A4C8 /* SSTeacherMatchViewController.swift */,
+				921938201E42677600C6A4C8 /* SSTeachTableViewCell.swift */,
+			);
+			name = Teach;
+			sourceTree = "<group>";
+		};
+		92F2AA031E68BEE900F6CF70 /* tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				92F2AA011E68BDFF00F6CF70 /* SSTutorialViewController.swift */,
+			);
+			name = tutorial;
+			sourceTree = "<group>";
+		};
+		92F2AA061E6922D100F6CF70 /* meetups */ = {
+			isa = PBXGroup;
+			children = (
+				921669BA1E4B9F30002EA0DB /* SSMeetupsViewController.swift */,
+				92F2A9F91E653C2100F6CF70 /* SSIconLabelButton.swift */,
+				921669C91E5AA9EC002EA0DB /* SSMeetupsActiveTableViewCell.swift */,
+				921669C51E56B266002EA0DB /* SSHistoryTableTableViewCell.swift */,
+			);
+			name = meetups;
+			sourceTree = "<group>";
+		};
+		92F2AA071E69230B00F6CF70 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				92C075971E3C1F8100D0B063 /* AppDelegate.swift */,
+				923383DB1E3C2EA800C3FFF6 /* SSColors.swift */,
+				9219381E1E41D50800C6A4C8 /* SSConstants.swift */,
+				9219381A1E41C7FC00C6A4C8 /* SSAnimations.swift */,
+				921669B81E4AEFA2002EA0DB /* SSUtils.swift */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		B936FABDDEB1CFD7F9693DA0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +334,7 @@
 		DAE1D88DF9B462E543EADB02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92F2AA041E69193600F6CF70 /* ChameleonFramework.framework */,
 				921669CC1E5C0C6D002EA0DB /* KeychainSwift.framework */,
 				921669C11E5552D8002EA0DB /* DropDown.framework */,
 				921669B21E499611002EA0DB /* Alamofire.framework */,
@@ -475,7 +519,6 @@
 				921669AB1E498085002EA0DB /* SSSubject.swift in Sources */,
 				9219382B1E457FAB00C6A4C8 /* SSMeetup.swift in Sources */,
 				923383DC1E3C2EA800C3FFF6 /* SSColors.swift in Sources */,
-				921669C01E552F26002EA0DB /* SSDropDownFilterView.swift in Sources */,
 				92F2A9FE1E66A32400F6CF70 /* SSRegisterNameViewController.swift in Sources */,
 				921669BB1E4B9F30002EA0DB /* SSMeetupsViewController.swift in Sources */,
 				921669AD1E498097002EA0DB /* SSTopic.swift in Sources */,
@@ -494,6 +537,7 @@
 				92C78E521E3FC46F003C8ED7 /* SSSelectTimeViewController.swift in Sources */,
 				9219381F1E41D50800C6A4C8 /* SSConstants.swift in Sources */,
 				921669C81E56BBA8002EA0DB /* SSLoginViewController.swift in Sources */,
+				92F2AA021E68BDFF00F6CF70 /* SSTutorialViewController.swift in Sources */,
 				923383F21E3D6DEE00C3FFF6 /* SSLearnViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

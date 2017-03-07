@@ -9,8 +9,9 @@
 import UIKit
 import SideMenu
 import MessageUI
+import PopupDialog
 
-class SSMeetupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate {
+class SSMeetupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate, ActiveMeetupTableViewCellDelegate {
     
     let tableView = UITableView(frame: .zero, style: .plain)
     var history: Array<SSMeetup> = []
@@ -95,6 +96,7 @@ class SSMeetupsViewController: UIViewController, UITableViewDelegate, UITableVie
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "active cell") as! SSMeetupsActiveTableViewCell
             cell.meetup = active[indexPath.row]
+            cell.delegate = self
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "history cell") as! SSHistoryTableViewCell
@@ -114,17 +116,7 @@ class SSMeetupsViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.cellForRow(at: indexPath)
         cell?.setSelected(false, animated: false)
         if indexPath.section == 0 {
-            let meetup = active[indexPath.row]
-            if (MFMessageComposeViewController.canSendText()) {
-                let composeVC = MFMessageComposeViewController()
-                composeVC.messageComposeDelegate = self
-                
-                // Configure the fields of the interface.
-                composeVC.recipients = [(meetup.student?.phone!)!]
-                
-                // Present the view controller modally.
-                self.present(composeVC, animated: true, completion: nil)
-            }
+
         }
     }
     
@@ -155,4 +147,42 @@ class SSMeetupsViewController: UIViewController, UITableViewDelegate, UITableVie
         present(SideMenuManager.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
+    func meetupCellDidSelectInfo(cell: SSMeetupsActiveTableViewCell) {
+        
+    }
+    
+    func meetupCellDidSelectCancel(cell: SSMeetupsActiveTableViewCell) {
+        
+    }
+    
+    func meetupCellDidSelectRemind(cell: SSMeetupsActiveTableViewCell) {
+        let meetup = cell.meetup
+        SSDatabase.remindStudent(studentPhone: (meetup?.student?.phone)!, createdDate: (meetup?.createdDate)!) { (success) in
+            if success {
+                let popup = PopupDialog(title: "Success", message: "\((meetup?.student?.name)!) has been reminded.")
+                let buttonOne = CancelButton(title: "dimiss") {}
+                popup.addButtons([buttonOne])
+                self.present(popup, animated: true, completion: nil)
+            } else {
+                let popup = PopupDialog(title: "Whoops", message: "Looks like your reminder didn't go through")
+                let buttonOne = CancelButton(title: "dimiss") {}
+                popup.addButtons([buttonOne])
+                self.present(popup, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func meetupCellDidSelectMessage(cell: SSMeetupsActiveTableViewCell) {
+        let meetup = cell.meetup
+        if (MFMessageComposeViewController.canSendText()) {
+            let composeVC = MFMessageComposeViewController()
+            composeVC.messageComposeDelegate = self
+            
+            // Configure the fields of the interface.
+            composeVC.recipients = [(meetup?.student?.phone!)!]
+            
+            // Present the view controller modally.
+            self.present(composeVC, animated: true, completion: nil)
+        }
+    }
 }

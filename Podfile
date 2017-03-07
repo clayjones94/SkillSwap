@@ -21,5 +21,6 @@ target 'SkillSwap' do
   pod 'KeychainSwift', '~> 7.0'
   pod 'Digits'
   pod 'TwitterCore'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 end
 

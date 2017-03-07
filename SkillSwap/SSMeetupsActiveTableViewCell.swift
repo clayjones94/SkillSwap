@@ -8,8 +8,16 @@
 
 import UIKit
 import MessageUI
+import PopupDialog
 
-class SSMeetupsActiveTableViewCell: UITableViewCell, MFMessageComposeViewControllerDelegate {
+protocol ActiveMeetupTableViewCellDelegate {
+    func meetupCellDidSelectRemind(cell: SSMeetupsActiveTableViewCell)
+    func meetupCellDidSelectMessage(cell: SSMeetupsActiveTableViewCell)
+    func meetupCellDidSelectCancel(cell: SSMeetupsActiveTableViewCell)
+    func meetupCellDidSelectInfo(cell: SSMeetupsActiveTableViewCell)
+}
+
+class SSMeetupsActiveTableViewCell: UITableViewCell {
     
     let iconView = UIImageView()
     let nameLabel = UILabel()
@@ -22,6 +30,8 @@ class SSMeetupsActiveTableViewCell: UITableViewCell, MFMessageComposeViewControl
     
     let line = UIView()
     var meetup: SSMeetup?
+    
+    var delegate: ActiveMeetupTableViewCellDelegate?
     
     override func layoutSubviews() {
         
@@ -106,23 +116,23 @@ class SSMeetupsActiveTableViewCell: UITableViewCell, MFMessageComposeViewControl
         }
     }
     
-    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        //self.dismiss(animated: false, completion: nil)
-    }
-    
     func request() {
         SSAnimations().popAnimateButton(button: requestButton)
+        delegate?.meetupCellDidSelectRemind(cell: self)
     }
     
     func message() {
         SSAnimations().popAnimateButton(button: messageButton)
+        delegate?.meetupCellDidSelectMessage(cell: self)
     }
     
     func info() {
         SSAnimations().popAnimateButton(button: infoButton)
+        delegate?.meetupCellDidSelectInfo(cell: self)
     }
     
     func cancel() {
         SSAnimations().popAnimateButton(button: cancelButton)
+        delegate?.meetupCellDidSelectCancel(cell: self)
     }
 }
