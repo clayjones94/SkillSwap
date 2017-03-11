@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		124BE3D91E749B3D000653DD /* SSAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124BE3D81E749B3D000653DD /* SSAboutViewController.swift */; };
 		921669AB1E498085002EA0DB /* SSSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669AA1E498085002EA0DB /* SSSubject.swift */; };
 		921669AD1E498097002EA0DB /* SSTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669AC1E498097002EA0DB /* SSTopic.swift */; };
 		921669B11E498305002EA0DB /* SSDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921669B01E498305002EA0DB /* SSDatabase.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		124BE3D81E749B3D000653DD /* SSAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSAboutViewController.swift; sourceTree = "<group>"; };
 		685A2BE634EBF6C1E9C0D762 /* Pods-SkillSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillSwap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkillSwap/Pods-SkillSwap.debug.xcconfig"; sourceTree = "<group>"; };
 		82ACFD579FEB922F137AD524 /* Pods-SkillSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillSwap.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkillSwap/Pods-SkillSwap.release.xcconfig"; sourceTree = "<group>"; };
 		921669AA1E498085002EA0DB /* SSSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSubject.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				921669CB1E5B9606002EA0DB /* SkillSwap.entitlements */,
 				92C075AB1E3C23FF00D0B063 /* Default-568h@2x.png */,
 				923383EF1E3D67D000C3FFF6 /* SSSideMenuViewController.swift */,
+				124BE3D81E749B3D000653DD /* SSAboutViewController.swift */,
 				92F2AA061E6922D100F6CF70 /* meetups */,
 				92C075A91E3C22E400D0B063 /* SSMainViewController.swift */,
 				923383F11E3D6DEE00C3FFF6 /* SSLearnViewController.swift */,
@@ -522,6 +525,7 @@
 				92F2A9FE1E66A32400F6CF70 /* SSRegisterNameViewController.swift in Sources */,
 				921669BB1E4B9F30002EA0DB /* SSMeetupsViewController.swift in Sources */,
 				921669AD1E498097002EA0DB /* SSTopic.swift in Sources */,
+				124BE3D91E749B3D000653DD /* SSAboutViewController.swift in Sources */,
 				92C075AA1E3C22E400D0B063 /* SSMainViewController.swift in Sources */,
 				921669B91E4AEFA2002EA0DB /* SSUtils.swift in Sources */,
 				9219382F1E45834000C6A4C8 /* SSLocation.swift in Sources */,

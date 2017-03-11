@@ -19,6 +19,7 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var mainViewController: SSMainViewController?
     var meetupViewController: SSMeetupsViewController?
+    var aboutViewController: SSAboutViewController?
     let nameLabel = UILabel()
     let timeLabel = UILabel()
     
@@ -48,6 +49,10 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
             [
                 "title": "Meetups",
                 "action": #selector(SSSideMenuViewController.meetups)
+            ],
+            [
+                "title": "About",
+                "action": #selector(SSSideMenuViewController.about)
             ],
             [
                 "title": "Logout",
@@ -92,7 +97,7 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -123,6 +128,12 @@ class SSSideMenuViewController: UIViewController, UITableViewDelegate, UITableVi
         appDelegate.navController?.viewControllers = [meetupViewController!]
         dismiss(animated: true, completion: nil)
 //        navigationController?.pushViewController(meetupViewController, animated: false)
+    }
+    
+    func about() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.navController?.viewControllers = [aboutViewController!]
+        dismiss(animated: true, completion: nil)
     }
     
     func logout () {

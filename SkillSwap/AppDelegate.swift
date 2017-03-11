@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         sideMenuController.mainViewController = mainViewController
         sideMenuController.meetupViewController = SSMeetupsViewController()
+        sideMenuController.aboutViewController = SSAboutViewController()
         let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: sideMenuController)
         menuLeftNavigationController.view.backgroundColor = .white
         menuLeftNavigationController.leftSide = true

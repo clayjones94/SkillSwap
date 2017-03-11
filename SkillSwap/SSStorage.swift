@@ -53,71 +53,123 @@ class SSStorage: NSObject {
     
     func getTopicsForSubject(subject: SSSubject) -> Array<SSTopic> {
         if subject.id == computerScience.id {
-            let cs106A = SSTopic(id: "cs106a", name: "CS 106A", subject: computerScience, state: TopicState.active)
-            let cs106B = SSTopic(id: "cs106b", name: "CS 106B", subject: computerScience, state: TopicState.active)
-            let cs103 = SSTopic(id: "cs103", name: "CS 103", subject: computerScience, state: TopicState.active)
-            let cs105 = SSTopic(id: "cs105", name: "CS 105", subject: computerScience, state: TopicState.active)
-            let cs109 = SSTopic(id: "cs109", name: "CS 109", subject: computerScience, state: TopicState.active)
-            return [cs106A, cs106B, cs103, cs105, cs109]
+            let cs1 = SSTopic(id: "cs106a", name: "CS 106A", subject: computerScience, state: TopicState.active)
+            let cs2 = SSTopic(id: "cs106b", name: "CS 106B", subject: computerScience, state: TopicState.active)
+            let cs3 = SSTopic(id: "cs103", name: "CS 103", subject: computerScience, state: TopicState.active)
+            let cs4 = SSTopic(id: "cs105", name: "CS 105", subject: computerScience, state: TopicState.active)
+            let cs5 = SSTopic(id: "cs109", name: "CS 109", subject: computerScience, state: TopicState.active)
+            let cs6 = SSTopic(id: "cs107", name: "CS 107", subject: computerScience, state: TopicState.active)
+            let cs7 = SSTopic(id: "python", name: "Python", subject: computerScience, state: TopicState.active)
+            let cs8 = SSTopic(id: "matlab", name: "Matlab", subject: computerScience, state: TopicState.active)
+            let cs9 = SSTopic(id: "runtime", name: "Runtime", subject: computerScience, state: TopicState.active)
+            let cs10 = SSTopic(id: "basics", name: "Basics", subject: computerScience, state: TopicState.active)
+            let cs11 = SSTopic(id: "csother", name: "Other", subject: computerScience, state: TopicState.active)
+            return [cs1, cs2, cs3, cs4, cs5,cs6, cs7, cs8, cs9, cs10, cs11]
         } else if subject.id == math.id {
-            let topic1 = SSTopic(id: "Math 19", name: "Math 19", subject: math, state: TopicState.active)
-            let topic2 = SSTopic(id: "Math 20", name: "Math 20", subject: math, state: TopicState.active)
-            let topic3 = SSTopic(id: "cs103", name: "Math 51", subject: math, state: TopicState.active)
-            let topic4 = SSTopic(id: "cs105", name: "Math 53", subject: math, state: TopicState.active)
-            let topic5 = SSTopic(id: "cs109", name: "CME 100", subject: math, state: TopicState.active)
-            return [topic1, topic2, topic3, topic4, topic5]
+            let m1 = SSTopic(id: "math19", name: "Math 19", subject: math, state: TopicState.active)
+            let m2 = SSTopic(id: "math20", name: "Math 20", subject: math, state: TopicState.active)
+            let m3 = SSTopic(id: "math51", name: "Math 51", subject: math, state: TopicState.active)
+            let m4 = SSTopic(id: "math53", name: "Math 53", subject: math, state: TopicState.active)
+            let m5 = SSTopic(id: "cme100", name: "CME 100", subject: math, state: TopicState.active)
+            let m6 = SSTopic(id: "math52", name: "Math 52", subject: math, state: TopicState.active)
+            let m7 = SSTopic(id: "cme102", name: "CME 102", subject: math, state: TopicState.active)
+            let m8 = SSTopic(id: "integration", name: "Integration", subject: math, state: TopicState.active)
+            let m9 = SSTopic(id: "matrices", name: "Matrices", subject: math, state: TopicState.active)
+            let m10 = SSTopic(id: "derivatives", name: "Derivatives", subject: math, state: TopicState.active)
+            let m11 = SSTopic(id: "mathother", name: "Other", subject: math, state: TopicState.active)
+            return [m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11]
         } else if subject.id == writing.id {
-            let topic1 = SSTopic(id: "Grammar", name: "Grammar", subject: writing, state: TopicState.active)
-            let topic2 = SSTopic(id: "Creative Writing", name: "Creative Writing", subject: writing, state: TopicState.active)
-            let topic3 = SSTopic(id: "Poetry", name: "Poetry", subject: writing, state: TopicState.active)
-            let topic4 = SSTopic(id: "Haiku", name: "Haiku", subject: writing, state: TopicState.active)
-            let topic5 = SSTopic(id: "Syntax", name: "Syntax", subject: writing, state: TopicState.active)
-            return [topic1, topic2, topic3, topic4, topic5]
+            let w1 = SSTopic(id: "grammar", name: "Grammar", subject: writing, state: TopicState.active)
+            let w2 = SSTopic(id: "creativewriting", name: "Creative Writing", subject: writing, state: TopicState.active)
+            let w3 = SSTopic(id: "poetry", name: "Poetry", subject: writing, state: TopicState.active)
+            let w4 = SSTopic(id: "oral", name: "Oral Presentation", subject: writing, state: TopicState.active)
+            let w5 = SSTopic(id: "syntax", name: "Syntax", subject: writing, state: TopicState.active)
+            let w6 = SSTopic(id: "pwr", name: "PWR", subject: writing, state: TopicState.active)
+            let w7 = SSTopic(id: "pwr2", name: "PWR 2", subject: writing, state: TopicState.active)
+            let w8 = SSTopic(id: "research", name: "Research", subject: writing, state: TopicState.active)
+            let w9 = SSTopic(id: "publishing", name: "Publishing", subject: writing, state: TopicState.active)
+            let w10 = SSTopic(id: "wim", name: "WIM", subject: writing, state: TopicState.active)
+            let w11 = SSTopic(id: "wother", name: "Other", subject: writing, state: TopicState.active)
+            return [w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11]
         } else if subject.id == physics.id {
-            let topic1 = SSTopic(id: "Math 19", name: "Math 19", subject: physics, state: TopicState.active)
-            let topic2 = SSTopic(id: "Math 20", name: "Math 20", subject: physics, state: TopicState.active)
-            let topic3 = SSTopic(id: "cs103", name: "Math 51", subject: physics, state: TopicState.active)
-            let topic4 = SSTopic(id: "cs105", name: "Math 53", subject: physics, state: TopicState.active)
-            let topic5 = SSTopic(id: "cs109", name: "CME 100", subject: physics, state: TopicState.active)
-            return [topic1, topic2, topic3, topic4, topic5]
+            let p1 = SSTopic(id: "physics41", name: "Physics 41", subject: physics, state: TopicState.active)
+            let p2 = SSTopic(id: "physics43", name: "Physics 43", subject: physics, state: TopicState.active)
+            let p3 = SSTopic(id: "physics45", name: "Physics 45", subject: physics, state: TopicState.active)
+            let p4 = SSTopic(id: "physics61", name: "Physics 61", subject: physics, state: TopicState.active)
+            let p5 = SSTopic(id: "physics63", name: "Physics 63", subject: physics, state: TopicState.active)
+            let p6 = SSTopic(id: "physics65", name: "Physics 65", subject: physics, state: TopicState.active)
+            let p7 = SSTopic(id: "physics21", name: "Physics 21", subject: physics, state: TopicState.active)
+            let p8 = SSTopic(id: "physics23", name: "Physics 23", subject: physics, state: TopicState.active)
+            let p9 = SSTopic(id: "physics25", name: "Physics 25", subject: physics, state: TopicState.active)
+            let p10 = SSTopic(id: "pother", name: "Other", subject: physics, state: TopicState.active)
+            return [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
         } else if subject.id == chemistry.id {
-            let topic1 = SSTopic(id: "Math 19", name: "Chem 31", subject: chemistry, state: TopicState.active)
-            let topic2 = SSTopic(id: "Math 20", name: "Chem 45", subject: chemistry, state: TopicState.active)
-            let topic3 = SSTopic(id: "cs103", name: "Organic Chemistry", subject: chemistry, state: TopicState.active)
-            let topic4 = SSTopic(id: "cs105", name: "Chem 191", subject: chemistry, state: TopicState.active)
-            let topic5 = SSTopic(id: "cs109", name: "Moles", subject: chemistry, state: TopicState.active)
-            return [topic1, topic2, topic3, topic4, topic5]
+            let c1 = SSTopic(id: "chem31", name: "Chem 31", subject: chemistry, state: TopicState.active)
+            let c2 = SSTopic(id: "chem45", name: "Chem 45", subject: chemistry, state: TopicState.active)
+            let c3 = SSTopic(id: "organicchem", name: "Organic Chemistry", subject: chemistry, state: TopicState.active)
+            let c4 = SSTopic(id: "chem191", name: "Chem 191", subject: chemistry, state: TopicState.active)
+            let c5 = SSTopic(id: "moles", name: "Moles", subject: chemistry, state: TopicState.active)
+            let c6 = SSTopic(id: "chem35", name: "Chem 35", subject: chemistry, state: TopicState.active)
+            let c7 = SSTopic(id: "acidsbases", name: "Acids/Bases", subject: chemistry, state: TopicState.active)
+            let c8 = SSTopic(id: "stereochemistry", name: "Stereochemistry", subject: chemistry, state: TopicState.active)
+            let c9 = SSTopic(id: "chem31a", name: "Chem 31A", subject: chemistry, state: TopicState.active)
+            let c10 = SSTopic(id: "chem31x", name: "Chem 31X", subject: chemistry, state: TopicState.active)
+            let c11 = SSTopic(id: "cother", name: "Other", subject: chemistry, state: TopicState.active)
+            return [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11]
         } else if subject.id == athletics.id {
-            let topic1 = SSTopic(id: "Math 19", name: "Volleyball", subject: athletics, state: TopicState.active)
-            let topic2 = SSTopic(id: "Math 20", name: "Baseball", subject: athletics, state: TopicState.active)
-            let topic3 = SSTopic(id: "cs103", name: "Ballroom Dance", subject: athletics, state: TopicState.active)
-            let topic4 = SSTopic(id: "cs105", name: "Self Defense", subject: athletics, state: TopicState.active)
-            let topic5 = SSTopic(id: "cs109", name: "Basketball", subject: athletics, state: TopicState.active)
-            return [topic1, topic2, topic3, topic4, topic5]
+            let ath1 = SSTopic(id: "volleyball", name: "Volleyball", subject: athletics, state: TopicState.active)
+            let ath2 = SSTopic(id: "baseball", name: "Baseball", subject: athletics, state: TopicState.active)
+            let ath3 = SSTopic(id: "ballroomdance", name: "Ballroom Dance", subject: athletics, state: TopicState.active)
+            let ath4 = SSTopic(id: "selfdefense", name: "Self Defense", subject: athletics, state: TopicState.active)
+            let ath5 = SSTopic(id: "basketball", name: "Basketball", subject: athletics, state: TopicState.active)
+            let ath6 = SSTopic(id: "swimming", name: "Swimming", subject: athletics, state: TopicState.active)
+            let ath7 = SSTopic(id: "salsa", name: "Salsa Dancing", subject: athletics, state: TopicState.active)
+            let ath8 = SSTopic(id: "parkour", name: "Parkour", subject: athletics, state: TopicState.active)
+            let ath9 = SSTopic(id: "socialdance", name: "Social Dance", subject: athletics, state: TopicState.active)
+            let ath10 = SSTopic(id: "athother", name: "Other", subject: athletics, state: TopicState.active)
+            return [ath1, ath2, ath3, ath4, ath5, ath6, ath7, ath8, ath9, ath10]
         } else if subject.id == music.id {
-            let topic1 = SSTopic(id: "Math 19", name: "Guitar", subject: music, state: TopicState.active)
-            let topic2 = SSTopic(id: "Math 20", name: "Piano", subject: music, state: TopicState.active)
-            let topic3 = SSTopic(id: "cs103", name: "Singing", subject: music, state: TopicState.active)
-            let topic4 = SSTopic(id: "cs105", name: "Viola", subject: music, state: TopicState.active)
-            let topic5 = SSTopic(id: "cs109", name: "Rapping", subject: music, state: TopicState.active)
-            return [topic1, topic2, topic3, topic4, topic5]
+            let mu1 = SSTopic(id: "guitar", name: "Guitar", subject: music, state: TopicState.active)
+            let mu2 = SSTopic(id: "piano", name: "Piano", subject: music, state: TopicState.active)
+            let mu3 = SSTopic(id: "singing", name: "Singing", subject: music, state: TopicState.active)
+            let mu4 = SSTopic(id: "viola", name: "Viola", subject: music, state: TopicState.active)
+            let mu5 = SSTopic(id: "rapping", name: "Rapping", subject: music, state: TopicState.active)
+            let mu6 = SSTopic(id: "mutheory", name: "Theory", subject: music, state: TopicState.active)
+            let mu7 = SSTopic(id: "violin", name: "Violin", subject: music, state: TopicState.active)
+            let mu8 = SSTopic(id: "sheetMusic", name: "Sheet Music", subject: music, state: TopicState.active)
+            let mu9 = SSTopic(id: "writingmusic", name: "Writing Music", subject: music, state: TopicState.active)
+            let mu10 = SSTopic(id: "ocarina", name: "Ocarina", subject: music, state: TopicState.active)
+            let mu11 = SSTopic(id: "muother", name: "Other", subject: music, state: TopicState.active)
+            return [mu1, mu2, mu3, mu4, mu5, mu6, mu7, mu8, mu9, mu10, mu11]
         } else if subject.id == art.id {
-            let topic1 = SSTopic(id: "Math 19", name: "Watercolors", subject: art, state: TopicState.active)
-            let topic2 = SSTopic(id: "Math 20", name: "Painting", subject: art, state: TopicState.active)
-            let topic3 = SSTopic(id: "cs103", name: "Drawing", subject: art, state: TopicState.active)
-            let topic4 = SSTopic(id: "cs105", name: "Graphical Design", subject: art, state: TopicState.active)
-            let topic5 = SSTopic(id: "cs109", name: "Ceramics", subject: art, state: TopicState.active)
-            return [topic1, topic2, topic3, topic4, topic5]
+            let a1 = SSTopic(id: "watercolors", name: "Watercolors", subject: art, state: TopicState.active)
+            let a2 = SSTopic(id: "painting", name: "Painting", subject: art, state: TopicState.active)
+            let a3 = SSTopic(id: "drawing", name: "Drawing", subject: art, state: TopicState.active)
+            let a4 = SSTopic(id: "graphicaldesign", name: "Graphical Design", subject: art, state: TopicState.active)
+            let a5 = SSTopic(id: "ceramics", name: "Ceramics", subject: art, state: TopicState.active)
+            let a6 = SSTopic(id: "3dmodeling", name: "3D Modeling", subject: art, state: TopicState.active)
+            let a7 = SSTopic(id: "animation", name: "Animation", subject: art, state: TopicState.active)
+            let a8 = SSTopic(id: "3dprinting", name: "3D Printing", subject: art, state: TopicState.active)
+            let a9 = SSTopic(id: "storyboarding", name: "Storyboarding", subject: art, state: TopicState.active)
+            let a10 = SSTopic(id: "moviemaking", name: "Movie Making", subject: art, state: TopicState.active)
+            let a11 = SSTopic(id: "aother", name: "Other", subject: art, state: TopicState.active)
+            return [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11]
         }  else if subject.id == interviewPrep.id {
-            let topic1 = SSTopic(id: "Math 19", name: "Computer Science", subject: interviewPrep, state: TopicState.active)
-            let topic2 = SSTopic(id: "Math 20", name: "Consulting", subject: interviewPrep, state: TopicState.active)
-            let topic3 = SSTopic(id: "cs103", name: "Finance", subject: interviewPrep, state: TopicState.active)
-            let topic4 = SSTopic(id: "cs105", name: "Medical", subject: interviewPrep, state: TopicState.active)
-            let topic5 = SSTopic(id: "cs109", name: "Education", subject: interviewPrep, state: TopicState.active)
-            return [topic1, topic2, topic3, topic4, topic5]
+            let i1 = SSTopic(id: "csinterview", name: "Computer Science", subject: interviewPrep, state: TopicState.active)
+            let i2 = SSTopic(id: "consultinginterview", name: "Consulting", subject: interviewPrep, state: TopicState.active)
+            let i3 = SSTopic(id: "financeinterview", name: "Finance", subject: interviewPrep, state: TopicState.active)
+            let i4 = SSTopic(id: "medicalinterview", name: "Medical", subject: interviewPrep, state: TopicState.active)
+            let i5 = SSTopic(id: "educationinterview", name: "Education", subject: interviewPrep, state: TopicState.active)
+            let i6 = SSTopic(id: "practiceinterview", name: "Practice Run", subject: interviewPrep, state: TopicState.active)
+            let i7 = SSTopic(id: "resumei", name: "Resumes", subject: interviewPrep, state: TopicState.active)
+            let i8 = SSTopic(id: "negotiationi", name: "Negotiations", subject: interviewPrep, state: TopicState.active)
+            let i9 = SSTopic(id: "sectionleading", name: "Section Leading", subject: interviewPrep, state: TopicState.active)
+            let i10 = SSTopic(id: "iother", name: "Other", subject: interviewPrep, state: TopicState.active)
+            return [i1, i2, i3, i4, i5, i6, i7, i8, i9, i10]
         }
         return []
     }
+
     
     func getAllSubjects() -> Array<SSSubject> {
         return [computerScience, math, writing, physics, chemistry, athletics, music, interviewPrep, art]
