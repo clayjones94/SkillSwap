@@ -67,7 +67,7 @@ class SSDescriptionViewController: UIViewController, AnimatedTextInputDelegate {
         view.addSubview(subjectField)
         subjectField.placeHolderText = "Summary"
         subjectField.style = AnimatedTextInputStyleRed(color: color)
-        subjectField.showCharacterCounterLabel(with: 20)
+        subjectField.showCharacterCounterLabel(with: 40)
         subjectField.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(titleView.snp.bottom).offset(25)
@@ -101,7 +101,7 @@ class SSDescriptionViewController: UIViewController, AnimatedTextInputDelegate {
             return
         }
         
-        if (subjectField.text?.characters.count)! > 20 {
+        if (subjectField.text?.characters.count)! > 40 {
             let popup = PopupDialog(title: "Whoops", message: "Your summary is too long!")
             let buttonOne = CancelButton(title: "dimiss") {}
             popup.addButtons([buttonOne])

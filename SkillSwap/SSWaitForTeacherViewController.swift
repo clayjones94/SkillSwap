@@ -35,8 +35,10 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        time = Int((SSCurrentUser.sharedInstance.currentMeetupPost?.createdDate?.timeIntervalSince1970)!/1000 + 60*60 - Date().timeIntervalSince1970)
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.countDown), userInfo: nil, repeats: true)
+        if (SSCurrentUser.sharedInstance.learningStatus == .waiting) {
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.countDown), userInfo: nil, repeats: true)
+            time = Int((SSCurrentUser.sharedInstance.currentMeetupPost?.createdDate?.timeIntervalSince1970)!/1000 + 60*60 - Date().timeIntervalSince1970)
+        }
         updateBar()
     }
     
@@ -138,6 +140,7 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
     }
     
     func countDown() {
+        time = Int((SSCurrentUser.sharedInstance.currentMeetupPost?.createdDate?.timeIntervalSince1970)!/1000 + 60*60 - Date().timeIntervalSince1970)
         if time == 0 {
             timer.invalidate()
             SSCurrentUser.sharedInstance.learningStatus = .none
@@ -159,7 +162,6 @@ class SSWaitForTeacherViewController: UIViewController, MFMessageComposeViewCont
             timeExpire.text = "\(time/60):\(time % 60)"
         }
 //        time -= 1
-        time = Int((SSCurrentUser.sharedInstance.currentMeetupPost?.createdDate?.timeIntervalSince1970)!/1000 + 60*60 - Date().timeIntervalSince1970)
     }
     
     func checkMeetup () {

@@ -16,7 +16,9 @@ class SSTeacherMatchViewController: UIViewController, MFMessageComposeViewContro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = SSColors.SSBlue
+        let color1 = hexStringToUIColor(hex: "00A0EA")
+        let color2 = hexStringToUIColor(hex: "91DCFF")
+        view.backgroundColor = UIColor.init(gradientStyle: .topToBottom, withFrame: view.frame, andColors: [color2, color1])
         
         layoutViews()
     }
